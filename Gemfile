@@ -31,3 +31,5 @@ group :development, :test do
 end
 
 gem 'money-rails'
+
+gem 'pundit'
