@@ -9,7 +9,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
       t.string :address
-      t.integer :cook_status
+      t.integer :cook_status, null: false, default: 0
 
 
       ## Recoverable
