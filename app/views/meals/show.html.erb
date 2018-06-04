@@ -1,1 +1,13 @@
-show.html.erb
+<h3> <%= @meal.name  %></h3>
+<p>Description: <%= @meal.description %></p>
+<p>Grams per dose: <%= @meal.grams_per_dose %></p>
+<p>Ingredients: <%= @meal.ingredients %></p>
+<%= link_to "Back", meals_path, class: "btn btn-primary" %>
+<%= link_to edit_meal_path do %>
+            <i class="fas fa-pencil-alt fa-l"></i>
+<% end %>
+<%#= link_to "Edit", edit_meal_path, class: "btn btn-info" %>
+<%#= link_to "Delete", meal_path, method: :delete, class: "btn btn-info" %>
+ <%= link_to meal_path, method: :delete, data: {confirm: 'Are you sure?'} do %>
+            <i class="fas fa-trash-alt fa-l"></i>
+<% end %>
