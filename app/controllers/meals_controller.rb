@@ -1,19 +1,22 @@
 class MealsController < ApplicationController
   beforce_action :set_meals, only: [:show, :edit, :destroy]
   def index
-    @meals = Meal.all
+    @meals = policy_scope(Meal).order(created_at: :desc)
+    authorize @meals
   end
 
   def show
-    @meal= Order.new
+    @order = Order.new
   end
 
   def new
     @meal = Meal.new
+    authorize @meal
   end
 
   def create
     @meal = Meal.new(meal_params)
+    authorize @meal
     if @meal.save
       redirect_to meals_path
     else
@@ -40,6 +43,7 @@ class MealsController < ApplicationController
 
   def set_meals
     @meal = Meal.find(params[:id])
+    authorize @meal
   end
 
 end
