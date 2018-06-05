@@ -58,6 +58,11 @@ class MealsController < ApplicationController
     redirect_to meals_path
   end
 
+  def my_repository
+    @my_meals = current_user.meals
+    authorize @my_meals
+  end
+
   private
 
   def meal_params
