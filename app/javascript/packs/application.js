@@ -7,5 +7,5 @@ initMap(mapElement);
 import { autocomplete } from '../components/autocomplete';
 autocomplete();
 
-
+import AppModule from '../components/NgDragDrop';
 console.log("Hello from app/javascript/packs/application.js!");
