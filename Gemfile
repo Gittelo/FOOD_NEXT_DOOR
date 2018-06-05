@@ -39,5 +39,10 @@ gem 'figaro'
 # Add gem to use postmark
 gem 'postmark-rails'
 
+# Add gem geocoder
+gem 'geocoder'
+
+# Add gem elasticsearch
+gem 'pg_search'
 
 

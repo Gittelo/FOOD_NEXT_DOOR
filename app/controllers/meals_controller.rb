@@ -18,6 +18,8 @@ class MealsController < ApplicationController
 
   def create
     @meal = Meal.new(meal_params)
+    @meal.cook = current_user
+    #raise
     authorize @meal
     if @meal.save
       redirect_to meals_path
