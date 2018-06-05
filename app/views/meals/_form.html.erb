@@ -1,13 +1,18 @@
 <%= simple_form_for(@meal) do |f| %>
 
 <div class="col-md-6 col-md-offset-3">
-  <div class="form-inputs" style="color: black">
-
-    <%= f.input :name %>
-    <%= f.input :description%>
-    <%= f.input :grams_per_dose %>
-    <%= f.input :ingredients %>
-    <%= f.input :price %>
+  <div class="form-body">
+    <div class="form-inputs form-control-lg">
+      <%= f.input :name, placeholder: 'Enter name', label: false, input_html: { class: 'recognitionStyling'}%>
+      <div class="form-details">
+       <h4>Meal Details</h4>
+       <div class="form-inputs" style="color: black">
+        <%= f.input :description, placeholder: 'Enter description', input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'}%>
+        <%= f.input :ingredients, placeholder: 'Enter ingredients', input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'}%>
+        <%= f.input :grams_per_dose, placeholder: 'Enter grams/dose', input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'}%>
+        <%= f.input :price_cents, input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'}%>
+      </div>
+    </div>
   </div>
 
   <div class="form-actions flexing-box">
@@ -17,3 +22,7 @@
 </div>
 
 <% end %>
+</div>
+
+
+

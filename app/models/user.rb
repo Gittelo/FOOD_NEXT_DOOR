@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  after_create :send_welcome_email
+  #after_create :send_welcome_email
 
   has_many :orders
   has_many :meals, foreign_key: "cook_id"
