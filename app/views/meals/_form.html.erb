@@ -3,23 +3,25 @@
 <div class="col-md-6 col-md-offset-3">
   <div class="form-body">
     <div class="form-inputs form-control-lg">
-      <%= f.input :name, placeholder: 'Enter name', label: false, input_html: { class: 'recognitionStyling'}%>
+      <%= f.input :name, placeholder: 'Enter name', label: false, input_html: { class: 'recognitionStylingName'}%>
       <div class="form-details">
-       <h4>Meal Details</h4>
+        <h4 style= "border-bottom: 0.5px dotted gray;padding-bottom: 10px; color: #56BBC9;">Meal Details</h4>
        <div class="form-inputs" style="color: black">
-        <%= f.input :description, placeholder: 'Enter description', input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'}%>
-        <%= f.input :ingredients, placeholder: 'Enter ingredients', input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'}%>
-        <%= f.input :grams_per_dose, placeholder: 'Enter grams/dose', input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'}%>
-        <%= f.input :price_cents, input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'}%>
+        <%= f.input :description,  input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'}%>
+        <%= f.input :ingredients,  input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'}%>
       </div>
+        <div class="form-inline">
+        <%= f.input :grams_per_dose, input_html: { class: 'detailStylingInline'}, label_html: { class: 'detailLabelStyling'}; %>
+        <%= f.input :price, label: 'Price €', input_html: { class: 'detailStylingInline'}, label_html: { class: 'detailLabelStyling'};%>
+        </div>
+  <div class="form-actions flexing-box">
+    <%= f.button :submit, class: "btn btn-default" %>
+    <%= link_to "Back", meals_path, class: "btn btn-primary" %>
+  </div>
+</div>
     </div>
   </div>
 
-  <div class="form-actions flexing-box">
-    <%= f.button :submit, class: "btn btn-success" %>
-    <%= link_to "Back", meals_path, class: "btn btn-danger" %>
-  </div>
-</div>
 
 <% end %>
 </div>
