@@ -19,6 +19,8 @@ gem 'webpacker'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+  # Add letter opener for emails
+  gem "letter_opener"
 end
 
 group :development, :test do
@@ -34,3 +36,9 @@ gem 'money-rails'
 gem 'pundit'
 gem 'stripe'
 gem 'figaro'
+
+# Add gem to use postmark
+gem 'postmark-rails'
+
+
+
