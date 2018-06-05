@@ -12,6 +12,15 @@ class MealsController < ApplicationController
       @meals = Meal.all
     end
 
+    @meals = Meal.where.not(latitude: nil, longitude: nil)
+
+    @markers = @meals.map do |meal|
+      {
+        lat: meal.latitude,
+        lng: meal.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/meals/map_box", locals: { meal: meal }) }
+      }
+    end
   end
 
   def show
@@ -26,6 +35,7 @@ class MealsController < ApplicationController
   def create
     @meal = Meal.new(meal_params)
     @meal.cook = current_user
+    @meal.address = current_user.address
     #raise
     authorize @meal
     if @meal.save
