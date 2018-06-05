@@ -1,5 +1,6 @@
 class MealsController < ApplicationController
-  before_action :set_meals, only: [:show, :edit, :destroy]
+  before_action :set_meals, only: [:show, :edit, :destroy, :update]
+  skip_before_action :authenticate_user!, only: [ :index, :show]
 
   def index
     @meals = policy_scope(Meal).order(created_at: :desc)
@@ -29,6 +30,8 @@ class MealsController < ApplicationController
   end
 
   def update
+    @meal.update(meal_params)
+    redirect_to meal_path(@meal)
   end
 
   def destroy
