@@ -1,14 +1,15 @@
 .home-cards{
   padding-top: 100px;
   display:grid;
-  grid-template-columns: 400px 400px;
-  grid-gap: 20px;
+  grid-template-columns: 450px 450px;
+  grid-gap: 10px;
+  margin: 0 auto;
 }
 
 .item {
-  padding: 5px;
   width: 350px;
   height: 250px;
+  box-shadow: 6px 6px 26px -4px rgba(0,0,0,0.75);
 }
 
 .a,
@@ -25,7 +26,12 @@
   background-color: white;
 }
 
+.a,
+.d, {
+  padding: 5px;
+}
 
 .home-details{
-  background-color: #B7B7B7;
+  background-color: #E8E8E8;
+  padding-bottom: 40px;
 }
