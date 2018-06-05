@@ -1,7 +1,8 @@
 import GMaps from 'gmaps/gmaps.js';
 const styles = [
     {
-        "featureType": "administrative",
+        "featureType": "all",
+        "elementType": "labels",
         "stylers": [
             {
                 "visibility": "off"
@@ -9,65 +10,35 @@ const styles = [
         ]
     },
     {
-        "featureType": "poi",
+        "featureType": "poi.park",
+        "elementType": "geometry.fill",
         "stylers": [
             {
-                "visibility": "simplified"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            }
-        ]
-    },
-    {
-        "featureType": "transit",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape",
-        "stylers": [
-            {
-                "visibility": "simplified"
+                "color": "#aadd55"
             }
         ]
     },
     {
         "featureType": "road.highway",
+        "elementType": "labels",
         "stylers": [
             {
-                "visibility": "off"
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels.text",
+        "stylers": [
+            {
+                "visibility": "on"
             }
         ]
     },
     {
         "featureType": "road.local",
-        "stylers": [
-            {
-                "visibility": "on"
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "geometry",
+        "elementType": "labels.text",
         "stylers": [
             {
                 "visibility": "on"
@@ -76,31 +47,10 @@ const styles = [
     },
     {
         "featureType": "water",
+        "elementType": "geometry.fill",
         "stylers": [
             {
-                "color": "#84afa3"
-            },
-            {
-                "lightness": 52
-            }
-        ]
-    },
-    {
-        "stylers": [
-            {
-                "saturation": -17
-            },
-            {
-                "gamma": 0.36
-            }
-        ]
-    },
-    {
-        "featureType": "transit.line",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#3f518c"
+                "color": "#0099dd"
             }
         ]
     }
