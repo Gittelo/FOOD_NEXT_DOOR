@@ -24,5 +24,4 @@ module FOODNextDoor
 
 # config.action_mailer.delivery_method = :postmark
 # config.action_mailer.postmark_settings = { :api_token => "32abebf8-5ef9-4570-ac50-39e428617ba8" }
-
 end
