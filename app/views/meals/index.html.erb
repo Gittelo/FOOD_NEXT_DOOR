@@ -10,7 +10,6 @@
   <div class="cards-container">
     <% @meals.each do |meal| %>
       <%= render 'card', meal: meal %>
-      <%#= link_to render("card", meal: meal), meal_path(meal) %>
     <% end %>
   </div>
   <div id="map" data-markers="<%= @markers.to_json %>"></div>
