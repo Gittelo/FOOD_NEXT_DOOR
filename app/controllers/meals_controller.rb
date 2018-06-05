@@ -1,5 +1,5 @@
 class MealsController < ApplicationController
-  beforce_action :set_meals, only: [:show, :edit, :destroy]
+  before_action :set_meals, only: [:show, :edit, :destroy]
   def index
     @meals = policy_scope(Meal).order(created_at: :desc)
     authorize @meals

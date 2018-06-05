@@ -1,9 +1,9 @@
 puts("Cleaning Database...")
+User.destroy_all
 Account.destroy_all
 Meal.destroy_all
 Order.destroy_all
 Review.destroy_all
-User.destroy_all
 
 puts("Creating meals...")
 meal1 = Meal.create!(name: "Delicious Babon", description: "I didn't know Portugal shops closed early. The last two days, I got back post 9pm and there aren't many places open. Thankfully yelp came to the rescue with.", grams_per_dose: 500, ingredients: "Maionese, tomato and cheese")
@@ -19,16 +19,16 @@ user4 = User.create!(first_name: "Joana", last_name: "R",  address: "Faro",    e
 user5 = User.create!(first_name: "Vasco", last_name: "C",  address: "Coimbra", email: "vasco@fesf.fr",  password: "123456", cook_status: 0)
 
 puts("Creating order...")
-order1 = Order.create!(user: User.find(1), meal: Meal.find(1), status: 0, doses: 2)
+order1 = Order.create!(user: User.find(2), meal: Meal.find(1), status: 0, doses: 2)
 order2 = Order.create!(user: User.find(2), meal: Meal.find(2), status: 1, doses: 4)
 order3 = Order.create!(user: User.find(3), meal: Meal.find(3), status: 2, doses: 1)
 order4 = Order.create!(user: User.find(4), meal: Meal.find(4), status: 3, doses: 5)
 order5 = Order.create!(user: User.find(5), meal: Meal.find(3), status: 2, doses: 3)
 
 puts("Creating review...")
-Review.create!(user: User.find(1), meal: Meal.find(1), rating: 3, description: 'That was good enough')
-Review.create!(user: User.find(2), meal: Meal.find(2), rating: 2, description: 'That was not good')
-Review.create!(user: User.find(3), meal: Meal.find(3), rating: 3, description: 'That was good')
-Review.create!(user: User.find(4), meal: Meal.find(4), rating: 4, description: 'That was really good')
-Review.create!(user: User.find(5), meal: Meal.find(4), rating: 4, description: 'That was really good')
+Review.create!(user: User.find(1), meal: Meal.find(1), rating: 3, content: 'That was good enough')
+Review.create!(user: User.find(2), meal: Meal.find(2), rating: 2, content: 'That was not good')
+Review.create!(user: User.find(3), meal: Meal.find(3), rating: 3, content: 'That was good')
+Review.create!(user: User.find(4), meal: Meal.find(4), rating: 4, content: 'That was really good')
+Review.create!(user: User.find(5), meal: Meal.find(4), rating: 4, content: 'That was really good')
 
