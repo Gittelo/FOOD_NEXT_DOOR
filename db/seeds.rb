@@ -5,6 +5,7 @@ Account.destroy_all
 Meal.destroy_all
 Order.destroy_all
 Review.destroy_all
+Cart.destroy_all
 
 puts("Creating users...")
 user1 = User.create!(first_name: "Maria", last_name: "B",  address: "Lisbon",  email: "maria@fesf.fr",  password: "123456", cook_status: 0)
@@ -15,10 +16,10 @@ user5 = User.create!(first_name: "Vasco", last_name: "C",  address: "Coimbra", e
 
 puts("Creating meals...")
 
-meal1 = Meal.create!(cook: user1,name: "Delicious Babon", description: "I didn't know Portugal shops closed early. The last two days, I got back post 9pm and there aren't many places open. Thankfully yelp came to the rescue with.", grams_per_dose: 500, ingredients: "Maionese, tomato and cheese", price: 10)
-meal2 = Meal.create!(cook: user2,name: "Delicious Lasanha", description: "This is one of the most random reviews ever, but this is the best Chinese food I've ever had. We've been here twice and both times Mr. Lu was here and in the kitchen.", grams_per_dose: 400, ingredients: "Maionese", price: 10)
-meal3 = Meal.create!(cook: user2,name: "Delicious Pasta", description: "what a surprise! I had no high expectation thinking it might be just another so-so Chinese restaurant like others in lisbon. most people came  here for the buffet", grams_per_dose: 300, ingredients: "tomato and cheese", price: 10)
-meal4 = Meal.create!(cook: user3,name: "Great Sushi", description: "I've had Chinese food in 45 states , Toronto and British Columbia  Hands down ... NO JOKE the best DIM SUM and fresh Chinese dishes ever that have crossed my taste buds !!", grams_per_dose: 100, ingredients: "carrot", price: 10)
+meal1 = Meal.create!(cook: user1,name: "Delicious Babon", description: "I didn't know Portugal shops closed early. The last two days, I got back post 9pm and there aren't many places open. Thankfully yelp came to the rescue with.", grams_per_dose: 500, ingredients: "Maionese, tomato and cheese", price: 10, address: '16 Villa Gaudelet, Paris')
+meal2 = Meal.create!(cook: user2,name: "Delicious Lasanha", description: "This is one of the most random reviews ever, but this is the best Chinese food I've ever had. We've been here twice and both times Mr. Lu was here and in the kitchen.", grams_per_dose: 400, ingredients: "Maionese", price: 10, address: '22 rue Oberkampf, Paris')
+meal3 = Meal.create!(cook: user2,name: "Delicious Pasta", description: "what a surprise! I had no high expectation thinking it might be just another so-so Chinese restaurant like others in lisbon. most people came  here for the buffet", grams_per_dose: 300, ingredients: "tomato and cheese", price: 10, address: '1 Rue du Liban, Paris')
+meal4 = Meal.create!(cook: user3,name: "Great Sushi", description: "I've had Chinese food in 45 states , Toronto and British Columbia  Hands down ... NO JOKE the best DIM SUM and fresh Chinese dishes ever that have crossed my taste buds !!", grams_per_dose: 100, ingredients: "carrot", price: 10, address: '9 rue Le Regrattier, Paris')
 
 
 
@@ -35,3 +36,7 @@ Review.create!(user: User.find(2), meal: Meal.find(2), rating: 2, content: 'That
 Review.create!(user: User.find(3), meal: Meal.find(3), rating: 3, content: 'That was good')
 Review.create!(user: User.find(4), meal: Meal.find(4), rating: 4, content: 'That was really good')
 Review.create!(user: User.find(5), meal: Meal.find(4), rating: 4, content: 'That was really good')
+
+
+puts "\nTotal cart count: #{Cart.all.count}"
+
