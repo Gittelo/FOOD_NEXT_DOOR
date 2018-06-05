@@ -1,0 +1,52 @@
+.recognitionStyling{
+  width: 100%;
+  height: 50px;
+  color: gray;
+}
+
+.labelStyling{
+  width: 100%;
+  color: red;
+}
+
+.detailStyling{
+  width: 100%;
+  border: none;
+  border-bottom: 0.5px solid gray ;
+  box-shadow: none;
+}
+
+.detailStylingInline{
+  width: 40%;
+  border: none;
+  border-bottom: 0.5px solid gray ;
+  box-shadow: none;
+}
+
+.detailLabelStyling{
+  font-weight: lighter ;
+}
+
+.recognitionStylingName{
+  width: 100%;
+  height: 50px;
+  color: gray;
+  box-shadow: 6px 6px 26px -4px rgba(0,0,0,0.75);
+}
+
+
+.form-details{
+  background-color: white;
+  padding: 15px;
+  box-shadow: 6px 6px 26px -4px rgba(0,0,0,0.75);
+}
+
+.form-actions button {
+  color:#43929D;
+}
+
+.form-inline {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
