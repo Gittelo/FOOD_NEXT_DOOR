@@ -5,6 +5,7 @@ Account.destroy_all
 Meal.destroy_all
 Order.destroy_all
 Review.destroy_all
+Cart.destroy_all
 
 puts("Creating users...")
 user1 = User.create!(first_name: "Maria", last_name: "B",  address: "Lisbon",  email: "maria@fesf.fr",  password: "123456", cook_status: 0)
@@ -36,3 +37,4 @@ Review.create!(user: User.find(3), meal: Meal.find(3), rating: 3, content: 'That
 Review.create!(user: User.find(4), meal: Meal.find(4), rating: 4, content: 'That was really good')
 Review.create!(user: User.find(5), meal: Meal.find(4), rating: 4, content: 'That was really good')
 
+puts "\nTotal cart count: #{Cart.all.count}"

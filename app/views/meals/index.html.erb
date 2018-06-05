@@ -2,9 +2,7 @@
 
   <div class="cards-container">
     <% @meals.each do |meal| %>
-      <%= link_to render("card", meal: meal), meal_path(meal) %>
-      <%= link_to render("card", meal: meal), meal_path(meal) %>
-      <%= link_to render("card", meal: meal), meal_path(meal) %>
+      <%= render 'card', meal: meal %>
     <% end %>
   </div>
 
