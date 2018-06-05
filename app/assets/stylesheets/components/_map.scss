@@ -6,17 +6,9 @@
   height: calc(100vh - 70px);
 }
 
-.cards-container {
-  height: 100%;
-  float: left;
-  width: 70%;
-  overflow-y: scroll;
-  padding: 0 20px;
-}
-
 #map {
   flex: 0 0 30%;
-  height: 500px;
+  height: 550px;
   //width: 30%;
   float: right;
   position: sticky;

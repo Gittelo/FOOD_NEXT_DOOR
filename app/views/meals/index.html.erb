@@ -1,8 +1,7 @@
 <div class="wrapper-search">
-  <div class="search-bar">
-    <% if action_name == "index"%>
-      <%= render "search" %>
-    <% end %>
+  <div class="search-form-components search-bar">
+    <%= render "search" %>
+    <i class="fas fa-search"></i>
   </div>
 </div>
 
@@ -10,8 +9,11 @@
   <div class="cards-container">
     <% @meals.each do |meal| %>
       <%= render 'card', meal: meal %>
+      <%= render 'card', meal: meal %>
     <% end %>
   </div>
   <div id="map" data-markers="<%= @markers.to_json %>"></div>
 </div>
+
+
 
