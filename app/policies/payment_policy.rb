@@ -1,5 +1,4 @@
-class MealPolicy < ApplicationPolicy
-
+class PaymentPolicy < ApplicationPolicy
   def index?
     true
   end
@@ -19,18 +18,18 @@ class MealPolicy < ApplicationPolicy
   # end
 
   def update?
-    user_is_cook?
+    false
   end
 
   def destroy?
-    user_is_cook?
+    false
   end
 
   private
 
-  def user_is_cook?
-    user == record.cook
-  end
+  # def user_is_client?
+  #   user == record.user
+  # end
 
   class Scope < Scope
     def resolve
