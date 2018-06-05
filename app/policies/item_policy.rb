@@ -1,4 +1,4 @@
-class OrderPolicy < ApplicationPolicy
+class ItemPolicy < ApplicationPolicy
   def index?
     true
   end

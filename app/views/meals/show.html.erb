@@ -22,7 +22,7 @@
   <p><%= @meal.ingredients %></p>
 </div>
 
-<%= form_tag orders_path do %>
+<%= form_tag items_path do %>
   <%= hidden_field_tag 'meal_id', @meal.id %>
   <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
 <% end %>

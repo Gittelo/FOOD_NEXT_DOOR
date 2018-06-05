@@ -3,7 +3,7 @@ puts("Cleaning Database...")
 User.destroy_all
 Account.destroy_all
 Meal.destroy_all
-Order.destroy_all
+Item.destroy_all
 Review.destroy_all
 Cart.destroy_all
 
@@ -23,12 +23,12 @@ meal4 = Meal.create!(cook: user3,name: "Great Sushi", description: "I've had Chi
 
 
 
-puts("Creating order...")
-order1 = Order.create!(user: User.find(2), meal: Meal.find(1), status: 0, doses: 2, state: 2)
-order2 = Order.create!(user: User.find(2), meal: Meal.find(2), status: 1, doses: 4, state: 2)
-order3 = Order.create!(user: User.find(3), meal: Meal.find(3), status: 2, doses: 1, state: 2)
-order4 = Order.create!(user: User.find(4), meal: Meal.find(4), status: 3, doses: 4, state: 2)
-order5 = Order.create!(user: User.find(5), meal: Meal.find(3), status: 2, doses: 3, state: 2)
+puts("Creating Item...")
+item1 = Item.create!(user: User.find(2), meal: Meal.find(1), status: 0, doses: 2, state: 2)
+item2 = Item.create!(user: User.find(2), meal: Meal.find(2), status: 1, doses: 4, state: 2)
+item3 = Item.create!(user: User.find(3), meal: Meal.find(3), status: 2, doses: 1, state: 2)
+item4 = Item.create!(user: User.find(4), meal: Meal.find(4), status: 3, doses: 4, state: 2)
+item5 = Item.create!(user: User.find(5), meal: Meal.find(3), status: 2, doses: 3, state: 2)
 
 puts("Creating review...")
 Review.create!(user: User.find(1), meal: Meal.find(1), rating: 3, content: 'That was good enough')

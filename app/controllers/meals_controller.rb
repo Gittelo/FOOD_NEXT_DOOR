@@ -3,7 +3,7 @@ class MealsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show]
 
   def index
-    @meals = policy_scope(Meal).order(created_at: :desc)
+    @meals = policy_scope(Meal).item(created_at: :desc)
     authorize @meals
 
     if params[:query].present?
@@ -24,7 +24,7 @@ class MealsController < ApplicationController
   end
 
   def show
-    @order = Order.new
+    @item = Item.new
   end
 
   def new
