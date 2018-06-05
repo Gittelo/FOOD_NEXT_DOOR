@@ -1,12 +1,12 @@
 .card{
   overflow:hidden;
   color:#FF4200;
-  width:300px;
+  //width:300px;
   height:350px;
   //display:border-box;
   //position: relative;
   background: #F5F5F5;
-  top:0; left:0; right:0; bottom:0;
+  //top:0; left:0; right:0; bottom:0;
   //margin:auto;
   //margin-top: 20px;
   margin-bottom: 40px;
@@ -18,7 +18,7 @@
   height: 65%;
   background: linear-gradient(rgba(255,255,255,0) 50%, rgba(252,252,252,0) 50%, rgba(246,246,246,1) 90%), url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=67fb2e7b1fbe39b18b51146234ef38aa&auto=format&fit=crop&w=500&q=60");
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   transition: all 1s;
   &:hover {
     opacity: 0.8;

@@ -5,6 +5,13 @@ class MealsController < ApplicationController
   def index
     @meals = policy_scope(Meal).order(created_at: :desc)
     authorize @meals
+
+    if params[:query].present?
+      @meals = Meal.search_by_name(params[:query])
+    else
+      @meals = Meal.all
+    end
+
   end
 
   def show
