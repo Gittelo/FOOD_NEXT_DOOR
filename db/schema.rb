@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2018_06_04_154204) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -35,6 +36,9 @@ ActiveRecord::Schema.define(version: 2018_06_04_154204) do
     t.datetime "updated_at", null: false
     t.integer "price_cents", default: 0, null: false
     t.integer "cook_id"
+
+    t.string "sku"
+
     t.index ["cook_id"], name: "index_meals_on_cook_id"
   end
 
@@ -45,6 +49,10 @@ ActiveRecord::Schema.define(version: 2018_06_04_154204) do
     t.integer "doses"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "state"
+    t.string "meal_sku"
+    t.integer "amount_cents", default: 0, null: false
+    t.jsonb "payment"
     t.index ["meal_id"], name: "index_orders_on_meal_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end

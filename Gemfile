@@ -30,7 +30,6 @@ group :development, :test do
 end
 
 gem 'money-rails'
-
 gem 'pundit'
 gem 'stripe'
 gem 'figaro'
