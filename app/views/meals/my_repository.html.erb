@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>My Meals repository</h1>
+  <% @my_meals.each do |meal| %>
+  <div class="box-container">
+    <div class="box" draggable="true">
+      <%= link_to render("card", meal: meal), meal_path(meal) %>
+    </div>
+  </div>
+  <% end %>
+
+</div>
+  <h1>Plan the schedule for the next 7 days:</h1>
+  <div class="box-container"></div>
