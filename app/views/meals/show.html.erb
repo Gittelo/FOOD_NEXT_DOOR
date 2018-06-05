@@ -3,7 +3,7 @@
 <div class="container">
 <div class="food_header" >
   <h3> <%= @meal.name  %></h3>
-  <h5> $$$ </h5>
+  <h5> <%= @meal.price %> € </h5>
   <% if current_user == @meal.cook %>
   <%= link_to edit_meal_path do %>
   <i class="fas fa-pencil-alt fa-l"></i>
