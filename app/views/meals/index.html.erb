@@ -1,12 +1,17 @@
-<div class="wrapper">
+<div class="wrapper-search">
+  <div class="search-bar">
+    <% if action_name == "index"%>
+      <%= render "search" %>
+    <% end %>
+  </div>
+</div>
 
+<div class="wrapper">
   <div class="cards-container">
     <% @meals.each do |meal| %>
       <%= render 'card', meal: meal %>
     <% end %>
   </div>
-
-  <div id="map" data-markers="<%= @markers.to_json %>">
-  </div>
-
+  <div id="map" data-markers="<%= @markers.to_json %>"></div>
 </div>
+

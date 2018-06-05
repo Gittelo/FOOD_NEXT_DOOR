@@ -1,1 +1,7 @@
-_search.html.erb
+<%= form_tag meals_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "meal name"
+  %>
+<% end %>
