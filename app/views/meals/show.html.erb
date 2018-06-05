@@ -1,1 +1,32 @@
-show.html.erb
+<div class="food_banner" style="background-image: url('https://images.unsplash.com/photo-1473093226795-af9932fe5856?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3bf6fd384a4045ad91b8f08279f02ab8&auto=format&fit=crop&w=685&q=80');">
+</div>
+<div class="container">
+<div class="food_header" >
+  <h3> <%= @meal.name  %></h3>
+  <h5> $$$ </h5>
+  <% if current_user == @meal.cook %>
+  <%= link_to edit_meal_path do %>
+  <i class="fas fa-pencil-alt fa-l"></i>
+  <% end %>
+  <%= link_to meal_path, method: :delete, data: {confirm: 'Are you sure?'} do %>
+  <i class="fas fa-trash-alt fa-l"></i>
+  <% end %>
+  <% end %>
+</div>
+<div class="food_info">
+  <h4>Description</h4>
+  <p> <%= @meal.description %></p>
+  <h4>Grams per dose</h4>
+  <p> <%= @meal.grams_per_dose %> </p>
+  <h4>Ingredients</h4>
+  <p><%= @meal.ingredients %></p>
+</div>
+<%= link_to "Back", meals_path, class: "btn btn-primary" %>
+
+
+<h3> Get to know the Cook:</h3>
+<p> Name: <%= @meal.cook.first_name %>  <%= @meal.cook.last_name %> </p>
+<p> Contact datails: <%= @meal.cook.email %> </p>
+<p> Pick up food address: <%= @meal.cook.address %> </p>
+
+</div>
