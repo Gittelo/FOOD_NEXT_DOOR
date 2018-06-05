@@ -3,16 +3,9 @@
   <% @my_meals.each do |meal| %>
   <%= link_to render("drag_card", meal: meal), meal_path(meal) %>
   <% end %>
-  <h1>Plan the schedule for the next 7 days:</h1>
   <% meal = @my_meals.first %>
   <%#= link_to render("drag_card", meal: meal), meal_path(meal), class: "box" %>
-
-
-
-
-
-
-
+  <h1>Plan the schedule for the next 7 days:</h1>
 </div>
 
 
