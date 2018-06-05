@@ -35,4 +35,3 @@ Review.create!(user: User.find(2), meal: Meal.find(2), rating: 2, content: 'That
 Review.create!(user: User.find(3), meal: Meal.find(3), rating: 3, content: 'That was good')
 Review.create!(user: User.find(4), meal: Meal.find(4), rating: 4, content: 'That was really good')
 Review.create!(user: User.find(5), meal: Meal.find(4), rating: 4, content: 'That was really good')
-

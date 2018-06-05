@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_04_211745) do
+ActiveRecord::Schema.define(version: 2018_06_05_145859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,8 +86,22 @@ ActiveRecord::Schema.define(version: 2018_06_04_211745) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "week_days", force: :cascade do |t|
+    t.bigint "meal_id"
+    t.datetime "pick_up_time_start"
+    t.datetime "pick_up_time_end"
+    t.datetime "last_order_time"
+    t.integer "doses"
+    t.datetime "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "price_cents", default: 0, null: false
+    t.index ["meal_id"], name: "index_week_days_on_meal_id"
+  end
+
   add_foreign_key "orders", "meals"
   add_foreign_key "orders", "users"
   add_foreign_key "reviews", "meals"
   add_foreign_key "reviews", "users"
+  add_foreign_key "week_days", "meals"
 end
