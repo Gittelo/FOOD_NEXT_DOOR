@@ -45,4 +45,7 @@ gem 'geocoder'
 # Add gem elasticsearch
 gem 'pg_search'
 
+gem 'coffee-rails', '~>4.2.2'
 
+
+gem 'coffee-rails', '~> 4.2.2'
