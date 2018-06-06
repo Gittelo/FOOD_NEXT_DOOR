@@ -1,7 +1,8 @@
 puts("Cleaning Database...")
 
-Review.destroy_all
 Item.destroy_all
+Order.destroy_all
+Review.destroy_all
 User.destroy_all
 Account.destroy_all
 Meal.destroy_all
@@ -20,14 +21,28 @@ meal2 = Meal.create!(cook: user2,name: "Delicious Lasanha", description: "This i
 meal3 = Meal.create!(cook: user2,name: "Delicious Pasta", description: "what a surprise! I had no high expectation thinking it might be just another so-so Chinese restaurant like others in lisbon. most people came  here for the buffet", grams_per_dose: 300, ingredients: "tomato and cheese", price: 10, address: '1 Rue du Liban, Paris')
 meal4 = Meal.create!(cook: user3,name: "Great Sushi", description: "I've had Chinese food in 45 states , Toronto and British Columbia  Hands down ... NO JOKE the best DIM SUM and fresh Chinese dishes ever that have crossed my taste buds !!", grams_per_dose: 100, ingredients: "carrot", price: 10, address: '9 rue Le Regrattier, Paris')
 
-
+puts("Creating Orders...")
+order1 = Order.create!(sku: 'avocato', user: User.find(1), status: 0, total_price: Money.new(0))
+# order3 = Order.create!(user: User.find(3), status: 0)
+# order4 = Order.create!(user: User.find(4), status: 0)
+# order5 = Order.create!(user: User.find(5), status: 0)
 
 puts("Creating Item...")
-item1 = Item.create!(user: User.find(2), meal: Meal.find(1), doses: 2, state: 2)
-item2 = Item.create!(user: User.find(2), meal: Meal.find(2), doses: 4, state: 2)
-item3 = Item.create!(user: User.find(3), meal: Meal.find(3), doses: 1, state: 2)
-item4 = Item.create!(user: User.find(4), meal: Meal.find(4), doses: 4, state: 2)
-item5 = Item.create!(user: User.find(5), meal: Meal.find(3), doses: 3, state: 2)
+item1 = Item.create!(order: Order.find(1), meal: Meal.find(1), doses: 2, item_price: Meal.find(1).price * 2)
+item2 = Item.create!(order: Order.find(1), meal: Meal.find(2), doses: 4, item_price: Meal.find(2).price * 1)
+item3 = Item.create!(order: Order.find(1), meal: Meal.find(3), doses: 1, item_price: Meal.find(1).price * 2)
+item4 = Item.create!(order: Order.find(1), meal: Meal.find(4), doses: 4, item_price: Meal.find(3).price * 4)
+item5 = Item.create!(order: Order.find(1), meal: Meal.find(3), doses: 3, item_price: Meal.find(1).price * 2)
+
+sum = 0
+order1.items.each do |item|
+  sum += item.item_price
+end
+puts sum
+
+order1.total_price = sum
+
+puts order1.total_price
 
 puts("Creating review...")
 Review.create!(user: User.find(1), meal: Meal.find(1), rating: 3, content: 'That was good enough')

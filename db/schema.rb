@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_06_083206) do
+ActiveRecord::Schema.define(version: 2018_06_06_163346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,16 +26,12 @@ ActiveRecord::Schema.define(version: 2018_06_06_083206) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "carts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "items", force: :cascade do |t|
-    t.bigint "user_id"
     t.bigint "meal_id"
     t.integer "status"
     t.integer "doses"
+    t.integer "item_price_cents", default: 0, null: false
+    t.bigint "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "state"
@@ -44,15 +40,7 @@ ActiveRecord::Schema.define(version: 2018_06_06_083206) do
     t.jsonb "payment"
     t.boolean "purchased", default: false, null: false
     t.index ["meal_id"], name: "index_items_on_meal_id"
-    t.index ["user_id"], name: "index_items_on_user_id"
-  end
-
-  create_table "line_items", force: :cascade do |t|
-    t.integer "quantity", default: 1
-    t.integer "meal_id"
-    t.integer "cart_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_items_on_order_id"
   end
 
   create_table "meals", force: :cascade do |t|
@@ -69,6 +57,17 @@ ActiveRecord::Schema.define(version: 2018_06_06_083206) do
     t.float "latitude"
     t.float "longitude"
     t.index ["cook_id"], name: "index_meals_on_cook_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.bigint "user_id"
+    t.integer "status", default: 0
+    t.integer "total_price_cents", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "sku"
+    t.jsonb "payment"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -117,7 +116,8 @@ ActiveRecord::Schema.define(version: 2018_06_06_083206) do
   end
 
   add_foreign_key "items", "meals"
-  add_foreign_key "items", "users"
+  add_foreign_key "items", "orders"
+  add_foreign_key "orders", "users"
   add_foreign_key "reviews", "meals"
   add_foreign_key "reviews", "users"
   add_foreign_key "week_days", "meals"

@@ -6,7 +6,7 @@ class User < ApplicationRecord
   #after_create :send_welcome_email
 
 
-  has_many :items
+  has_many :orders
   has_many :meals, foreign_key: "cook_id"
 
   private

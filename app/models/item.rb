@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  belongs_to :user
+  belongs_to :order
   belongs_to :meal
-  monetize :amount_cents
+  monetize :item_price_cents
 end
