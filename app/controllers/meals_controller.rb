@@ -6,11 +6,6 @@ class MealsController < ApplicationController
     @meals = policy_scope(Meal).order(created_at: :desc)
     authorize @meals
 
-    if params[:query].present?
-      @meals = Meal.search_by_name(params[:query])
-    else
-      @meals = Meal.all
-    end
 
     @meals = Meal.where.not(latitude: nil, longitude: nil)
 
@@ -21,6 +16,13 @@ class MealsController < ApplicationController
         # infoWindow: { content: render_to_string(partial: "/meals/map_box", locals: { meal: meal }) }
       }
     end
+
+    if params[:query].present?
+      @meals = Meal.search_by_name(params[:query])
+    else
+      @meals = Meal.all
+    end
+
   end
 
   def show
