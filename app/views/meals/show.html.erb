@@ -36,8 +36,11 @@
 
     <div class="meal-footer">
       <div class="meal-dose">
-        <p><i class="fas fa-minus"></i> 1 <i class="fas fa-plus"></i></p>
+        <i class="fas fa-minus" onclick="decrease()"></i>
+        <input type="number" min="1" max="22" value="4" id="val">
+        <i class="fas fa-plus" onclick="increase()"></i>
       </div>
+
       <div class="meal-button">
         <%= form_tag items_path do %>
           <%= hidden_field_tag 'meal_id', @meal.id %>
@@ -46,28 +49,43 @@
       </div>
     </div>
 
-    <div class="meal-review">
-      <p>
-        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-          See the reviews for this meal
-        </a>
-      </p>
-      <div class="collapse" id="collapseExample">
-        <% @meal.reviews.each do |review| %>
-          <p>
-            <%= review.user.first_name %>, <%= review.created_at.strftime('%d %b %Y') %>:
-            "<em><%= review.content %></em>"
-          </p>
-        <% end %>
-      </div>
-    </div>
   </div>
 
   <div class="right-section">
-    <%= link_to "Back", meals_path, class: "btn btn-primary" %>
+    <div class="meal-review">
+        <p>
+          <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            See the reviews for this meal
+          </a>
+        </p>
+        <div class="collapse" id="collapseExample">
+          <% @meal.reviews.each do |review| %>
+            <p>
+              <%= review.user.first_name %>, <%= review.created_at.strftime('%d %b %Y') %>:
+              "<em><%= review.content %></em>"
+            </p>
+          <% end %>
+        </div>
+    </div>
   </div>
 
 </div>
+
+<script>
+  function decrease() {
+    let val = document.getElementById("val");
+    if(parseInt(val.value) > parseInt(val.min)) {
+      val.value = parseInt(val.value) - 1;
+    }
+  }
+  function increase() {
+    let val = document.getElementById("val");
+    if(parseInt(val.value) < parseInt(val.max)) {
+      val.value = parseInt(val.value) + 1;
+    }
+  }
+</script>
+
 
 
 
