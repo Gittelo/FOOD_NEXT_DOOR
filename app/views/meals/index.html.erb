@@ -1,14 +1,16 @@
 <div class="wrapper-search">
-  <div class="search-form-components search-bar">
-    <%= render "search" %>
+  <div class="search-bar">
     <i class="fas fa-search"></i>
+    <%= render "search" %>
   </div>
+  <!--   <div>
+     <button onclick="hide_map()">Show/Hide</button>
+    </div> -->
 </div>
 
 <div class="wrapper">
   <div class="cards-container">
     <% @meals.each do |meal| %>
-      <%= render 'card', meal: meal %>
       <%= render 'card', meal: meal %>
     <% end %>
   </div>
