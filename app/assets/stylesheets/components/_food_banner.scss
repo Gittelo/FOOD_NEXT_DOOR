@@ -15,9 +15,12 @@
 
 .meal-header{
   padding: 0 10px;
-  display: flex;
+  //display: flex;
   color: $dark-gray;
-    //text-align: center;
+  i{
+    font-size: 15px;
+    padding-left: 2px;
+  }
 }
 
 .meal-info{

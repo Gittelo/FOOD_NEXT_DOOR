@@ -16,6 +16,7 @@
           <% end %>
         <% end %>
       </h4>
+      <p><%= @meal.price %>€</p>
     </div>
 
     <div class="meal-info">
@@ -34,14 +35,11 @@
     </div> -->
 
     <div class="meal-footer">
-      <div class="price">
-        <p><%= @meal.price %>€</p>
-      </div>
       <div class="meal-dose">
-
+        <p><i class="fas fa-minus"></i> 1 <i class="fas fa-plus"></i></p>
       </div>
       <div class="meal-button">
-        <%= form_tag orders_path do %>
+        <%= form_tag items_path do %>
           <%= hidden_field_tag 'meal_id', @meal.id %>
           <%= submit_tag 'Add to Cart', class: 'btn btn-primary' %>
         <% end %>
@@ -63,11 +61,9 @@
         <% end %>
       </div>
     </div>
-
   </div>
 
   <div class="right-section">
-
     <%= link_to "Back", meals_path, class: "btn btn-primary" %>
   </div>
 
