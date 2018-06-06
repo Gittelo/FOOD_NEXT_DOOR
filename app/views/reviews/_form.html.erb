@@ -1,0 +1,11 @@
+<%= simple_form_for [@meal, @review] do |f| %>
+  <div class="form-inputs" style="color: white">
+    <%= f.input :rating %>
+    <%= f.input :content, :as => :text %>
+    <%#= f.button :submit %>
+  </div>
+  <div class="form-actions flexing-box">
+    <%= f.button :submit, "Create Review", class: "btn btn-success" %>
+    <%= link_to "Back", @meal, class: "btn btn-danger" %>
+  </div>
+<% end %>
