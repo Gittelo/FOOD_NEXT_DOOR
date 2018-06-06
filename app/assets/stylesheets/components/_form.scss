@@ -1,3 +1,23 @@
+.form {
+  background-image: url('https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a98ac47048f530b6d587279d52c13ab7&auto=format&fit=crop&w=1568&q=80');
+  height: 100vh;
+}
+
+.form-inline {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.form-actions button {
+  color:#43929D;
+}
+
+.form-details{
+  background-color: white;
+  padding: 15px;
+  box-shadow: 6px 6px 26px -4px rgba(0,0,0,0.75);
+}
 .recognitionStyling{
   width: 100%;
   height: 50px;
@@ -34,19 +54,3 @@
   box-shadow: 6px 6px 26px -4px rgba(0,0,0,0.75);
 }
 
-
-.form-details{
-  background-color: white;
-  padding: 15px;
-  box-shadow: 6px 6px 26px -4px rgba(0,0,0,0.75);
-}
-
-.form-actions button {
-  color:#43929D;
-}
-
-.form-inline {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
-}
