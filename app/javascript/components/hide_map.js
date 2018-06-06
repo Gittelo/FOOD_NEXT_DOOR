@@ -1,9 +1,9 @@
 function hide_map() {
     var hide = document.getElementById("map");
-    if (hide.style.display === "none") {
-        hide.style.display = "block";
-    } else {
+    if (hide.style.display === "block") {
         hide.style.display = "none";
+    } else {
+        hide.style.display = "block";
     }
 }
 
