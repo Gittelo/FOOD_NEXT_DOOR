@@ -1,9 +1,13 @@
 .home-cards{
   padding-top: 100px;
-  display:grid;
-  grid-template-columns: 450px 450px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
   margin: 0 auto;
+  width: 70%;
+
 }
 
 .item {
