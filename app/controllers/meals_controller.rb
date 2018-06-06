@@ -26,7 +26,7 @@ class MealsController < ApplicationController
   end
 
   def show
-    @order = Order.new
+    @item = Item.new
   end
 
   def new

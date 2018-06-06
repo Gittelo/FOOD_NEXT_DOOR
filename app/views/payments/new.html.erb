@@ -1,9 +1,9 @@
 <!-- app/views/payments/new.html.erb -->
-<h1>Purchase of meal <%= @order.meal_sku %></h1>
-<%= form_tag order_payments_path(@order) do %>
+<h1>Purchase of meal <%= @item.meal_sku %></h1>
+<%= form_tag item_payments_path(@item) do %>
   <article>
     <label class="amount">
-      <span>Amount: <%= humanized_money_with_symbol(@order.amount) %></span>
+      <span>Amount: <%= humanized_money_with_symbol(@item.amount) %></span>
     </label>
   </article>
 
@@ -12,8 +12,8 @@
     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
     data-name="My Meal"
     data-email="<%= current_user.email %>"
-    data-description="Meal <%= @order.meal_sku %>"
-    data-amount="<%= @order.amount_cents %>"
-    data-currency="<%= @order.amount.currency %>"></script>
+    data-description="Meal <%= @item.meal_sku %>"
+    data-amount="<%= @item.amount_cents %>"
+    data-currency="<%= @item.amount.currency %>"></script>
 
 <% end %>
