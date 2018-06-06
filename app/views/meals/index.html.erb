@@ -1,9 +1,11 @@
 <div class="wrapper-search">
   <div class="search-bar">
-    <% if action_name == "index"%>
-      <%= render "search" %>
-    <% end %>
+    <i class="fas fa-search"></i>
+    <%= render "search" %>
   </div>
+  <!--   <div>
+     <button onclick="hide_map()">Show/Hide</button>
+    </div> -->
 </div>
 
 <div class="wrapper">
@@ -14,4 +16,6 @@
   </div>
   <div id="map" data-markers="<%= @markers.to_json %>"></div>
 </div>
+
+
 
