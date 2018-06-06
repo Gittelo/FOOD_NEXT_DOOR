@@ -11,7 +11,7 @@ class PaymentsController < ApplicationController
 
   charge = Stripe::Charge.create(
     customer:     customer.id,   # You should store this customer id and re-use it.
-    amount:       @item.amount_cents,
+    amount:       @item.amount_cents * @item.doses,
     description:  "Payment for meal #{@item.meal_sku} for item #{@item.id}",
     currency:     @item.amount.currency
   )
