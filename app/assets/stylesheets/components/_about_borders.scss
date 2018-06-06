@@ -1,0 +1,24 @@
+.about {
+  border-top: 0.5px dotted black;
+  padding-top: 40px;
+}
+
+.about-images {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.about-text {
+ margin-top: 30px;
+ margin-bottom: 100px;
+ margin-left: 100px;
+ margin-right: 100px;
+ p {
+  font-weight: lighter;
+  font-size: 18px;
+ }
+
+
+
+}
