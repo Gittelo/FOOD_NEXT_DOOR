@@ -32,6 +32,8 @@ order5 = Order.create!(user: User.find(5), meal: Meal.find(3), status: 2, doses:
 
 puts("Creating review...")
 Review.create!(user: User.find(1), meal: Meal.find(1), rating: 3, content: 'That was good enough')
+Review.create!(user: User.find(3), meal: Meal.find(1), rating: 1, content: "It's a trap! Don't order this meal!")
+Review.create!(user: User.find(4), meal: Meal.find(1), rating: 3, content: "Average meal..")
 Review.create!(user: User.find(2), meal: Meal.find(2), rating: 2, content: 'That was not good')
 Review.create!(user: User.find(3), meal: Meal.find(3), rating: 3, content: 'That was good')
 Review.create!(user: User.find(4), meal: Meal.find(4), rating: 4, content: 'That was really good')
