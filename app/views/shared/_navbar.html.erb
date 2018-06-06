@@ -10,8 +10,11 @@
     <% if user_signed_in? %>
 
     <!-- Links when logged in -->
-
+    <% if !current_user.orders.empty? %>
+    <%= link_to "Checkout", order_path(current_user.orders.last), class: "navbar-wagon-item navbar-wagon-link" %>
+    <% end %>
     <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+
 
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">

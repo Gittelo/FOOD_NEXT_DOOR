@@ -1,33 +1,36 @@
 class PaymentsController < ApplicationController
-  before_action :set_item
+  before_action :set_order
+
   def new
   end
 
   def create
-  customer = Stripe::Customer.create(
-    source: params[:stripeToken],
-    email:  params[:stripeEmail]
-  )
+    customer = Stripe::Customer.create(
+      source: params[:stripeToken],
+      email:  params[:stripeEmail]
+    )
 
-  charge = Stripe::Charge.create(
-    customer:     customer.id,   # You should store this customer id and re-use it.
-    amount:       @item.amount_cents * @item.doses,
-    description:  "Payment for meal #{@item.meal_sku} for item #{@item.id}",
-    currency:     @item.amount.currency
-  )
 
-  @item.update(payment: charge.to_json, state: 'paid')
-  redirect_to item_path(@item)
+    charge = Stripe::Charge.create(
+      customer:     customer.id,   # You should store this customer id and re-use it.
+      amount:       @order.total_price_cents,
+      description:  "Payment for order #{@order.id}",
+      currency:     @order.total_price.currency
+    )
 
-rescue Stripe::CardError => e
-  flash[:alert] = e.message
-  redirect_to new_item_payment_path(@item)
-end
+    @order.update(payment: charge.to_json, status: :paid)
+    redirect_to meals_path
 
-private
+  rescue Stripe::CardError => e
+    flash[:alert] = e.message
+    redirect_to meals_path
 
-  def set_item
-    @item = current_user.items.where(state: 'pending').find(params[:item_id])
-    authorize @item
+  end
+
+  private
+
+  def set_order
+    @order = current_user.orders.pending.find(params[:order_id])
+    authorize @order
   end
 end
