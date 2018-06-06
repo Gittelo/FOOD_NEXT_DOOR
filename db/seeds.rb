@@ -37,4 +37,6 @@ Review.create!(user: User.find(3), meal: Meal.find(3), rating: 3, content: 'That
 Review.create!(user: User.find(4), meal: Meal.find(4), rating: 4, content: 'That was really good')
 Review.create!(user: User.find(5), meal: Meal.find(4), rating: 4, content: 'That was really good')
 
+
 puts "\nTotal cart count: #{Cart.all.count}"
+

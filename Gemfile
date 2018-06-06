@@ -46,3 +46,4 @@ gem 'geocoder'
 gem 'pg_search'
 
 
+gem 'coffee-rails', '~> 4.2.2'
