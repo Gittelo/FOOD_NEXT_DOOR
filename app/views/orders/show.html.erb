@@ -1,25 +1,39 @@
-<h1>
-Your cart
-</h1>
-<%= form_tag order_payments_path(@order) do %>
-<ul>
-  <% @items.each do |item| %>
-    <li>
-      <%= item.meal.name %>
-      <%= item.doses %>
-      <%= item.item_price %>
-    </li>
-  <% end %>
-  <%=  @order.total_price %>
-</ul>
+<div class="shopping_cart-container">
+    <div class="items-container">
+        <h1>
+          Your cart
+        </h1>
+        <!-- Iteration over each item to display them in a table -->
+        <table id="cart-table">
+          <% @items.each do |item| %>
+          <tr class="cart-row">
+            <td class="item-image" style="background-image: url('https://img.taste.com.au/bBe9SZ5Q/taste/2016/11/cheesy-beef-and-spinach-lasagne-45846-1.jpeg')"></td>
+            <td class="item-name"><%= item.meal.name %></td>
+            <td class="item-details"><%= item.doses %></td>
+            <td class="item-price"><%= item.item_price %></td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
 
- <!--  # Commented for the lecture, remove comments. -->
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-name="Food Next Door"
-    data-email="<%= current_user.email %>"
-    data-description="Purchase for <%= @order.id %>"
-    data-amount="<%= @order.total_price_cents %>"
-    data-currency="<%= @order.total_price.currency %>"></script>
+    <div class="summary-container">
+      <!--  # Commented for the lecture, remove comments. -->
+      <div class="cart-summary">
+        <h1>
+          Summary
+        </h1>
+      </div>
+      <%=  @order.total_price %>
+      <%= form_tag order_payments_path(@order) do %>
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-name="Food Next Door"
+        data-email="<%= current_user.email %>"
+        data-description="Purchase for <%= @order.id %>"
+        data-amount="<%= @order.total_price_cents %>"
+        data-currency="<%= @order.total_price.currency %>"></script>
+      <% end %>
+    </div>
 
-<% end %>
+  </div>
+

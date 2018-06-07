@@ -8,7 +8,7 @@
 
 #map {
   //flex: 0 0 450px;
-  height: 70vh;
+  height: calc(100vh-140px);
   width: 30%;
   float: right;
   position: sticky !important;
