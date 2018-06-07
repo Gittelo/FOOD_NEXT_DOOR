@@ -1,7 +1,7 @@
 <%= form_tag meals_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
-    class: "form-control",
+    class: "form-control-search",
     placeholder: "e.g. Chinese, Sushi, Cake"
   %>
 <% end %>
