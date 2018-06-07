@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/cooks', to: 'pages#cooks'
   get '/profile', to: 'pages#profile'
   get "/become_cook", to: "pages#apply"
+  get '/confirmation', to: 'orders#confirmation'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :meals do
