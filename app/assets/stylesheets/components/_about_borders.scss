@@ -1,0 +1,28 @@
+.about {
+  background-color: white;
+  padding-top: 40px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-images {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.about-text {
+ margin-top: 30px;
+ margin-bottom: 100px;
+ margin-left: 250px;
+ margin-right: 250px;
+ p {
+  font-weight: lighter;
+  font-size: 18px;
+ }
+
+
+
+}
