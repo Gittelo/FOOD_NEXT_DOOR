@@ -8,20 +8,7 @@
   </div>
 </div>
 
-<!-- cards and map
-<div class="wrapper">
-  <div class="cards-container container">
-    <div class="row">
-      <div class="col-md-8" id="cards-section-left">
-        <% @meals.each do |meal| %>
-          <%= render 'card', meal: meal %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-  <div id="map" data-markers="<%= @markers.to_json %>"></div>
-</div>
--->
+<!-- cards and map -->
 
 <div class="wrapper">
   <div class="container cards-container">
@@ -31,7 +18,6 @@
         <%= render 'card', meal: meal %>
       <% end %>
       </div>
-
       <div class="col-md-4">
          <div id="map" data-markers="<%= @markers.to_json %>"></div>
       </div>

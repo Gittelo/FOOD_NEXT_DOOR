@@ -50,7 +50,6 @@
         <% end %>
       </div>
     </div>
-
   </div>
 
   <% ratings = [] %>
@@ -73,7 +72,7 @@
         See the reviews for this meal
       </a>
     </p>
-    <div class="meal-review">
+    <div class="meal-review" style="display: none;">
       <% @meal.reviews.each do |review| %>
         <div class="card-review">
           <div class="review-name">
@@ -83,14 +82,12 @@
           <div class="review-body">
             <p>"<em><%= review.content %></em>"</p>
           </div>
-          <p class="button-review"> <%= review.rating %></p>
         </div>
       <% end %>
     </div>
   </div>
 
 </div>
-
 
 <script>
   function decrease() {
