@@ -74,20 +74,20 @@ const initMap = function(mapElement) {
       mapTypeId: 'map_style'
     });
     map.setStyle('map_style');
-    const contentString = "Hello World";
-    const infoWindow = new google.maps.InfoWindow({
-      content: contentString
-    });
+    // const contentString = "Hello World";
+    // const infoWindow = new google.maps.InfoWindow({
+    //   content: contentString
+    // });
 
-    markers.forEach((marker) => {
-        marker = new google.maps.Marker({
-        position: { marker.lat, marker.lng }
-        map: map,
-      });
-      marker.addListener('click', () => {
-        infowindow.open(map, marker);
-      });
-    }
+    // markers.forEach((marker) => {
+    //     marker = new google.maps.Marker({
+    //     position: { marker.lat, marker.lng }
+    //     map: map,
+    //   });
+    //   marker.addListener('click', () => {
+    //     infowindow.open(map, marker);
+    //   });
+    // }
 
   }
 }
