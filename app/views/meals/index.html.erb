@@ -4,7 +4,7 @@
   <div class="search-bar">
     <i class="fas fa-search"></i>
     <%= render "search" %>
-    <button onclick="myFunction()">Click Me</button>
+    <button onclick="hideShowMap()">Show/Hide Map</button>
   </div>
 </div>
 
@@ -23,7 +23,7 @@
 <!-- js for the map hide/show button -->
 
 <script>
-  function myFunction() {
+  function hideShowMap() {
     var x = document.getElementById("map");
     if (x.style.display === "none") {
         x.style.display = "block";

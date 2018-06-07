@@ -17,11 +17,10 @@
   width: 55%;
   height: 100vh;
   float: left;
-  //background-color: grey;
 }
 
 .right-section{
-  padding: 30px 60px;
+  padding: 30px 80px;
   width: 45%;
   height: 100vh;
   float: right;
@@ -58,21 +57,27 @@
 .meal-footer{
   padding: 10px 10px;
   display: flex;
-  // justify-content: space-between;
-  // align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.meal-time{
+  //width: 40%;
+  p{
+    margin: 0;
+  }
 }
 
 .meal-dose{
-  float: left;
-  width: 70%;
+  //width: 40%;
   i{
     color: $green;
   }
 }
 
 .meal-button{
-  float: right;
-  width: 30%;
+  //width: 20%;
 }
 
 input[type=number]::-webkit-inner-spin-button,

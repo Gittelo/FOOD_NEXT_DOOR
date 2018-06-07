@@ -35,16 +35,20 @@
     </div> -->
 
     <div class="meal-footer">
+      <div class="meal-time">
+        <p>Pickup time: 18h / 20h</p>
+      </div>
+
       <div class="meal-dose">
         <i class="fas fa-minus" onclick="decrease()"></i>
-        <input type="number" min="1" max="22" value="4" id="val">
+        <input type="number" min="1" max="10" value="1" id="val" disabled>
         <i class="fas fa-plus" onclick="increase()"></i>
       </div>
 
       <div class="meal-button">
         <%= form_tag items_path do %>
           <%= hidden_field_tag 'meal_id', @meal.id %>
-          <%= submit_tag 'Add to Cart', class: 'btn btn-primary' %>
+          <%= submit_tag 'Add to Cart', class: 'button' %>
         <% end %>
       </div>
     </div>
@@ -54,7 +58,7 @@
   <div class="right-section">
     <div class="meal-review">
         <p>
-          <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+          <a class="button" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
             See the reviews for this meal
           </a>
         </p>
