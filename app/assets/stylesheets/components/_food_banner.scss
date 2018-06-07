@@ -24,6 +24,7 @@
   width: 45%;
   height: 100vh;
   float: right;
+  background: transparent;
 }
 
 .meal-header{
@@ -50,8 +51,7 @@
 }
 
 .meal-review{
-  padding: 0 10px;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .meal-footer{
@@ -61,23 +61,20 @@
   align-items: center;
   position: relative;
 }
+.fa-plus{
+  margin-right: 30px;
+}
 
 .meal-time{
-  //width: 40%;
   p{
     margin: 0;
   }
 }
 
 .meal-dose{
-  //width: 40%;
   i{
     color: $green;
   }
-}
-
-.meal-button{
-  //width: 20%;
 }
 
 input[type=number]::-webkit-inner-spin-button,
