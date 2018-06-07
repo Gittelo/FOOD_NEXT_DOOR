@@ -45,9 +45,9 @@
             <i class="fas fa-minus" onclick="decrease()"></i>
             <input name="item[doses]" type="number" min="1" max="10" value="4" class="val" id="item_doses">
             <i class="fas fa-plus" onclick="increase()"></i>
-            
-            <%= f.button :submit, class: "button", value:"Add to Cart" %>
-            
+
+            <%= f.button :submit, 'Add to Cart', class: "button" %>
+
           </div>
         <% end %>
       </div>
@@ -70,7 +70,7 @@
       <% end %>
     </p>
     <p>
-      <a class="button" id="show-reviews-btn">
+      <a class="button" id="show-reviews-btn" style="cursor: pointer">
         See the reviews for this meal
       </a>
     </p>
@@ -106,6 +106,21 @@
     }
     return val;
   }
+
+  const hideElement = (element) => {
+  if (element.style.display === "none") {
+    element.style.display = "block";
+  } else {
+    element.style.display = "none";
+  }
+}
+
+  const buttonReview = document.getElementById('show-reviews-btn');
+  const reviewContainer = document.querySelector('.meal-review');
+
+  buttonReview.addEventListener('click', (event) => {
+    hideElement(reviewContainer);
+  })
 </script>
 
 
