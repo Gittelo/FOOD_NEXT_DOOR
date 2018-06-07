@@ -11,8 +11,8 @@
         <%= f.input :ingredients,  input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'}%>
       </div>
         <div class="form-inline">
-        <%= f.input :grams_per_dose, input_html: { class: 'detailStylingInline'}, label_html: { class: 'detailLabelStyling'}; %>
-        <%= f.input :price, label: 'Price €', input_html: { class: 'detailStylingInline'}, label_html: { class: 'detailLabelStyling'};%>
+        <%= f.input :grams_per_dose, class: 'width', input_html: { class: 'detailStylingInline'}, label_html: { class: 'detailLabelStyling'}; %>
+        <%= f.input :price, label: 'Price €', class: "width", input_html: { class: 'detailStylingInline', style: "width: 100%"}, label_html: { class: 'detailLabelStyling'};%>
         </div>
   <div class="form-actions flexing-box">
     <%= f.button :submit, class: "btn btn-default" %>
@@ -25,6 +25,3 @@
 
 <% end %>
 </div>
-
-
-
