@@ -10,14 +10,30 @@
 }
 
 .main-container{
-  margin: 20px;
+  margin: 30px;
+}
+
+.left-section{
+  width: 55%;
+  height: 100vh;
+  float: left;
+}
+
+.right-section{
+  padding: 30px 80px;
+  width: 45%;
+  height: 100vh;
+  float: right;
 }
 
 .meal-header{
   padding: 0 10px;
-  display: flex;
+  //display: flex;
   color: $dark-gray;
-    //text-align: center;
+  i{
+    font-size: 15px;
+    padding-left: 2px;
+  }
 }
 
 .meal-info{
@@ -40,23 +56,40 @@
 
 .meal-footer{
   padding: 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
 
-
-.left-section{
-  width: 60%;
-  height: 100vh;
-  float: left;
-  //background-color: grey;
+.meal-time{
+  //width: 40%;
+  p{
+    margin: 0;
+  }
 }
 
-.right-section{
-  width: 40%;
-  height: 100vh;
-  float: right;
+.meal-dose{
+  //width: 40%;
+  i{
+    color: $green;
+  }
 }
 
+.meal-button{
+  //width: 20%;
+}
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input {
+  border: none;
+  text-align: center;
+}
 
 //uncomment if needed
 

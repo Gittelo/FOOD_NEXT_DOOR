@@ -1,10 +1,14 @@
+<!-- search bar and map button -->
+
 <div class="wrapper-search">
   <div class="search-bar">
     <i class="fas fa-search"></i>
     <%= render "search" %>
+    <button onclick="hideShowMap()">Show/Hide Map</button>
   </div>
-
 </div>
+
+<!-- cards and map -->
 
 <div class="wrapper">
   <div class="cards-container">
@@ -16,4 +20,15 @@
 </div>
 
 
+<!-- js for the map hide/show button -->
 
+<script>
+  function hideShowMap() {
+    var x = document.getElementById("map");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+  }
+</script>
