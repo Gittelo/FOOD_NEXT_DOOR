@@ -4,31 +4,23 @@
   <div class="search-bar">
     <i class="fas fa-search"></i>
     <%= render "search" %>
-    <button onclick="hideShowMap()">Show/Hide Map</button>
+    <button id="show-map">Show/Hide Map</button>
   </div>
 </div>
 
 <!-- cards and map -->
 
 <div class="wrapper">
-  <div class="cards-container">
-    <% @meals.each do |meal| %>
-      <%= render 'card', meal: meal %>
-    <% end %>
+  <div class="container cards-container">
+    <div class="row">
+      <div class="col-md-8" id="cards-section-left">
+      <% @meals.each do |meal| %>
+        <%= render 'card', meal: meal %>
+      <% end %>
+      </div>
+      <div class="col-md-4">
+         <div id="map" data-markers="<%= @markers.to_json %>"></div>
+      </div>
+    </div>
   </div>
-  <div id="map" data-markers="<%= @markers.to_json %>"></div>
 </div>
-
-
-<!-- js for the map hide/show button -->
-
-<script>
-  function hideShowMap() {
-    var x = document.getElementById("map");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-  }
-</script>

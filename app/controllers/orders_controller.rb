@@ -11,4 +11,20 @@ class OrdersController < ApplicationController
     # @order = current_user.orders.where(status: 0).find(params[:id])
     authorize @items
   end
+
+  def confirmation
+    @order = current_user.orders.last
+    @items = current_user.orders.last.items
+    authorize @order
+
+    cookingicon = 'https://s15.postimg.cc/kidbwuw3v/cooking.png';
+    @markers_items = @items.map do |item|
+      {
+        lat: item.meal.latitude,
+        lng: item.meal.longitude,
+        icon: cookingicon
+      }
+    end
+  end
+
 end

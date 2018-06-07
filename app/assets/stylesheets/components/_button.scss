@@ -1,6 +1,5 @@
 .button{
   background: $green;
-  //border: 2px solid $green;
   padding: 10px 50px;
   border-radius: 5px;
   opacity: 0.8;
@@ -10,4 +9,14 @@
 .button:hover{
   opacity: 1;
   text-decoration: none;
+}
+
+.button-review{
+  width: 30px;
+  height: 30px;
+  background: $green;
+  padding: 5px;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
 }

@@ -8,17 +8,21 @@
 
 .search-bar{
   margin: 10px 0 20px 40px;
-  width: 350px;
   display: flex;
-  //justify-content: space-between;
   align-items: center;
+  width: 300px;
   border-bottom: 1px solid $dark-gray;
   i {
     color: $medium-gray;
   }
 }
 
+<<<<<<< HEAD
 .form-control-search{
+=======
+
+.form-control{
+>>>>>>> d81ab5a363f8f855940d8c6299fd69252e8e335d
   border: none !important;
   box-shadow: none !important;
   outline: none !important;

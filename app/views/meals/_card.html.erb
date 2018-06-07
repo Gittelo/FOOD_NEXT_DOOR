@@ -1,4 +1,4 @@
-<div class="col-xs-12 col-sm-6 col-md-4">
+<div class="col-xs-12 col-sm-6 col-lg-4">
   <div class="card">
     <%= link_to meal_path(meal) do %>
       <div class="card-picture"
@@ -13,10 +13,35 @@
 
       <div class="card-footer">
         <div><p><%= meal.price %>€</p></div>
-        <div>
-          <i class="fas fa-cart-plus fa-lg"></i></div>
+<!--           <div class="meal-dose">
+            <%= simple_form_for meal do |f| %>
+              <div class="form-actions">
+                <i class="fas fa-minus" onclick="decrease()"></i>
+                <input name="item[doses]" type="number" min="1" max="10" value="4" class="val" id="item_doses">
+                <i class="fas fa-plus" onclick="increase()"></i>
+                <%= f.button :submit, 'Add to cart',class: "button" %>
+              </div>
+            <% end %>
+          </div> -->
+        <div><i class="fas fa-cart-plus fa-lg"></i></div>
       </div>
     </div>
 
 </div>
 
+<script>
+  function decrease() {
+    let val = document.querySelector(".val");
+    if(parseInt(val.value) > parseInt(val.min)) {
+      val.value = parseInt(val.value) - 1;
+    }
+    return val;
+  }
+  function increase() {
+    let val = document.querySelector(".val");
+    if(parseInt(val.value) < parseInt(val.max)) {
+      val.value = parseInt(val.value) + 1;
+    }
+    return val;
+  }
+</script>

@@ -1,0 +1,15 @@
+.info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  .concept-details{
+    width: 60%;
+  }
+
+  p {
+    font-size: 17px;
+    color: gray;
+  }
+}
