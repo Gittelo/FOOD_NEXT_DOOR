@@ -45,8 +45,6 @@
         <input type="number" min="1" max="10" value="1" id="val" disabled>
         <i class="fas fa-plus" onclick="increase()"></i>
       </div>
-
-<<<<<<< HEAD
     </div>
     <%= simple_form_for [@meal, @item] do |f| %>
       <%= f.input :doses %>
@@ -54,29 +52,6 @@
         <%= f.button :submit, class: "btn btn-success" %>
       </div>
     <% end %>
-
-    <div class="meal-review">
-      <p>
-        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-          See the reviews for this meal
-        </a>
-      </p>
-      <div class="collapse" id="collapseExample">
-        <% @meal.reviews.each do |review| %>
-          <p>
-            <%= review.user.first_name %>, <%= review.created_at.strftime('%d %b %Y') %>:
-            "<em><%= review.content %></em>"
-          </p>
-=======
-      <div class="meal-button">
-        <%= form_tag items_path do %>
-          <%= hidden_field_tag 'meal_id', @meal.id %>
-          <%= submit_tag 'Add to Cart', class: 'button' %>
->>>>>>> ad38c934144df00822be8778a388d305bc2b9b37
-        <% end %>
-      </div>
-    </div>
-
   </div>
 
   <div class="right-section">
