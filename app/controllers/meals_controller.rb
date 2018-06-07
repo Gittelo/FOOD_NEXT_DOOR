@@ -6,13 +6,14 @@ class MealsController < ApplicationController
     @meals = policy_scope(Meal).order(created_at: :desc)
     authorize @meals
 
-
     @meals = Meal.where.not(latitude: nil, longitude: nil)
+    cookingicon = 'https://s15.postimg.cc/kidbwuw3v/cooking.png';
 
     @markers = @meals.map do |meal|
       {
         lat: meal.latitude,
-        lng: meal.longitude#,
+        lng: meal.longitude,
+        icon: cookingicon
         # infoWindow: { content: render_to_string(partial: "/meals/map_box", locals: { meal: meal }) }
       }
     end

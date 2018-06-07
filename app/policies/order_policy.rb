@@ -11,6 +11,9 @@ class OrderPolicy < ApplicationPolicy
     true
   end
 
+  def confirmation?
+    true
+  end
 
   private
 
