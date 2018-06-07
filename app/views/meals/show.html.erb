@@ -39,19 +39,18 @@
       <div class="meal-time">
         <p>Pickup time: 18h / 20h</p>
       </div>
-
       <div class="meal-dose">
-        <i class="fas fa-minus" onclick="decrease()"></i>
-        <input type="number" min="1" max="10" value="1" id="val" disabled>
-        <i class="fas fa-plus" onclick="increase()"></i>
+        <%= simple_form_for [@meal, @item] do |f| %>
+          <div class="form-actions">
+            <i class="fas fa-minus" onclick="decrease()"></i>
+            <input name="item[doses]" type="number" min="1" max="10" value="4" class="val" id="item_doses">
+            <i class="fas fa-plus" onclick="increase()"></i>
+            <%= f.button :submit, class: "btn btn-success" %>
+          </div>
+        <% end %>
       </div>
     </div>
-    <%= simple_form_for [@meal, @item] do |f| %>
-      <%= f.input :doses %>
-      <div class="form-actions">
-        <%= f.button :submit, class: "btn btn-success" %>
-      </div>
-    <% end %>
+
   </div>
 
   <div class="right-section">
@@ -76,16 +75,18 @@
 
 <script>
   function decrease() {
-    let val = document.getElementById("val");
+    let val = document.querySelector(".val");
     if(parseInt(val.value) > parseInt(val.min)) {
       val.value = parseInt(val.value) - 1;
     }
+    return val;
   }
   function increase() {
-    let val = document.getElementById("val");
+    let val = document.querySelector(".val");
     if(parseInt(val.value) < parseInt(val.max)) {
       val.value = parseInt(val.value) + 1;
     }
+    return val;
   }
 </script>
 
