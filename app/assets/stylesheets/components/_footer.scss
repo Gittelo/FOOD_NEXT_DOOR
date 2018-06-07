@@ -1,13 +1,28 @@
 .footer {
-  background: #F4F4F4;
-  display: flex;
+  color: white;
+  height: 400px;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('Footer.jpg');
   align-items: center;
-  justify-content: space-between;
-  height: 100px;
-  padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
-  width: 100%;
+  justify-content: center;
+  h1 {
+    padding-top: 80px;
+    padding-bottom: 20px;
+    margin-left: 10px;
+  }
 }
+.footer-content {
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  ul {
+  list-style-type: none;
+  }
+}
+
 .footer-links {
   display: flex;
   align-items: center;
@@ -25,3 +40,4 @@
 .footer .fa-heart {
   color: #D23333;
 }
+
