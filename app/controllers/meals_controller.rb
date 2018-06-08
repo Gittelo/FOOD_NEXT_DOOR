@@ -41,6 +41,9 @@ class MealsController < ApplicationController
     @meal.address = current_user.address
     #raise
     authorize @meal
+    if @meal.photo.nil?
+      @meal.photo = "https://cdn3.tmbi.com/secure/RMS/attachments/37/1200x1200/Traditional-Lasagna_EXPS_THND16_12003_C07_26_6b.jpg"
+    end
     if @meal.save
       redirect_to meals_path
     else
