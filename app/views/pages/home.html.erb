@@ -2,7 +2,12 @@
   <div class="banner-content">
     <h1>FOOD NEXT DOOR</h1>
     <p>Order a home cooked meal</p>
-    <%= link_to "See all meals", meals_path, class:'btn btn-success'%>
+    <div class="search-home">
+      <div class="search-bar-home">
+        <%= render "search_lp" %>
+      </div>
+      <%= link_to "See all my meals", meals_path, class:'btn-sm btn-success'%>
+    </div>
     <a href="#details"><h3 style="color: white";><i class="fas fa-arrow-circle-down"></i></h3></a>
   </div>
 </div>

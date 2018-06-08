@@ -19,10 +19,16 @@ class MealsController < ApplicationController
     end
 
     if params[:query].present?
-      @meals = Meal.search_by_name(params[:query])
-    else
-      @meals = Meal.all
+         @meals = Meal.search_by_address(params[:query])
+      else
+        @meals = Meal.all
     end
+
+    # if params[:query].present?
+    #   @meals = Meal.search_by_name(params[:query])
+    # else
+    #   @meals = Meal.all
+    # end
 
   end
 
