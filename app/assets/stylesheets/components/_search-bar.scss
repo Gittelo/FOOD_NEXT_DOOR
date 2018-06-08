@@ -29,3 +29,35 @@
   display: flex;
   justify-content: space-between;
 }
+
+
+.form-control-search-home {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  font-size: 17px;
+  width: 250px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  color: black;
+}
+
+.search-bar-home{
+  margin-bottom: 20px;
+  // margin-left: auto;
+  // margin-right: auto;
+  i {
+    color: $medium-gray;
+  }
+}
+
+.search-home{
+  display: flex;
+  justify-content: space-between;
+  a {
+
+  }
+}
+
+
