@@ -1,8 +1,8 @@
 class Meal < ApplicationRecord
 
   include PgSearch
-  pg_search_scope :search_by_name,
-    against: [ :name ],
+  pg_search_scope :search_by_name_and_address,
+    against: [ :name, :address ],
     using: {
       tsearch: { prefix: true }
     }
