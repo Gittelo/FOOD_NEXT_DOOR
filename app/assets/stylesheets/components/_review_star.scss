@@ -1,7 +1,16 @@
 .star-yellow{
   color: gold;
+  margin-bottom: 20px;
 }
 
 .star-grey{
   color: $medium-gray;
+}
+
+.star-rating{
+  text-align: center;
+  padding: 20px 0;
+  p{
+    margin: 10px 0;
+  }
 }

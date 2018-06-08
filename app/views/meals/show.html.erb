@@ -45,9 +45,7 @@
             <i class="fas fa-minus" onclick="decrease()"></i>
             <input name="item[doses]" type="number" min="1" max="10" value="4" class="val" id="item_doses">
             <i class="fas fa-plus" onclick="increase()"></i>
-            
-            <%= f.button :submit, class: "button", value:"Add to Cart" %>
-            
+            <%= f.button :submit, 'Add to Cart', class: "button" %>
           </div>
         <% end %>
       </div>
@@ -61,27 +59,39 @@
   <% average_rating = (ratings.reduce(:+)/ratings.size.to_f).round(0)  %>
 
   <div class="right-section">
-    <p>
-      <% average_rating.times do %>
-        <i class="fas fa-star star-yellow"></i>
-      <% end %>
-      <% (5 - average_rating).times do %>
-        <i class="fas fa-star star-grey"></i>
-      <% end %>
-    </p>
-    <p>
-      <a class="button" id="show-reviews-btn">
-        See the reviews for this meal
-      </a>
-    </p>
+    <div class="star-rating">
+      <p>
+        <% average_rating.times do %>
+          <i class="fas fa-star star-yellow"></i>
+        <% end %>
+        <% (5 - average_rating).times do %>
+          <i class="fas fa-star star-grey"></i>
+        <% end %>
+      </p>
+      <p>
+        <a class="button" id="show-reviews-btn" style="cursor: pointer">
+          Reviews (<%= @meal.reviews.count %>)
+        </a>
+      </p>
+    </div>
     <div class="meal-review" style="display: none;">
       <% @meal.reviews.each do |review| %>
         <div class="card-review">
           <div class="review-name">
+            <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-review" %>
             <p><%= review.user.first_name %></p>
-            <p class="review-date"><%= review.created_at.strftime('%d %b %Y') %></p>
+            <p><%= review.user.address %></p>
           </div>
           <div class="review-body">
+            <p class="review-date">
+              <% review.rating.times do %>
+                <i class="fas fa-star star-yellow"></i>
+              <% end %>
+               <% (5 - review.rating).times do %>
+                <i class="fas fa-star star-grey"></i>
+              <% end %>
+              <span><%= review.created_at.strftime('%d %b %Y') %></span>
+            </p>
             <p>"<em><%= review.content %></em>"</p>
           </div>
         </div>
@@ -106,6 +116,21 @@
     }
     return val;
   }
+
+  const hideElement = (element) => {
+  if (element.style.display === "none") {
+    element.style.display = "block";
+  } else {
+    element.style.display = "none";
+  }
+}
+
+  const buttonReview = document.getElementById('show-reviews-btn');
+  const reviewContainer = document.querySelector('.meal-review');
+
+  buttonReview.addEventListener('click', (event) => {
+    hideElement(reviewContainer);
+  })
 </script>
 
 

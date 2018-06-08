@@ -75,30 +75,38 @@
 }
 
 .card-review{
-  //width: 350px;
-  height: 120px;
-  margin: 15px 0;
-  border: 1px solid $green;
+  min-height: 150px;
   display: flex;
+  border-top: 1px solid rgb(220, 220, 220);
   //align-items: center;
   p{
     margin: 5px 0;
   }
 }
 
+.card-review:first-child{
+  margin-top: 40px;
+}
+
 .review-name{
   margin: 5px 0;
   width: 100px;
   padding: 10px;
+  text-align: center;
+  p{
+    margin: 5px 0;
+  }
 }
 
 .review-body{
   margin: 5px 0;
-  border-left: 0.5px solid $green;
   flex-grow: 1;
   padding: 10px;
 }
 
 .review-date{
-  font-size: 12px;
+  font-size: 13px;
+  :last-child{
+    padding-left: 20px;
+  }
 }
