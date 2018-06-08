@@ -15,8 +15,12 @@
   }
 }
 
-.confirmation {
-  padding: 50px;
+.confirmation-box {
+  padding: 20px;
   border: 2px solid $light-gray;
   border-radius: 2px;
+}
+
+.confirmation-map-container {
+  margin-bottom: 50px;
 }
