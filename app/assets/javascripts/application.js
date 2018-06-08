@@ -42,3 +42,4 @@ button.addEventListener('click', (event) => {
 buttonReview.addEventListener('click', (event) => {
   hideElement(reviewContainer);
 })
+*/

@@ -21,6 +21,13 @@
   margin-bottom: 40px;
 }
 
+.banner p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  opacity: 0.6;
+  margin-bottom: 40px;
+}
 
 .banner-small {
   color: white;
@@ -36,3 +43,18 @@
 .down-of-image {
   background-position: bottom;
 }
+
+
+.banner-content{
+
+  display: flex;
+  flex-direction: column;
+
+
+
+}
+
+
+
+
+

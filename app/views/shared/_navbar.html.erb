@@ -10,11 +10,16 @@
     <% if user_signed_in? %>
 
     <!-- Links when logged in -->
-    <% if current_user.orders.last.status == "pending" %>
-    <%= link_to "Your cart", order_path(current_user.orders.last), class: "navbar-wagon-item navbar-wagon-link" %>
+    <% if current_user.orders.empty?  %>
+
+    <% elsif current_user.orders.last.status == "pending" %>
+    <%= link_to "Your cart", order_path(current_user.orders.last), class: "navbar-wagon-item navbar-wagon-link", style: "font-weight: bold" %>
     <% end %>
     <% if current_user.meals.empty? %>
       <%= link_to "Apply to be a cook", root_path, class: "navbar-wagon-item navbar-wagon-link"  %>
+    <% end %>
+    <% if !current_user.meals.empty? %>
+        <%= link_to "Add a new meal", new_meal_path, class: "navbar-wagon-item navbar-wagon-link"  %>
     <% end %>
 
     <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
@@ -30,13 +35,11 @@
             <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
             <% end %>
           </li>
-          <% if !current_user.meals.empty? %>
           <li>
-            <%= link_to my_repository_meals_path do %>
-            <i class="fas fa-utensils"></i>  <%= t(".settings", default: "my_meals_repository") %>
+            <%= link_to dashboard_index_path do %>
+            <i class="fas fa-utensils"></i>  <%= t(".settings", default: "Dashboard") %>
             <% end %>
           </li>
-          <% end %>
           <li>
             <%= link_to destroy_user_session_path, method: :delete do %>
             <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
