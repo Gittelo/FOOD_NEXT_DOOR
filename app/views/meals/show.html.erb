@@ -45,7 +45,8 @@
             <i class="fas fa-minus" onclick="decrease()"></i>
             <input name="item[doses]" type="number" min="1" max="10" value="4" class="val" id="item_doses">
             <i class="fas fa-plus" onclick="increase()"></i>
-            <%= f.button :submit, 'Add to Cart', class: "button" %>
+<button type="button" class="btn btn-primary" data-toggle="popover" title="Popover title" data-content="Default popover">Popover</button>
+            <%= f.button :submit, 'Add to Cart', class: "button"%>
           </div>
         <% end %>
       </div>
@@ -136,3 +137,9 @@
 
 
 
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
