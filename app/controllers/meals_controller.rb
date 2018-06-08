@@ -1,6 +1,7 @@
 class MealsController < ApplicationController
   before_action :set_meals, only: [:show, :edit, :destroy, :update]
   skip_before_action :authenticate_user!, only: [ :index, :show]
+  #layout 'map', only: :index
 
   def index
     @meals = policy_scope(Meal).order(created_at: :desc)
@@ -47,6 +48,9 @@ class MealsController < ApplicationController
     @meal.address = current_user.address
     #raise
     authorize @meal
+    if @meal.photo.nil?
+      @meal.photo = "https://cdn3.tmbi.com/secure/RMS/attachments/37/1200x1200/Traditional-Lasagna_EXPS_THND16_12003_C07_26_6b.jpg"
+    end
     if @meal.save
       redirect_to meals_path
     else

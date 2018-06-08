@@ -1,15 +1,18 @@
 .wrapper {
   background-color: $white;
-  width: 100%;
-  height: calc(100vh - 70px);
+  width: 100vw;
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: row;
 }
 
 #map {
   //flex: 0 0 450px;
-  height: calc(100vh - 140px) !important;
-  width: 100%;
-  position: sticky;
-  top: 0 !important;
+  height: 100%;
+  width: 30%;
+  flex-shrink: 0;
+  // position: sticky;
+  // top: 0 !important;
 }
 
 #map-confirmation {
