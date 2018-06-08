@@ -11,8 +11,10 @@
   <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/solid-locations-icon-set/64/Restaurant_2-512.png">
   <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
 </head>
-<body>
-  <%= render 'shared/navbar' %>
+  <body class="<%= controller_name %> <%= action_name %>">
+    <% unless action_name == "home"%>
+      <%= render 'shared/navbar' %>
+    <% end %>
   <%= render 'shared/flashes' %>
   <div class="page-wrapper">
     <%= yield %>
