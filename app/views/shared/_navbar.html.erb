@@ -13,10 +13,13 @@
     <% if current_user.orders.empty?  %>
 
     <% elsif current_user.orders.last.status == "pending" %>
-    <%= link_to "Your cart", order_path(current_user.orders.last), class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Your cart", order_path(current_user.orders.last), class: "navbar-wagon-item navbar-wagon-link", style: "font-weight: bold" %>
     <% end %>
     <% if current_user.meals.empty? %>
       <%= link_to "Apply to be a cook", root_path, class: "navbar-wagon-item navbar-wagon-link"  %>
+    <% end %>
+    <% if !current_user.meals.empty? %>
+        <%= link_to "Add a new meal", new_meal_path, class: "navbar-wagon-item navbar-wagon-link"  %>
     <% end %>
 
     <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
