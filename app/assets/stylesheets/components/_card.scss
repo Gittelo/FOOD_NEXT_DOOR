@@ -9,7 +9,7 @@
 
 .card{
   overflow: hidden;
-  color: $green;
+  color: $dark-gray;
   height: 350px;
   background: $light-gray;
   margin: 20px 10px;
@@ -42,7 +42,7 @@
   margin: 0;
   font-size: 16px;
   padding: 1% 0;
-  color: $green;
+  color: $dark-gray;
 }
 
 
@@ -68,12 +68,14 @@
   border-top: 1px solid rgb(230, 230, 230);
   height: 15%;
   padding: 0 5%;
+  color: $green;
 }
 
 .card .card-footer p{
   font-size: 20px;
   margin: 0;
   padding: 0;
+  color: $dark-gray;
 }
 
 .card-review{

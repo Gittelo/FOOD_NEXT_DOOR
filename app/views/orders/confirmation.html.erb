@@ -1,8 +1,10 @@
 
-<div class="wrapper">
+<div class="wrapper confirmation-map-container">
+  <div class="text-center confirmation-box">
+    <h2>Thank you for your order!</h2>
+    <br>
+    You can pick up your meal between 6:00 and 8:00 pm at <strong><%= @order.items.first.meal.address %></strong>
+  </div>
   <div id="map" style="width: 100%" data-markers="<%= @markers_items.to_json %>">
-    <div class="summary-container">
-      Thank you for your order
-    </div>
   </div>
 </div>

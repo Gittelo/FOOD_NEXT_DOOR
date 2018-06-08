@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
     @items = current_user.orders.last.items
     authorize @order
 
-    cookingicon = 'https://s15.postimg.cc/kidbwuw3v/cooking.png';
+    cookingicon = 'https://s15.postimg.cc/8jm1drv63/cooking.png'
     @markers_items = @items.map do |item|
       {
         lat: item.meal.latitude,

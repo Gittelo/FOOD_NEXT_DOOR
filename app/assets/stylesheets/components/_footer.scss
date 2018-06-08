@@ -1,4 +1,5 @@
 .footer {
+
   color: $green;
   height: 400px;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
@@ -7,6 +8,7 @@
   align-items: center;
   justify-content: center;
   h1 {
+    color: $green;
     opacity: 0.6;
     padding-top: 60px;
     padding-bottom: 20px;

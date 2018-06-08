@@ -15,6 +15,7 @@ const styles = [
 ];
 
 const initMap = function(mapElement) {
+  console.log('Hello world');
   if (mapElement) { // don't try to build a map if there's no div#map to inject in
     const map = new GMaps({ el: '#map', lat: 0, lng: 0 } );
     const markers = JSON.parse(mapElement.dataset.markers);
@@ -32,21 +33,21 @@ const initMap = function(mapElement) {
       mapTypeId: 'map_style'
     });
     map.setStyle('map_style');
-    // const contentString = "Hello World";
-    // const infoWindow = new google.maps.InfoWindow({
-    //   content: contentString
-    // });
+    const contentString = "Hello World";
+    const infoWindow = new google.maps.InfoWindow({
+      content: contentString
+    });
 
-    // markers.forEach((marker) => {
-    //     marker = new google.maps.Marker({
-    //     position: { marker.lat, marker.lng }
-    //     map: map,
+    //   markers.forEach((marker) => {
+    //   const marker_card = new google.maps.Marker({
+    //   position: {marker.lat, marker.lng},
+    //   map: map,
+    //   title: 'Hello)'
     //   });
-    //   marker.addListener('click', () => {
+    //   marker_carcard.addEventListener('click', function() {
     //     infowindow.open(map, marker);
     //   });
-    // }
-
+    // });
   }
 }
 

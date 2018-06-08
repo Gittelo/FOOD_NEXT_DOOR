@@ -8,7 +8,7 @@ class MealsController < ApplicationController
     authorize @meals
 
     @meals = Meal.where.not(latitude: nil, longitude: nil)
-    cookingicon = 'https://s15.postimg.cc/kidbwuw3v/cooking.png';
+    cookingicon = 'https://s15.postimg.cc/8jm1drv63/cooking.png'
 
     @markers = @meals.map do |meal|
       {
