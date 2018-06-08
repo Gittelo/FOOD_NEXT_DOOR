@@ -20,3 +20,17 @@
   color: white;
   text-align: center;
 }
+
+.coupon-code-button {
+    background-color: $dark-gray;
+    color: $light-gray;
+    margin: 0 0 0 -6px;
+    padding: 10px 20px;
+    height: 34px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1rem;
+    vertical-align: bottom;
+    border: 1px solid $dark-gray;
+}

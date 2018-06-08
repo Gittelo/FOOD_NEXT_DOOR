@@ -33,12 +33,12 @@ const sectionLeft = document.getElementById('cards-section-left');
 const buttonReview = document.getElementById('show-reviews-btn');
 const reviewContainer = document.querySelector('.meal-review');
 
-*/
-// button.addEventListener('click', (event) => {
-//   hideElement(map);
-//   switchClasses(sectionLeft, 'col-md-8', 'col-md-12');
-// });
 
-// buttonReview.addEventListener('click', (event) => {
-//   hideElement(reviewContainer);
-// })
+button.addEventListener('click', (event) => {
+  hideElement(map);
+  switchClasses(sectionLeft, 'col-md-8', 'col-md-12');
+});
+
+buttonReview.addEventListener('click', (event) => {
+  hideElement(reviewContainer);
+})
