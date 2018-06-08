@@ -10,7 +10,9 @@
     <% if user_signed_in? %>
 
     <!-- Links when logged in -->
-    <% if current_user.orders.last.status == "pending" %>
+    <% if current_user.orders.empty?  %>
+
+    <% elsif current_user.orders.last.status == "pending" %>
     <%= link_to "Your cart", order_path(current_user.orders.last), class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
     <% if current_user.meals.empty? %>
