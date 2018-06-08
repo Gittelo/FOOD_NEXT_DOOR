@@ -5,7 +5,7 @@
 
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('Footer.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), asset-url('Footer.jpg');
   align-items: center;
   justify-content: center;
   h1 {
