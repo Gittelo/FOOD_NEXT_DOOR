@@ -1,0 +1,39 @@
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+    <li><a data-toggle="tab" href="#meals">My Meals</a></li>
+    <li><a data-toggle="tab" href="#orders">My Orders</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h3>HOME</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+
+    <div id="meals" class="tab-pane fade">
+      <h3>Submit a new meal for approval</h3>
+      <%= link_to "Summit a meal for approval", new_meal_path, class: "btn btn-info" %>
+      <h1>My Meals repository</h1>
+      <h3>Approved Meals</h3>
+      <div class="row">
+        <% @my_meals.each do |meal| %>
+          <%= link_to render("drag_card", meal: meal), meal_path(meal) %>
+        <% end %>
+      </div>
+      <h1>Plan the schedule for the next 7 days:</h1>
+      <% meal = @my_meals.first %>
+    </div>
+
+    <div id="orders" class="tab-pane fade">
+      <h3>My Orders</h3>
+      <div class="row">
+        <% @my_orders.each do |order| %>
+          <p><%= order.user.first_name %>: <%= order.status %>, <%= order.total_price %>€</p>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+
+</div>

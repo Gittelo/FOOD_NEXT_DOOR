@@ -1,27 +1,27 @@
 .footer {
-  color: white;
-  height: 450px;
+
+  color: #c6dacd;
+  height: 400px;
+
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('Footer.jpg');
   align-items: center;
   justify-content: center;
   h1 {
-    padding-top: 80px;
+    padding-top: 60px;
     padding-bottom: 20px;
+    margin-left: 15px;
     margin-top: 0;
-    margin-left: 10px;
   }
 }
 .footer-content {
-  margin-left: 10px;
+  color: white;
+  margin-left: 20px;
   margin-right: 10px;
   display: flex;
   width: 90%;
   justify-content: space-between;
-  ul {
-  list-style-type: none;
-  }
 }
 
 .footer-links {
@@ -40,5 +40,15 @@
 }
 .footer .fa-heart {
   color: #D23333;
+}
+
+.footer-symbols {
+  font-size: 30px;
+  color: white;
+  padding-bottom : 0px;
+  padding-right: 30px;
+  p {
+    margin-bottom: 0;
+  }
 }
 

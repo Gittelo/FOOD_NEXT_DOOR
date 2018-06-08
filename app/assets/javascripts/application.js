@@ -2,6 +2,8 @@
 //= require_tree .
 
 
+/*
+
 
 const hideElement = (element) => {
   if (element.style.display === "none") {
@@ -24,7 +26,6 @@ const switchClasses = (element, class1, class2) => {
     element.classList.add(class1);
   }
 }
-
 const map = document.getElementById('map');
 const button = document.getElementById('show-map');
 const cardsContainer = document.querySelector('.cards-container');
