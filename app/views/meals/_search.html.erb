@@ -1,10 +1,30 @@
-<%= form_tag meals_path, method: :get do %>
-  <%= text_field_tag :location,
-    params[:location],
-    class: "form-control-search",
-    placeholder: "e.g. Saldanha, Cais do Sodré"
-  %>
+<%= form_tag meals_path, method: :get, id:"content" do %>
+  <% text_field_tag :location,
+    params[:location]%>
+        <input type="text" name="input" id="search">
+        <button type="reset" id="search-button" class="search"><%= image_tag("location.png", width: '35', height: '35')%></button>
 <% end %>
 
+<!-- <div>
+  <form id="content">
+        <input type="text" name="input" id="search">
+        <button type="reset" id="search-button" class="search"><%= image_tag("location.png", width: '35', height: '35')%></button>
+        <ul id="results">
+        </ul>
+  </form>
+</div> -->
 
-
+<script>
+  const searchButton = document.querySelector(".search");
+  const input = document.querySelector('#search');
+  const expandForm = (element) => {
+    searchButton.classList.toggle("close");
+    input.classList.toggle("square");
+    if (searchButton.classList.contains("close")) {
+      input.focus();
+    } else {
+      input.blur();
+    }
+  };
+  document.getElementById("search-button").addEventListener("click", expandForm);
+</script>
