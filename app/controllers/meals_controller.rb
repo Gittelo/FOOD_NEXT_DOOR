@@ -7,7 +7,12 @@ class MealsController < ApplicationController
     @meals = policy_scope(Meal).order(created_at: :desc)
     authorize @meals
 
-    @meals = Meal.where.not(latitude: nil, longitude: nil)
+    if params[:location].present?
+         @meals = Meal.near(params[:location], 20, order: 'distance')
+      else
+        @meals = Meal.all
+    end
+
     cookingicon = 'https://s15.postimg.cc/8jm1drv63/cooking.png'
 
     @markers = @meals.map do |meal|
@@ -18,18 +23,6 @@ class MealsController < ApplicationController
         # infoWindow: { content: render_to_string(partial: "/meals/map_box", locals: { meal: meal }) }
       }
     end
-
-    if params[:query].present?
-         @meals = Meal.search_by_address(params[:query])
-      else
-        @meals = Meal.all
-    end
-
-    # if params[:query].present?
-    #   @meals = Meal.search_by_name(params[:query])
-    # else
-    #   @meals = Meal.all
-    # end
 
   end
 
