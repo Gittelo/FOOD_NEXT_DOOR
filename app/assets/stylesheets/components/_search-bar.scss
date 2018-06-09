@@ -44,16 +44,11 @@
   color: black;
 }
 
-.search-home{
-  position: center;
+.search-home {
+    position: center;
 }
 
 // New Search bar with JS
-
-.hidden {
-  display: none;
-}
-
 #content {
   position: absolute;
   height: 40px;
@@ -61,18 +56,18 @@
   left: 5%;
   top: 50%;
 }
-#content.on {
-  -webkit-animation-name: in-out;
-  animation-name: in-out;
-  -webkit-animation-duration: 0.7s;
-  animation-duration: 0.7s;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
-}
+// #content.on {
+//   -webkit-animation-name: in-out;
+//   animation-name: in-out;
+//   -webkit-animation-duration: 0.7s;
+//   animation-duration: 0.7s;
+//   -webkit-animation-timing-function: linear;
+//   animation-timing-function: linear;
+//   -webkit-animation-iteration-count: 1;
+//   animation-iteration-count: 1;
+// }
 
-input {
+.animated-search-bar {
   box-sizing: border-box;
   width: 35px;
   height: 35px;

@@ -1,18 +1,9 @@
 <%= form_tag meals_path, method: :get, id:"content" do %>
   <% text_field_tag :location,
     params[:location]%>
-        <input type="text" name="input" id="search">
+        <input type="text" name="input" id="search" class="autocomplete animated-search-bar", placeholder=<%= current_user.address %>>
         <button type="reset" id="search-button" class="search"><%= image_tag("location.png", width: '35', height: '35')%></button>
 <% end %>
-
-<!-- <div>
-  <form id="content">
-        <input type="text" name="input" id="search">
-        <button type="reset" id="search-button" class="search"><%= image_tag("location.png", width: '35', height: '35')%></button>
-        <ul id="results">
-        </ul>
-  </form>
-</div> -->
 
 <script>
   const searchButton = document.querySelector(".search");
