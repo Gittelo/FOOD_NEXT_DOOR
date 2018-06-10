@@ -13,13 +13,10 @@ class MealsController < ApplicationController
         @meals = Meal.all
     end
 
-    cookingicon = 'https://s15.postimg.cc/8jm1drv63/cooking.png'
-
     @markers = @meals.map do |meal|
       {
         lat: meal.latitude,
         lng: meal.longitude,
-        icon: cookingicon
         # infoWindow: { content: render_to_string(partial: "/meals/map_box", locals: { meal: meal }) }
       }
     end
