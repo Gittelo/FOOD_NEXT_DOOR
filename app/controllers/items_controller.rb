@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
     @item.order = @order
     @item.item_price = @meal.price * @item.doses
     if @item.save
-      redirect_to meals_path
+      #redirect_to meals_path
     else
       render "meals/show"
     end
