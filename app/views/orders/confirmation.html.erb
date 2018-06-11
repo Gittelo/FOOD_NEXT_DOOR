@@ -5,6 +5,13 @@
     <br>
     You can pick up your meal between 6:00 and 8:00 pm at <strong><%= @order.items.first.meal.address %></strong>
   </div>
-  <div id="map" style="width: 100%" data-markers="<%= @markers_items.to_json %>">
+  <div id="map-confirmation" style="width: 100%" data-markers="<%= @markers_items.to_json %>">
   </div>
+
+  <div class="card-confirmation">
+    <!-- Build the card and give an id meal.name, meal.description -->
+  </div>
+<!--   CSS:
+  #cc display none; -->
+
 </div>

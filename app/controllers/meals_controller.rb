@@ -7,20 +7,31 @@ class MealsController < ApplicationController
     @meals = policy_scope(Meal).order(created_at: :desc)
     authorize @meals
 
+    # Query location in search bar
     if params[:location].present?
          @meals = Meal.near(params[:location], 5, order: 'distance')
       else
         @meals = Meal.all
     end
+
+    @meals = @meals.price(params[:price]) if params[:price].present?
+
+    # Markers placement, icons and info window
     iconmarker = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
     @markers = @meals.map do |meal|
       {
         lat: meal.latitude,
         lng: meal.longitude,
         icon: iconmarker,
-        # infoWindow: { content: render_to_string(partial: "/meals/map_box", locals: { meal: meal }) }
+        infoWindow: {
+                    content: meal.name
+                    }
       }
     end
+
+    # Set max parameters
+    @max_price = 30
+    @max_distance = 10
 
   end
 

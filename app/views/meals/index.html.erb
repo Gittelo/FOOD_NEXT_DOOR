@@ -5,12 +5,17 @@
     <!-- <i class="fas fa-search"></i> -->
     <%= render "search" %>
   </div>
-  <div class="switch-button">
-    <p class="switch-text">Show Map</p>
-    <label class="switch">
-      <input type="checkbox" id="show-map">
-      <span class="slider round"></span>
-    </label>
+
+  <div class="right-part-search flexing-stuff">
+    <%= render 'filters' %>
+
+    <div class="switch-button">
+      <p class="switch-text">Show Map</p>
+      <label class="switch">
+        <input type="checkbox" id="show-map">
+        <span class="slider round"></span>
+      </label>
+    </div>
   </div>
 </div>
 
@@ -58,3 +63,15 @@
     })
   })
 </script>
+
+<script>
+  function changePrice(value) {
+        document.getElementById('price_change').innerHTML='Price: '+value+'€';
+      }
+</script>
+<script>
+  function changeDistance(value) {
+        document.getElementById('distance_change').innerHTML='Distance: '+value+'km';
+      }
+</script>
+

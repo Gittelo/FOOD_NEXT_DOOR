@@ -8,9 +8,7 @@ const initMap = function(mapElement) {
       el: '#map',
       lat: 0,
       lng: 0,
-      mapTypeControl: false,
       streetViewControl: false,
-      fullscreenControl: false,
       zoomControl: true,
       zoomControlOptions: {
         position: google.maps.ControlPosition.TOP_RIGHT
@@ -60,29 +58,47 @@ const initMap = function(mapElement) {
         markRed(index);
       });
     });
-
-    // Infowindow on click
-    const contentString = "Hello World";
-    const infoWindow = new google.maps.InfoWindow({
-      content: contentString
-    });
-
-    markers.forEach(function(marker) {
-      marker.addEventListener(marker, 'click', function(marker) {
-      infowindow.setContent(content);
-      infowindow.open(map, marker);
-      });
-    });
-
-
   }
 }
 
 
+const initMapConfirmation = function(mapElement) {
+  // Map initialisation
+  if (mapElement) {
+    const map = window.map = new GMaps({
+      el: '#map-confirmation',
+      lat: 0,
+      lng: 0,
+      streetViewControl: false,
+      zoomControl: true,
+      zoomControlOptions: {
+        position: google.maps.ControlPosition.TOP_RIGHT
+      },
+      });
+
+    // Markers and zoom definition
+    const markers = JSON.parse(mapElement.dataset.markers);
+    map.addMarkers(markers);
+    if (markers.length === 0) {
+      map.setZoom(2);
+    } else if (markers.length === 1) {
+      map.setCenter(markers[0].lat, markers[0].lng);
+      map.setZoom(14);
+    } else {
+      map.fitLatLngBounds(markers);
+    }
+    map.addStyle({
+      styles: styles,
+      mapTypeId: 'map_style'
+    });
+    map.setStyle('map_style');
+  }
+}
+
 // pass html.erb
 
 
-export default initMap ;
+export { initMap, initMapConfirmation };
 
 import { autocomplete } from '../components/autocomplete';
 
