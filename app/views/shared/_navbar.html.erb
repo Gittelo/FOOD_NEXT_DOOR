@@ -25,7 +25,7 @@
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <span class="navbar-wagon-item navbar-wagon-link">Hello <%= current_user.first_name %>!</span>
+        <span class="navbar-wagon-item-name">Hello <%= current_user.first_name %>!</span>
         <% if current_user.photo.model[:photo] == nil %>
           <%= image_tag "https://www.myfirestorm.com/img/placeholder_user.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown"%>
         <% else %>
