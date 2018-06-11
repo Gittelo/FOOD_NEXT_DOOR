@@ -137,3 +137,15 @@
   -ms-transform: translate(-15%, -50%);
   transform: translate(-15%, -50%);
 }
+
+.address-change {
+  text-align: center;
+  font-style: italic;
+  width: 120px;
+  margin-top: -45px;
+  margin-left: 5px;
+  color: $medium-gray;
+  font-size: 14px;
+  font-weight: lighter;
+  border-bottom: 1px solid $medium-gray;
+}

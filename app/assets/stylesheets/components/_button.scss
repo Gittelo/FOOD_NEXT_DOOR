@@ -34,3 +34,26 @@
     vertical-align: bottom;
     border: 1px solid $dark-gray;
 }
+
+.flashing-red {
+ @-webkit-keyframes glowing {
+    0% { background-color: $green; box-shadow: 0 0 3px $green; }
+    50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+    100% { background-color: $green; box-shadow: 0 0 3px $green; }
+  }
+  @-moz-keyframes glowing {
+    0% { background-color: $green; box-shadow: 0 0 3px $green; }
+    50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+    100% { background-color: $green; box-shadow: 0 0 3px $green; }
+  }
+  @-o-keyframes glowing {
+    0% { background-color: $green; box-shadow: 0 0 3px $green; }
+    50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+    100% { background-color: $green; box-shadow: 0 0 3px $green; }
+  }
+  @keyframes glowing {
+    0% { background-color: $green; box-shadow: 0 0 3px $green; }
+    50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+    100% { background-color: $green; box-shadow: 0 0 3px $green; }
+  }
+}
