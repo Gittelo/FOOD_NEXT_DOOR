@@ -5,9 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   #after_create :send_welcome_email
 
-
   has_many :orders
   has_many :meals, foreign_key: "cook_id"
+
+  mount_uploader :photo, PhotoUploader
 
   private
 
