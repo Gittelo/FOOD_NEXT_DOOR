@@ -62,17 +62,17 @@ const initMap = function(mapElement) {
     });
 
     // Infowindow on click
-    const contentString = "Hello World";
-    const infoWindow = new google.maps.InfoWindow({
-      content: contentString
-    });
+    // const contentString = "Hello World";
+    // const infoWindow = new google.maps.InfoWindow({
+    //   content: contentString
+    // });
 
-    markers.forEach(function(marker) {
-      marker.addEventListener(marker, 'click', function(marker) {
-      infowindow.setContent(content);
-      infowindow.open(map, marker);
-      });
-    });
+    // markers.forEach(function(marker) {
+    //   marker.addEventListener(marker, 'click', function(marker) {
+    //   infowindow.setContent(content);
+    //   infowindow.open(map, marker);
+    //   });
+    // });
 
 
   }
