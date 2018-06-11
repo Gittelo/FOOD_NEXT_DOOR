@@ -8,15 +8,16 @@ class MealsController < ApplicationController
     authorize @meals
 
     if params[:location].present?
-         @meals = Meal.near(params[:location], 20, order: 'distance')
+         @meals = Meal.near(params[:location], 5, order: 'distance')
       else
         @meals = Meal.all
     end
-
+    iconmarker = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
     @markers = @meals.map do |meal|
       {
         lat: meal.latitude,
         lng: meal.longitude,
+        icon: iconmarker,
         # infoWindow: { content: render_to_string(partial: "/meals/map_box", locals: { meal: meal }) }
       }
     end

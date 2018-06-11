@@ -1,7 +1,9 @@
     <form action="/meals" method="get" id="content">
         <input type="text" name="location" id="search" class="autocomplete animated-search-bar", placeholder=<%= current_user.address %>>
         <button type="reset" id="search-button" class="search"><%= image_tag("location.png", width: '35', height: '35')%></button>
+        <div class="address-change">Change address</div>
     </form>
+
 
 <script>
   const searchButton = document.querySelector(".search");
