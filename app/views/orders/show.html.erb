@@ -12,7 +12,7 @@
         <td class="item-image" style="background: url(<%= item.meal.photo %>)">
         </td>
         <td class="item-name"><%= item.meal.name %></td>
-        <td class="item-details"><%= item.doses %> portions</td>
+        <td class="item-details"><%= item.doses %> <%= 'portion'.pluralize(item.doses) %>  </td>
         <td class="item-price"><%= item.item_price %>€</td>
         <td><%= link_to order_item_path(@order, item), method: :delete, data: {confirm: 'Are you sure?'} do %>
               <i class="fas fa-trash-alt fa-xs"></i>
