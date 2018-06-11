@@ -24,6 +24,13 @@ class ItemsController < ApplicationController
     authorize @item
   end
 
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    authorize @item
+    redirect_to order_path(current_user.orders.last)
+  end
+
   private
 
   def set_meal
