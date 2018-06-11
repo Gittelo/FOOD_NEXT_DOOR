@@ -6,7 +6,7 @@ class CreateWeekDays < ActiveRecord::Migration[5.2]
       t.datetime :pick_up_time_end
       t.datetime :last_order_time
       t.integer :doses
-      t.datetime :date
+      t.date :date
 
 
       t.timestamps

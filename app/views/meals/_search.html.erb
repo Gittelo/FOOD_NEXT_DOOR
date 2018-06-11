@@ -1,5 +1,11 @@
     <form action="/meals" method="get" id="content">
-        <input type="text" name="location" id="search" class="autocomplete animated-search-bar", placeholder=<%#= current_user.address %>>
+
+      <% if !current_user.nil? %>
+        <input type="text" name="location" id="search" class="autocomplete animated-search-bar", placeholder=<%= current_user.address  %>>
+      <% else %>
+        <input type="text" name="location" id="search" class="autocomplete animated-search-bar", placeholder="Insert address">
+      <% end %>
+
         <button type="reset" id="search-button" class="search"><%= image_tag("location.png", width: '35', height: '35')%></button>
         <div class="address-change"><i class="fas fa-angle-left"></i>  Change address</div>
     </form>
