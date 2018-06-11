@@ -92,11 +92,11 @@
   const coupon = () => {
     applyButton.addEventListener('click', (event) => {
     if (formInput === "chickensgang") {
-      div.insertAdjacentHTML('beforeend', 'Reduction');
+      div.insertAdjacentHTML('afterend', 'Reduction');
       button.disabled = true;
     }
     else {
-      div.insertAdjacentHTML('beforeend', 'Please enter a valid coupon.');
+      div.insertAdjacentHTML('afterend', '\<br>Please enter a valid coupon.');
     }
     });
   }
