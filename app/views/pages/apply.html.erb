@@ -52,21 +52,22 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 class="modal-title">Apply to be a cook</h2>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <h2 class="modal-title"><strong>Apply to be a cook</strong></h2>
       </div>
       <div class="modal-body">
         <p>Please confirm your data:</p>
-        <p><strong>First name: </strong><br><%= current_user.first_name %> </p>
-        <p><strong>Last name: </strong><br> <%= current_user.last_name %> </p>
-        <p><strong>Email: </strong><br> <%= current_user.email %></p>
-        <p><strong>Address: </strong><br> <%= current_user.address %> </p>
-        <p><em>* If you press "Apply", one of our members will contact you within 24 hours. </em></p>
+        <div class="modal-data">
+          <p><strong>First name: </strong><br><%= current_user.first_name %> </p>
+          <p><strong>Last name: </strong><br> <%= current_user.last_name %> </p>
+          <p><strong>Email: </strong><br> <%= current_user.email %></p>
+          <p><strong>Address: </strong><br> <%= current_user.address %> </p>
+          <div class="modal-confirm">
+          <p><em>* If you press "Apply", one of our members will contact you within 24 hours. </em></p>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
-        <%= link_to "Apply*", meals_path, class: "btn btn-primary" %>
+        <%= link_to "Apply *", meals_path, class: "btn btn-primary" %>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
