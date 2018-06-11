@@ -1,6 +1,7 @@
 <div class="meal-banner" style="background-image: url('<%= @meal.photo %>');">
 </div>
 
+<div class="show">
 
 <div class="main-container">
 
@@ -59,7 +60,12 @@
   <% @meal.reviews.each do |review| %>
     <% ratings << review.rating  %>
   <% end %>
-  <% average_rating = (ratings.reduce(:+)/ratings.size.to_f).round(0)  %>
+
+  <% if ratings.empty? %>
+    <% average_rating = 0 %>
+  <% else %>
+    <% average_rating = (ratings.reduce(:+)/ratings.size.to_f).round(0)  %>
+  <% end %>
 
   <div class="right-section">
     <div class="star-rating">
@@ -81,7 +87,11 @@
       <% @meal.reviews.each do |review| %>
         <div class="card-review">
           <div class="review-name">
-            <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-review" %>
+            <% if current_user.photo.model[:photo] == nil %>
+              <%= image_tag "https://www.myfirestorm.com/img/placeholder_user.png", class: "avatar-review" %>
+            <% else %>
+              <%= cl_image_tag current_user.photo, class: "avatar-review" %>
+            <% end %>
             <p><%= review.user.first_name %></p>
             <p><%= review.user.address %></p>
           </div>
@@ -104,6 +114,10 @@
 
 </div>
 
+</div>
+</div>
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -117,11 +131,13 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary"><%= link_to "Continue Shopping", meals_path %></button>
-        <button type="button" class="btn btn-secondary"><%= link_to "Checkout", order_path(current_user.orders.last) %></button>
+        <button type="button" class="btn btn-secondary"><%= link_to "Checkout", order_path(current_user.current_order) %></button>
       </div>
     </div>
   </div>
 </div>
+</div>
+
 <!-- Modal -->
 
 
@@ -166,3 +182,5 @@ $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
 });
 </script>
+
+

@@ -17,12 +17,12 @@ class OrdersController < ApplicationController
     @items = current_user.orders.last.items
     authorize @order
 
-    cookingicon = 'https://s15.postimg.cc/8jm1drv63/cooking.png'
+    redicon = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
     @markers_items = @items.map do |item|
       {
         lat: item.meal.latitude,
         lng: item.meal.longitude,
-        icon: cookingicon
+        icon: redicon
       }
     end
   end

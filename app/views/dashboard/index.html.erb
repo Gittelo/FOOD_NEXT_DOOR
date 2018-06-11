@@ -6,16 +6,19 @@
 
   <div class="tab-content">
 
+
     <div id="meals" class="tab-pane fade in active">
       <h3>Submit a new meal for approval</h3>
+
       <%= link_to "Summit a meal for approval", new_meal_path, class: "btn btn-info" %>
-      <h1>My Meals repository</h1>
-      <h3>Approved Meals</h3>
+      <h2>My Meals repository</h2>
+      <h4>Approved Meals</h4>
       <div class="row">
         <% @my_meals.each do |meal| %>
         <%= link_to render("drag_card", meal: meal), meal_path(meal) %>
         <% end %>
       </div>
+
       <h1>Plan the schedule for the next 7 days:</h1>
       <% meal = @my_meals.first %>
       <%#= link_to "Create a new schedule",  new_week_day_path, class: "btn btn-danger" %>
@@ -35,8 +38,6 @@
           </tr>
         </tbody>
       </table>
-
-
 
     </div>
 

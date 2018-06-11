@@ -12,8 +12,12 @@
         <td class="item-image" style="background: url(<%= item.meal.photo %>)">
         </td>
         <td class="item-name"><%= item.meal.name %></td>
-        <td class="item-details"><%= item.doses %> portions</td>
+        <td class="item-details"><%= item.doses %> <%= 'portion'.pluralize(item.doses) %>  </td>
         <td class="item-price"><%= item.item_price %>€</td>
+        <td><%= link_to order_item_path(@order, item), method: :delete, data: {confirm: 'Are you sure?'} do %>
+              <i class="fas fa-trash-alt fa-xs"></i>
+            <% end %>
+        </td>
       </tr>
       <% end %>
     </table>
@@ -57,7 +61,7 @@
       </div>
       <div class="extra-costs">
         <div>
-
+        <span>Discount</span>
         </div>
         <div>00€</div>
       </div>
@@ -78,6 +82,7 @@
         data-amount="<%= @order.total_price_cents %>"
         data-currency="<%= @order.total_price.currency %>"></script>
       <% end %>
+
 <script>
   const oForm = document.forms[0];
   const formInput = oForm.elements["cart_couponCode"].value;

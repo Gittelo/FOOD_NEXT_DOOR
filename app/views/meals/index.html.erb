@@ -5,12 +5,17 @@
     <!-- <i class="fas fa-search"></i> -->
     <%= render "search" %>
   </div>
-  <div class="switch-button">
-    <p class="switch-text">Show Map</p>
-    <label class="switch">
-      <input type="checkbox" id="show-map">
-      <span class="slider round"></span>
-    </label>
+
+  <div class="right-part-search flexing-stuff">
+    <%= render 'filters' %>
+
+    <div class="switch-button">
+      <p class="switch-text">Show Map</p>
+      <label class="switch">
+        <input type="checkbox" id="show-map">
+        <span class="slider round"></span>
+      </label>
+    </div>
   </div>
 </div>
 
@@ -26,19 +31,6 @@
   </div>
   <div id="map" data-markers="<%= @markers.to_json %>"></div>
 </div>
-
-<!--
-<div class="wrapper-search flexing-stuff">
-  <div class="search-bar flexing-stuff">
-    <div>
-      <i class="fas fa-search"></i>
-      <%#= render "search" %>
-    </div>
-    </div>
-    <div>
-      <button id="show-map">Show/Hide Map</button>
-    </div>
-</div> -->
 
 <script>
   const hideElement = (element) => {
@@ -71,3 +63,15 @@
     })
   })
 </script>
+
+<script>
+  function changePrice(value) {
+        document.getElementById('price_change').innerHTML='Price: '+value+'€';
+      }
+</script>
+<script>
+  function changeDistance(value) {
+        document.getElementById('distance_change').innerHTML='Distance: '+value+'km';
+      }
+</script>
+

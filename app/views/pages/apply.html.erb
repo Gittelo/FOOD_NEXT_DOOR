@@ -2,7 +2,9 @@
   <div class="banner-content">
     <h1>You want to become a cook in our platform?</h1>
     <p>Preper delicious home cook meals for your neighbors</p>
-    <%= link_to "Apply", meals_path, class:'btn btn-success btn-lg'%>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Apply to be a cook
+</button>
     <a href="#details"><h3 style="color: white";><i class="fas fa-arrow-circle-down"></i></h3></a>
   </div>
 </div>
@@ -44,5 +46,30 @@
    </div>
  </div>
 </div>
+</div>
+
+<div class="modal" id="exampleModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Apply to be a cook</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Please confirm your data:</p>
+        <p><strong>First name: </strong><br><%= current_user.first_name %> </p>
+        <p><strong>Last name: </strong><br> <%= current_user.last_name %> </p>
+        <p><strong>Email: </strong><br> <%= current_user.email %></p>
+        <p><strong>Address: </strong><br> <%= current_user.address %> </p>
+        <p><em>* If you press "Apply", one of our members will contact you within 24 hours. </em></p>
+      </div>
+      <div class="modal-footer">
+        <%= link_to "Apply*", meals_path, class: "btn btn-primary" %>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
 

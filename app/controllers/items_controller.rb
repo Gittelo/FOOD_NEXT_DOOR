@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @order = current_user.orders.pending.last || current_user.orders.create
+    @order = current_user.current_order
     @item = Item.new(item_params)
     @meal = Meal.find(params[:meal_id])
     @item.meal = @meal
@@ -22,6 +22,13 @@ class ItemsController < ApplicationController
       render "meals/show"
     end
     authorize @item
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    authorize @item
+    redirect_to order_path(current_user.orders.last)
   end
 
   private

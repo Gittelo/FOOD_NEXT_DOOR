@@ -1,6 +1,6 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+  <%= link_to meals_path, class: "navbar-wagon-brand" do %>
   <%= image_tag "logo.png", height: 50 %>
   <% end %>
 
@@ -19,17 +19,22 @@
         <%= link_to "Add a new meal", new_meal_path, class: "navbar-wagon-item navbar-wagon-link"  %>
     <% end %>
 
-    <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%#= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
 
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <span class="navbar-wagon-item-name">Hello <%= current_user.first_name %>!</span>
+        <% if current_user.photo.model[:photo] == nil %>
+          <%= image_tag "https://www.myfirestorm.com/img/placeholder_user.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown"%>
+        <% else %>
+          <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <% end %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
-            <%= link_to "#" do %>
-            <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+            <%= link_to edit_user_registration_path do %>
+              <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
             <% end %>
           </li>
           <li>
@@ -49,7 +54,7 @@
       <% if current_user.orders.empty?  %>
       <% elsif current_user.orders.last.status == "pending" %>
         <%= link_to order_path(current_user.orders.last) do %>
-        <div><h3><i class="fas fa-shopping-bag"></i></h3></div>
+        <i class="fas fa-shopping-bag"></i>
         <div class="number-of-articles">
           <%= current_user.orders.pending.last.items.length %>
         </div>

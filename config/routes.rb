@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:create, :show] do
     resources :payments, only: [:new, :create]
+    resources :items, only: [:destroy]
   end
 
   resources :dashboard, only: :index
