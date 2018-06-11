@@ -1,8 +1,11 @@
-<h1>Cook's Details</h1>
-<p><%= @cook.first_name %></p>
-<p><%= @cook.last_name %></p>
-<p><%= @cook.email %></p>
-<p><%= @cook.address %></p>
-<p><%= @cook.photo %></p>
+<div class="container">
 
-<p>Description</p>
+
+  <h1>Cook's Details</h1>
+  <p>Name: <%= @cook.first_name %> <%= @cook.last_name %></p>
+  <p>Email: <%= @cook.email %></p>
+  <p>Address: <%= @cook.address %></p>
+  <p><%= @cook.photo %></p>
+
+  <p>Bio</p>
+</div>
