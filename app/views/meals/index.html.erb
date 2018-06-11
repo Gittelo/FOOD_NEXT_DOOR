@@ -41,13 +41,13 @@
 </div> -->
 
 <script>
-  const showElement = (element) => {
-    if (element.style.display === "none") {
-      element.style.display = "block";
-    } else {
-      element.style.display = "none";
-    }
+  const hideElement = (element) => {
+  if (element.style.display === "none") {
+    element.style.display = "block";
+  } else {
+    element.style.display = "none";
   }
+}
   const switchClasses = (element, class1, class2) => {
     if (element.classList.contains(class1))
     {
@@ -60,12 +60,14 @@
     }
   }
 
+  const section = document.querySelectorAll('.col-lg-4');
   const map = document.getElementById('map');
   const button = document.getElementById('show-map');
-  const section = document.getElementById('cards-section');
 
   button.addEventListener('click', (event) => {
-    showElement(map);
-    switchClasses(section, 'col-xs-12 col-sm-6 col-lg-3', 'col-xs-12 col-sm-6 col-lg-4');
-  });
+    hideElement(map);
+    section.forEach(function(el) {
+      switchClasses(el, 'col-lg-4', 'col-lg-3');
+    })
+  })
 </script>
