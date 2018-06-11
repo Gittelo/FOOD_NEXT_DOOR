@@ -1,8 +1,7 @@
 <%= form_tag meals_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    id: "search",
-    class: "form-control-search-home",
+  <%= text_field_tag :location,
+    params[:location],
+    class: "autocomplete form-control-search-home",
     placeholder: "e.g. Saldanha, Cais do Sodré"
   %>
 <% end %>

@@ -46,3 +46,6 @@ gem 'geocoder'
 gem 'pg_search'
 
 gem 'coffee-rails', '~>4.2.2'
+
+# Calendar for cooks
+gem "simple_calendar", "~> 2.0"

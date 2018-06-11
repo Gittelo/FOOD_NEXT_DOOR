@@ -7,14 +7,11 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
+
+
     <% if user_signed_in? %>
 
     <!-- Links when logged in -->
-    <% if current_user.orders.empty?  %>
-
-    <% elsif current_user.orders.last.status == "pending" %>
-    <%= link_to "Your cart", order_path(current_user.orders.last), class: "navbar-wagon-item navbar-wagon-link", style: "font-weight: bold" %>
-    <% end %>
     <% if current_user.meals.empty? %>
       <%= link_to "Apply to be a cook", become_cook_path, class: "navbar-wagon-item navbar-wagon-link"  %>
     <% end %>
@@ -48,11 +45,25 @@
         </ul>
       </div>
     </div>
+    <div class="navbar-wagon-cart">
+      <% if current_user.orders.empty?  %>
+      <% elsif current_user.orders.last.status == "pending" %>
+        <%= link_to order_path(current_user.orders.last) do %>
+        <div><h3><i class="fas fa-shopping-bag"></i></h3></div>
+        <div class="number-of-articles">
+          <%= current_user.orders.pending.last.items.length %>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+
     <% else %>
     <!-- Login link (when logged out) -->
     <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
+
+
 
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">

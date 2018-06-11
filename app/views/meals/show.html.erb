@@ -43,13 +43,16 @@
         <%= simple_form_for [@meal, @item] do |f| %>
           <div class="form-actions">
             <i class="fas fa-minus" onclick="decrease()"></i>
-            <input name="item[doses]" type="number" min="1" max="10" value="4" class="val" id="item_doses">
+            <input name="item[doses]" type="number" min="1" max="10" value="1" class="val" id="item_doses">
             <i class="fas fa-plus" onclick="increase()"></i>
-            <%= f.button :submit, 'Add to Cart', class: "button"%>
+            <%#= f.button :submit, 'Add to Cart', class: "button" %>
+            <input type="submit" name="commit" value="Add to Cart" class="button" data-toggle="modal" data-target="#exampleModal">
+            </div>
           </div>
         <% end %>
       </div>
     </div>
+
   </div>
 
   <% ratings = [] %>
@@ -100,6 +103,27 @@
   </div>
 
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Meal added to your cart</h5>
+      </div>
+      <div class="modal-body">
+        <%= @meal.name %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"><%= link_to "Continue Shopping", meals_path %></button>
+        <button type="button" class="btn btn-secondary"><%= link_to "Checkout", order_path(current_user.orders.last) %></button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+
 
 <script>
   function decrease() {

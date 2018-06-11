@@ -7,29 +7,19 @@ class MealsController < ApplicationController
     @meals = policy_scope(Meal).order(created_at: :desc)
     authorize @meals
 
-    @meals = Meal.where.not(latitude: nil, longitude: nil)
-    cookingicon = 'https://s15.postimg.cc/8jm1drv63/cooking.png'
+    if params[:location].present?
+         @meals = Meal.near(params[:location], 20, order: 'distance')
+      else
+        @meals = Meal.all
+    end
 
     @markers = @meals.map do |meal|
       {
         lat: meal.latitude,
         lng: meal.longitude,
-        icon: cookingicon
         # infoWindow: { content: render_to_string(partial: "/meals/map_box", locals: { meal: meal }) }
       }
     end
-
-    if params[:query].present?
-         @meals = Meal.search_by_address(params[:query])
-      else
-        @meals = Meal.all
-    end
-
-    # if params[:query].present?
-    #   @meals = Meal.search_by_name(params[:query])
-    # else
-    #   @meals = Meal.all
-    # end
 
   end
 
@@ -52,7 +42,7 @@ class MealsController < ApplicationController
       @meal.photo = "https://cdn3.tmbi.com/secure/RMS/attachments/37/1200x1200/Traditional-Lasagna_EXPS_THND16_12003_C07_26_6b.jpg"
     end
     if @meal.save
-      redirect_to meals_path
+      #redirect_to meals_path
     else
       render :new
     end

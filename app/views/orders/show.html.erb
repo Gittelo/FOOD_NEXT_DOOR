@@ -30,15 +30,17 @@
     <!-- Form for coupon code (this is a fake one) -->
     <div class="form-coupon-code">
       <form action >
-        <input type="hidden">
         <div class="cart-coupon-code">
           <label for="dwfrm_cart_couponCode">
             Do you have a promo code?
           </label>
-          <input type="text" name="dwfrm_cart_couponCode" id="dwfrm_cart_couponCode">
-          <button class="coupon-code-button" type="submit" value="dwfrm_cart_addCoupon" name="dwfrm_cart_addCoupon" id="add-coupon">
+          <input type="text" name="cart_couponCode" id="dwfrm_cart_couponCode">
+          <button class="coupon-code-button" type="button" value="dwfrm_cart_addCoupon" name="cart_addCoupon" id="add-coupon">
             Apply
           </button>
+          <div id="content">
+
+          </div>
         </div>
       </form>
     </div>
@@ -54,8 +56,10 @@
         <span>Free</span>
       </div>
       <div class="extra-costs">
-        <span>Taxes</span>
-        <span>0.00€</span>
+        <div>
+
+        </div>
+        <div>00€</div>
       </div>
     </div>
 
@@ -74,9 +78,30 @@
         data-amount="<%= @order.total_price_cents %>"
         data-currency="<%= @order.total_price.currency %>"></script>
       <% end %>
+<script>
+  const oForm = document.forms[0];
+  const formInput = oForm.elements["cart_couponCode"].value;
+  const coupon = () => {
+      const div = document.createElement('div');
+    if (formInput === "CHICKENSGANG") {
+      div.innerHTML = 'Reduction';
+    }
+    else {
+      div.innerHTML = 'Please enter a valid coupon.';
+    }
+      document.getElementById('content').appendChild(div);
+  }
+
+
+  const button = document.querySelector('.coupon-code-button');
+  const applyButton = document.getElementById('add-coupon');
+  applyButton.addEventListener('click', (event) => {
+  coupon();
+  button.disabled = true;
+  });
+</script>
     </div>
-
   </div>
+</div>
 
-  </div>
 
