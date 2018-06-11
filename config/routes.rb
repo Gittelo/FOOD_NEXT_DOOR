@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :meals do
     resources :reviews, only: [:new, :create]
     resources :items, only: [:new, :create]
+    resources :cooks, only: [:show]
   end
 
   resources :orders, only: [:create, :show] do
