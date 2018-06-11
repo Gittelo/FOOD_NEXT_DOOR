@@ -14,7 +14,6 @@ class MealsController < ApplicationController
         @meals = Meal.all
     end
 
-    @meals = @meals.price(params[:price]) if params[:price].present?
 
     # Markers placement, icons and info window
     iconmarker = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'

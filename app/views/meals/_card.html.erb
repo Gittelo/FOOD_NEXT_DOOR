@@ -1,3 +1,4 @@
+<% if meal.price.to_i < @max_price %>
 <div class="col-xs-12 col-sm-6 col-lg-4" id="cards-section">
   <div class="card">
     <%= link_to meal_path(meal) do %>
@@ -26,8 +27,8 @@
         <div><i class="fas fa-cart-plus fa-lg"></i></div>
       </div>
     </div>
-
 </div>
+<% end %>
 
 <script>
   function decrease() {
