@@ -1,0 +1,34 @@
+<%= simple_form_for(@week_day) do |f| %>
+
+<div class="col-md-6 col-md-offset-3">
+  <div class="form-body">
+    <div class="form-inputs form-control-lg">
+      <div class="form-details">
+        <h4 style= "border-bottom: 0.5px dotted gray;padding-bottom: 10px;">Week day Details</h4>
+        <div class="form-inputs" style="color: black">
+          <div class="form-inline">
+            <%= f.input :last_order_time, as: :date, input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'}%>
+          </div>
+          <div class="form-inline">
+            <%= f.input :last_order_time, as: :time, input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'}%>
+          </div>
+          <div class="form-inline">
+            <%= f.input :pick_up_time_start, as: :time,  input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'}%>
+          </div>
+          <div class="form-inline">
+            <%= f.input :pick_up_time_end, as: :time,  input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'}%>
+          </div>
+
+          <%= f.input :doses,  input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'}%>
+        </div>
+        <div class="form-actions flexing-box">
+          <%= f.button :submit, class: "btn btn-primary" %>
+          <%= link_to "Back",  dashboard_index_path, class: "btn btn-default" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <% end %>
+</div>
