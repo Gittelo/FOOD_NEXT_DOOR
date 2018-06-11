@@ -10,6 +10,10 @@ class User < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 
+  def current_order
+    self.orders.pending.last || self.orders.create
+  end
+
   private
 
   def send_welcome_email

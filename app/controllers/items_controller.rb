@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @order = current_user.orders.pending.last || current_user.orders.create
+    @order = current_user.current_order
     @item = Item.new(item_params)
     @meal = Meal.find(params[:meal_id])
     @item.meal = @meal
