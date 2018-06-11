@@ -14,17 +14,17 @@
     </div>
 
     <div id="meals" class="tab-pane fade">
-      <h3>Submit a new meal for approval</h3>
+      <h4>Submit a new meal for approval</h4>
       <%= link_to "Summit a meal for approval", new_meal_path, class: "btn btn-info" %>
-      <h1>My Meals repository</h1>
-      <h3>Approved Meals</h3>
+      <h2>My Meals repository</h2>
+      <h4>Approved Meals</h4>
       <div class="row">
         <% @my_meals.each do |meal| %>
           <%= link_to render("drag_card", meal: meal), meal_path(meal) %>
         <% end %>
       </div>
-      <h1>Plan the schedule for the next 7 days:</h1>
-      <% meal = @my_meals.first %>
+      <h2>Plan the schedule for the next 7 days:</h2>
+      <%= meal = @my_meals.first %>
     </div>
 
     <div id="orders" class="tab-pane fade">
