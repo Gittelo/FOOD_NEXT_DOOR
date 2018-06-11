@@ -22,7 +22,7 @@ class ItemPolicy < ApplicationPolicy
   end
 
   def destroy?
-    false
+    true
   end
 
   private

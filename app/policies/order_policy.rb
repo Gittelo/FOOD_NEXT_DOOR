@@ -19,6 +19,10 @@ class OrderPolicy < ApplicationPolicy
     true
   end
 
+  def destroy?
+    true
+  end
+
   private
 
   # def user_is_client?
