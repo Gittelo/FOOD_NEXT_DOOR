@@ -57,7 +57,7 @@
       </div>
       <div class="extra-costs">
         <div>
-
+        <span>Discount</span>
         </div>
         <div>00€</div>
       </div>
@@ -78,6 +78,7 @@
         data-amount="<%= @order.total_price_cents %>"
         data-currency="<%= @order.total_price.currency %>"></script>
       <% end %>
+
 <script>
   const oForm = document.forms[0];
   const formInput = oForm.elements["cart_couponCode"].value;
