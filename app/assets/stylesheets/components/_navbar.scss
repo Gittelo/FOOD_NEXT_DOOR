@@ -37,6 +37,11 @@
   padding: 0 20px;
 }
 
+.navbar-wagon-item-name{
+  color: #616668;
+  font-size: 14px;
+}
+
 /* Navbar link */
 .navbar-wagon-link {
   color: #616668;
@@ -79,10 +84,16 @@
 }
 
 .navbar-wagon-cart {
-  background-color: $green;
+  //background-color: $green;
   height: 60px;
-  h3 {
-    color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  i {
+    font-size: 30px;
+    color: $green;
+    padding-right: 10px;
+    margin-bottom: 5px;
   }
   a {
     padding: 0 40px;
@@ -98,7 +109,10 @@
 .number-of-articles {
   height: 25px;
   width: 25px;
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 15px;
   border-radius: 50%;
   background-color: $dark-gray;
   color: white;
