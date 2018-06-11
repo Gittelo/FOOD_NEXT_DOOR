@@ -140,11 +140,12 @@
 
 .address-change {
   text-align: center;
-  width: 110px;
+  font-style: italic;
+  width: 120px;
   margin-top: -45px;
-  margin-left: 15px;
-  color: $dark-gray;
+  margin-left: 5px;
+  color: $medium-gray;
   font-size: 14px;
   font-weight: lighter;
-  border-bottom: 1px solid $dark-gray;
+  border-bottom: 1px solid $medium-gray;
 }
