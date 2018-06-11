@@ -87,7 +87,7 @@
       <% @meal.reviews.each do |review| %>
         <div class="card-review">
           <div class="review-name">
-            <% if current_user.photo.model[:photo] == nil %>
+            <% if review.user.photo.model[:photo] == nil %>
               <%= image_tag "https://www.myfirestorm.com/img/placeholder_user.png", class: "avatar-review" %>
             <% else %>
               <%= cl_image_tag current_user.photo, class: "avatar-review" %>
@@ -120,6 +120,7 @@
 
 
 <!-- Modal -->
+<% if user_signed_in? %>
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -137,6 +138,7 @@
   </div>
 </div>
 </div>
+<% end %>
 
 <!-- Modal -->
 
@@ -172,15 +174,4 @@
     hideElement(reviewContainer);
   })
 </script>
-
-
-
-
-
-<script type="text/javascript">
-$(document).ready(function(){
-    $('[data-toggle="popover"]').popover();
-});
-</script>
-
 
