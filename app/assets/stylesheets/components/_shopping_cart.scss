@@ -1,5 +1,5 @@
 .shopping_cart-container {
-  height: 600px;
+  height: calc(100vh - 60px);
   width: 100%;
   h1 {
     font-size: 30px;
@@ -11,6 +11,7 @@
 .items-container {
   width: 65%;
   float: left;
+  height: 100%;
   position: relative;
   padding: 15px 40px;
   background-color: $light-gray2;
@@ -34,12 +35,10 @@
 
 .summary-container {
   background-color: $light-gray;
-  height: 100vh;
   width: 35%;
   float: right;
   padding: 15px 40px;
   position: sticky !important;
-  position: absolute;
   top: 0px;
   right: 0px;
 }
@@ -47,7 +46,7 @@
 .cart-summary {
   color: $dark-gray;
   font-size: 18px;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
   border-bottom: 4px solid $dark-gray;
 }
 
@@ -107,7 +106,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 45px 0px;
+  padding: 35px 0px;
 }
 
 

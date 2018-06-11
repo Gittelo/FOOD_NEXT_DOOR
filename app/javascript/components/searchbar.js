@@ -1,12 +1,7 @@
-    <form action="/meals" method="get" id="content">
-        <input type="text" name="location" id="search" class="autocomplete animated-search-bar", placeholder=<%= current_user.address %>>
-        <button type="reset" id="search-button" class="search"><%= image_tag("location.png", width: '35', height: '35')%></button>
-    </form>
-
-<script>
   const searchButton = document.querySelector(".search");
   const input = document.querySelector('#search');
   const expandForm = (element) => {
+
     searchButton.classList.toggle("close");
     input.classList.toggle("square");
     if (searchButton.classList.contains("close")) {
@@ -16,4 +11,3 @@
     }
   };
   document.getElementById("search-button").addEventListener("click", expandForm);
-</script>
