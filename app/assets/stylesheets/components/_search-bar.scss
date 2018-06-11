@@ -5,6 +5,8 @@
   width: 100%;
   height: 60px;
   position: relative;
+  z-index: 998;
+  margin-top: 60px;
 }
 
 .search-bar{
@@ -75,13 +77,9 @@
   border-radius: 50%;
   font-size: 14px;
   outline: 0;
-  -webkit-transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out, padding 0.2s;
   transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out, padding 0.2s;
-  -webkit-transition-delay: 0.4s;
   transition-delay: 0.4s;
-  -webkit-transform: translate(-100%, -50%);
-  -ms-transform: translate(-100%, -50%);
-  transform: translate(-100%, -50%);
+  transform: translate(-35px, -50%);
 }
 
 .search {
@@ -108,9 +106,7 @@
 }
 
 .close {
-  -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
-  -webkit-transition-delay: 0.2s;
   transition-delay: 0.2s;
   opacity: 0.6;
   &:hover {
@@ -122,20 +118,16 @@
   box-sizing: border-box;
   padding: 0 ;
   margin-left: 30px;
-  width: 500px;
-  height: 40px;
+  width: 420px;
+  height: -35px;
   border: 3px solid $green;
   border-radius: 25px;
   color: $dark-gray;
   font-size: 14px;
   font-weight: 400;
-  -webkit-transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out, padding 0.2s;
-  transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out, padding 0.2s;
-  -webkit-transition-delay: 0.4s, 0s, 0.4s;
+  transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out, padding 0.2s;
   transition-delay: 0.4s, 0s, 0.4s;
-  -webkit-transform: translate(-15%, -50%);
-  -ms-transform: translate(-15%, -50%);
-  transform: translate(-15%, -50%);
+  transform: translate(-65px, -50%);
 }
 
 .address-change {
@@ -147,7 +139,6 @@
   color: $medium-gray;
   font-size: 14px;
   font-weight: lighter;
-  border-bottom: 1px solid $medium-gray;
 }
 
 .filter {
@@ -159,6 +150,9 @@
   label {
     font-weight: lighter;
     font-size: 16px;
+  }
+  input[type="range"] {
+    cursor: pointer;
   }
 }
 
