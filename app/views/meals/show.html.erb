@@ -59,7 +59,8 @@
   <% @meal.reviews.each do |review| %>
     <% ratings << review.rating  %>
   <% end %>
-  <% if ratings = [] %>
+
+  <% if ratings.empty? %>
     <% average_rating = 0 %>
   <% else %>
     <% average_rating = (ratings.reduce(:+)/ratings.size.to_f).round(0)  %>
