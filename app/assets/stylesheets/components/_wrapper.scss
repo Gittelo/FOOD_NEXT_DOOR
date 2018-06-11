@@ -17,6 +17,11 @@
   }
 }
 
+.show {
+  height: 100vh;
+  display: flex;
+}
+
 .confirmation-box {
   padding: 20px;
   border: 2px solid $light-gray;
