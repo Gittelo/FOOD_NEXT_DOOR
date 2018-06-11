@@ -25,10 +25,10 @@
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <% if current_user.photo.nil? %>
+        <% if current_user.photo.model[:photo] == nil %>
           <%= image_tag "https://www.myfirestorm.com/img/placeholder_user.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown"%>
         <% else %>
-          <%= image_tag current_user.photo.model[:photo], class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <% end %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
