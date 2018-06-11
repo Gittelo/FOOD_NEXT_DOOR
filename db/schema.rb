@@ -110,7 +110,7 @@ ActiveRecord::Schema.define(version: 2018_06_10_164425) do
     t.datetime "pick_up_time_end"
     t.datetime "last_order_time"
     t.integer "doses"
-    t.datetime "date"
+    t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "price_cents", default: 0, null: false
