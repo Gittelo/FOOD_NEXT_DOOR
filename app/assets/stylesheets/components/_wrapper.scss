@@ -5,6 +5,8 @@
   align-items: center;
   padding-left: 50px;
   padding-right: 50px;
+  padding-bottom: 200px;
+  padding-top: 200px;
   .concept-details{
     width: 60%;
   }
@@ -25,3 +27,18 @@
   margin-bottom: 50px;
   display: block;
 }
+
+.info-cook {
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 200px;
+  padding-top: 200px;
+  h2 {
+   padding-bottom: 40px;
+   color: $green;
+  }
+  }
+
