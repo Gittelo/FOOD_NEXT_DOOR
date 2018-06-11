@@ -1,6 +1,6 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+  <%= link_to meals_path, class: "navbar-wagon-brand" do %>
   <%= image_tag "logo.png", height: 50 %>
   <% end %>
 
@@ -54,7 +54,7 @@
       <% if current_user.orders.empty?  %>
       <% elsif current_user.orders.last.status == "pending" %>
         <%= link_to order_path(current_user.orders.last) do %>
-        <h3><i class="fas fa-shopping-bag"></i></h3>
+        <i class="fas fa-shopping-bag"></i>
         <div class="number-of-articles">
           <%= current_user.orders.pending.last.items.length %>
         </div>
