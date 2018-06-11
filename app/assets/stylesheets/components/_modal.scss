@@ -1,6 +1,10 @@
 *, *:before, *:after { box-sizing: border-box; }
 //body { height: 100vh; background: #ccc; overflow: hidden; }
 
+  .modal-header{
+    height: 80px;
+  }
+
 .modal-container {
   margin: 60px auto;
   padding-top: 0px;
@@ -33,6 +37,9 @@
     cursor: pointer;
     transition: opacity 0.2s ease-in;
   }
+
+
+
   .modal-close {
     color: #aaa;
     position: absolute;
