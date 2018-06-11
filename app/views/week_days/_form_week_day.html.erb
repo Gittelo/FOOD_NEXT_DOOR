@@ -1,16 +1,16 @@
+<p><%= @selected_day  %></p>
 <%= simple_form_for(@week_day) do |f| %>
 
-<div class="col-md-6 col-md-offset-3">
+<div class="col-md-12">
   <div class="form-body">
     <div class="form-inputs form-control-lg">
       <div class="form-details">
         <h4 style= "border-bottom: 0.5px dotted gray;padding-bottom: 10px;">Week day Details</h4>
         <div class="form-inputs" style="color: black">
           <div class="form-inline">
-            <%= f.association :meal, collection: @meals,  input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'} %>
+            <%= f.association :meal, collection: @my_meals,  input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'} %>
             <%#= f.input :date, input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'}%>
           </div>
-
           <div class="form-inline">
             <%= f.input :date, as: :date,  input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'} %>
             <%#= f.input :date, input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'}%>

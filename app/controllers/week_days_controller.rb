@@ -1,12 +1,12 @@
 class WeekDaysController < ApplicationController
 
 
-  def new
-    @week_day = WeekDay.new
-    @meals = current_user.meals
-    authorize @week_day
-    authorize = @meals
-  end
+  #def new
+  #  @week_day = WeekDay.new
+  #  @meals = current_user.meals
+  #  authorize @week_day
+  #  authorize = @meals
+  #end
 
   def create
     @week_day = WeekDay.new(week_day_params)
