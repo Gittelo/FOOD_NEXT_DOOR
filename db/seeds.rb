@@ -6,6 +6,7 @@ Review.destroy_all
 User.destroy_all
 Account.destroy_all
 Meal.destroy_all
+WeekDay.destroy_all
 
 puts("Creating users...")
 user1 = User.create!(first_name: "Maria", last_name: "B",  address: "Lisbon",  email: "maria@fesf.fr",  password: "123456", cook_status: 0)
@@ -58,4 +59,20 @@ Review.create!(user: User.find(3), meal: Meal.find(3), rating: 3, content: 'That
 Review.create!(user: User.find(4), meal: Meal.find(4), rating: 4, content: 'That was really good')
 Review.create!(user: User.find(5), meal: Meal.find(4), rating: 4, content: 'That was really good')
 
+puts("Creating weekdays...")
+WeekDay.create!(meal: Meal.find(1), pick_up_time_start: Time.zone.local(2018,06,12,18,00,00),
+                                    pick_up_time_end:   Time.zone.local(2018,06,12,20,00,00),
+                                    last_order_time:    Time.zone.local(2018,06,12,16,00,00),
+                                    doses: 4,
+                                    date: Date.new(2018,06,12))
+WeekDay.create!(meal: Meal.find(2), pick_up_time_start: Time.zone.local(2018,06,13,18,30,00),
+                                    pick_up_time_end:   Time.zone.local(2018,06,13,20,00,00),
+                                    last_order_time:    Time.zone.local(2018,06,13,12,00,00),
+                                    doses: 2,
+                                    date: Date.new(2018,06,13))
+WeekDay.create!(meal: Meal.find(1), pick_up_time_start: Time.zone.local(2018,06,14,17,30,00),
+                                    pick_up_time_end:   Time.zone.local(2018,06,14,21,00,00),
+                                    last_order_time:    Time.zone.local(2018,06,14,13,30,00),
+                                    doses: 6,
+                                    date: Date.new(2018,06,14))
 

@@ -23,6 +23,7 @@ class Meal < ApplicationRecord
   has_many :users, through: :items
   has_many :reviews, dependent: :destroy
   has_many :line_items, dependent: :destroy
+  has_many :week_days
   belongs_to :cook, class_name: 'User', optional: true
   monetize :price_cents
 end

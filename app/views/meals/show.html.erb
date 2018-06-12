@@ -1,33 +1,32 @@
-<div class="meal-banner" style="background-image: url('<%= @meal.photo %>');">
-</div>
+<div class="meal-banner" style="background-image: url('<%= @meal.photo %>');"></div>
 
 <div class="show">
 
-<div class="main-container">
+  <div class="main-container">
 
-  <div class="left-section">
-    <div class="meal-header">
-      <h4>
-        <%= @meal.name %>
-        <% if current_user == @meal.cook %>
-          <%= link_to edit_meal_path do %>
-            <i class="fas fa-pencil-alt fa-l"></i>
+    <div class="left-section">
+      <div class="meal-header">
+        <h4>
+          <%= @meal.name %>
+          <% if current_user == @meal.cook %>
+            <%= link_to edit_meal_path do %>
+              <i class="fas fa-pencil-alt fa-l"></i>
+            <% end %>
+            <%= link_to meal_path, method: :delete, data: {confirm: 'Are you sure?'} do %>
+              <i class="fas fa-trash-alt fa-l"></i>
+            <% end %>
           <% end %>
-          <%= link_to meal_path, method: :delete, data: {confirm: 'Are you sure?'} do %>
-            <i class="fas fa-trash-alt fa-l"></i>
-          <% end %>
-        <% end %>
-      </h4>
-      <p><%= @meal.price %>€</p>
-    </div>
+        </h4>
+        <p><%= @meal.price %>€</p>
+      </div>
 
-    <div class="meal-info">
-      <p><%= @meal.description %></p>
-      <h5>Ingredients</h5>
-      <p><%= @meal.ingredients %></p>
-      <h5>Portion</h5>
-      <p><%= @meal.grams_per_dose %>g</p>
-    </div>
+      <div class="meal-info">
+        <p><%= @meal.description %></p>
+        <h5>Ingredients</h5>
+        <p><%= @meal.ingredients %></p>
+        <h5>Portion</h5>
+        <p><%= @meal.grams_per_dose %>g</p>
+      </div>
 
 <!--     <div>
       <h4>Get to know the Cook:</h4>
@@ -35,22 +34,22 @@
       <p>Contact datails: <%= @meal.cook.email %></p>
       <p>Pick up food address: <%= @meal.cook.address %></p>
     </div> -->
-
-    <div class="meal-footer">
-      <div class="meal-time">
-        <p>Pickup time: 18h / 20h</p>
-      </div>
-      <div class="meal-dose">
-        <%= simple_form_for [@meal, @item] do |f| %>
-          <div class="form-actions">
-            <i class="fas fa-minus" onclick="decrease()"></i>
-            <input name="item[doses]" type="number" min="1" max="10" value="1" class="val" id="item_doses">
-            <i class="fas fa-plus" onclick="increase()"></i>
-            <%#= f.button :submit, 'Add to Cart', class: "button" %>
-            <input type="submit" name="commit" value="Add to Cart" class="button" data-toggle="modal" data-target="#exampleModal">
+      <% weekday_meal = @meal.week_days.where(date: Date.today)[0] %>
+      <div class="meal-footer">
+        <div class="meal-time">
+          <p>Pickup time: <%= weekday_meal.pick_up_time_start.strftime('%Hh%M') %> / <%= weekday_meal.pick_up_time_end.strftime('%Hh%M') %></p>
+        </div>
+        <div class="meal-dose">
+          <%= simple_form_for [@meal, @item] do |f| %>
+            <div class="form-actions">
+              <i class="fas fa-minus" onclick="decrease()"></i>
+              <input name="item[doses]" type="number" min="1" max="<%= weekday_meal.doses %>" value="1" class="val" id="item_doses" disabled>
+              <i class="fas fa-plus" onclick="increase()"></i>
+              <%#= f.button :submit, 'Add to Cart', class: "button" %>
+              <input type="submit" name="commit" value="Add to Cart" class="button" data-toggle="modal" data-target="#exampleModal">
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
 
   <%= link_to "See the cook", meal_cook_path(@meal) %>
       </div>
