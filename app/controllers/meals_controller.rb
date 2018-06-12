@@ -8,14 +8,14 @@ class MealsController < ApplicationController
     meals_of_the_day(@all_meals)
     authorize @all_meals
 
+    @all_meals = Meal.all
     # Query location in search bar
-    if params[:location].present?
-      @meals = Meal.near(params[:location], 5, order: 'distance')
-      meals_of_the_day(@meals)
-    else
-      meals_of_the_day(@all_meals)
-    end
-
+    @all_meals = Meal.near(params[:location], 10, order: 'distance') if params[:location].present?
+    @max_price_cents = 3000
+    @max_distance = 10
+    @meals = @meals.price_cents(params[:price]) if params[:price].present?
+    meals_of_the_day(@meals)
+    
     # Markers placement, icons and info window
     iconmarker = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
     @markers = @meals.map do |meal|
@@ -30,8 +30,12 @@ class MealsController < ApplicationController
     end
 
     # Set max parameters
-    @max_price = 30
-    @max_distance = 10
+
+
+    respond_to do |format|
+      format.html {render layout: "map"}
+      format.js
+    end
 
   end
 

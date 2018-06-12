@@ -13,6 +13,7 @@ class Meal < ApplicationRecord
       tsearch: { prefix: true }
     }
 
+  scope :price_cents, -> (max_price) { where("price_cents < ?", max_price) }
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?

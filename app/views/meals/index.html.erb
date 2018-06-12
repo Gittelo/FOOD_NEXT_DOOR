@@ -2,13 +2,11 @@
 
 <div class="wrapper-search flexing-stuff">
   <div class="">
-    <!-- <i class="fas fa-search"></i> -->
     <%= render "search" %>
   </div>
 
   <div class="right-part-search flexing-stuff">
     <%= render 'filters' %>
-
     <div class="switch-button">
       <p class="switch-text">Show Map</p>
       <label class="switch">
@@ -23,13 +21,12 @@
 
 <div class="wrapper">
   <div class="cards-container">
-    <div id="cards-section-left">
-      <% @meals.each do |meal| %>
-        <%= render 'card', meal: meal %>
-      <% end %>
-    </div>
+    <%= render 'card_list', meals: @meals %>
   </div>
-  <div id="map" data-markers="<%= @markers.to_json %>"></div>
+  <div id="map-container">
+    <%= render 'map' %>
+  </div>
+
 </div>
 
 <script>
@@ -66,12 +63,13 @@
 
 <script>
   function changePrice(value) {
-        document.getElementById('price_change').innerHTML='Price: '+value+'€';
+        document.getElementById('price_change').innerHTML='Price: '+ value / 100 +'€';
       }
 </script>
+
 <script>
   function changeDistance(value) {
-        document.getElementById('distance_change').innerHTML='Distance: '+value+'km';
+        document.getElementById('distance_change').innerHTML='Distance: '+ value +'km';
       }
 </script>
 

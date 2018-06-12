@@ -14,3 +14,5 @@ autocomplete();
 
 console.log("Hello from app/javascript/packs/application.js!");
 
+
+document.app = { initMap: initMap };
