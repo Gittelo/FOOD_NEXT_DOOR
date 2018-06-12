@@ -1,4 +1,3 @@
-<p><%= @selected_day  %></p>
 <%= simple_form_for(@week_day) do |f| %>
 
 <div class="col-md-12">
@@ -12,7 +11,7 @@
             <%#= f.input :date, input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'}%>
           </div>
           <div class="form-inline">
-            <%= f.input :date, as: :date,  input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'} %>
+            <%= f.input :date, as: :hidden,  input_html: { value: @selected_day, class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'} %>
             <%#= f.input :date, input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'}%>
           </div>
           <div class="form-inline">
