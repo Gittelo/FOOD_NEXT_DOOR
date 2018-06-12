@@ -11,10 +11,10 @@
       </div>
     <% end %>
 
-      <% weekday_meal = meal.week_days.where(date: Date.today)[0] %>
+      <%# weekday_meal = meal.week_days.where(date: Date.today)[0] %>
       <div class="card-footer">
         <div><p><%= meal.price %>€</p></div>
-        <div class="card-time">pick-up time: <%= weekday_meal.pick_up_time_start.strftime('%Hh%M') %> / <%= weekday_meal.pick_up_time_end.strftime('%Hh%M') %></div>
+        <div class="card-time">pick-up time: <%#= weekday_meal.pick_up_time_start.strftime('%Hh%M') %> / <%#= weekday_meal.pick_up_time_end.strftime('%Hh%M') %></div>
         <div><i class="fas fa-cart-plus fa-lg"></i></div>
       </div>
     </div>
