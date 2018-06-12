@@ -4,18 +4,14 @@ class MealsController < ApplicationController
   #layout 'map', only: :index
 
   def index
-    @all_meals = policy_scope(Meal).order(created_at: :desc)
-    meals_of_the_day(@all_meals)
-    authorize @all_meals
-
-    @all_meals = Meal.all
+    @meals = policy_scope(Meal).order(created_at: :desc)
+    authorize @meals
     # Query location in search bar
-    @all_meals = Meal.near(params[:location], 10, order: 'distance') if params[:location].present?
+    @meals = Meal.near(params[:location], 10, order: 'distance') if params[:location].present?
     @max_price_cents = 3000
-    @max_distance = 10
     @meals = @meals.price_cents(params[:price]) if params[:price].present?
-    meals_of_the_day(@meals)
-    
+    # @max_distance = 10
+    # @meals = meals_of_the_day(@meals)
     # Markers placement, icons and info window
     iconmarker = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
     @markers = @meals.map do |meal|
@@ -27,14 +23,6 @@ class MealsController < ApplicationController
                     content: meal.name
                     }
       }
-    end
-
-    # Set max parameters
-
-
-    respond_to do |format|
-      format.html {render layout: "map"}
-      format.js
     end
 
   end
@@ -61,7 +49,7 @@ class MealsController < ApplicationController
       @meal.photo = "https://cdn3.tmbi.com/secure/RMS/attachments/37/1200x1200/Traditional-Lasagna_EXPS_THND16_12003_C07_26_6b.jpg"
     end
     if @meal.save
-      #redirect_to meals_path
+      redirect_to meals_path
     else
       render :new
     end
@@ -88,13 +76,14 @@ class MealsController < ApplicationController
   # We have that 1 meal have N weekdays and 1 weekday have only 1 meal(That is not true. It is only true for one cook!)
   # One cook can only assign one meal per day.
     all_meals.each do |meal|
-      @meals = []
+      @filtered_meals = []
       meal.week_days.each do |weekday|
         if weekday.date == Date.today && weekday.last_order_time > Time.now
-          @meals << weekday.meal
+          @filtered_meals << weekday.meal
         end
       end
     end
+    @filtered_meals
   end
 
   def meal_params
