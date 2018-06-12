@@ -14,6 +14,10 @@ class MealsController < ApplicationController
     # @meals = meals_of_the_day(@meals)
     # Markers placement, icons and info window
     iconmarker = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+
+    @meals = meals_of_the_day(@meals)
+
+
     @markers = @meals.map do |meal|
       {
         lat: meal.latitude,
@@ -23,7 +27,9 @@ class MealsController < ApplicationController
                     content: meal.name
                     }
       }
+
     end
+
 
   end
 
@@ -78,6 +84,7 @@ class MealsController < ApplicationController
     all_meals.each do |meal|
       @filtered_meals = []
       meal.week_days.each do |weekday|
+      raise
         if weekday.date == Date.today && weekday.last_order_time > Time.now
           @filtered_meals << weekday.meal
         end
