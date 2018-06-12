@@ -1,5 +1,5 @@
 class MealsController < ApplicationController
-  before_action :set_meals, only: [:show, :edit, :destroy, :update]
+  before_action :set_meals, only: [:edit, :destroy, :update]
   skip_before_action :authenticate_user!, only: [ :index, :show]
   #layout 'map', only: :index
 
@@ -37,6 +37,9 @@ class MealsController < ApplicationController
 
   def show
     @item = Item.new
+    @meal = Meal.find(params[:id])
+    @meal.week_days.select{|item| item[:date] == Date.today}
+    authorize @meal
   end
 
   def new
@@ -83,7 +86,7 @@ class MealsController < ApplicationController
     all_meals.each do |meal|
       @meals = []
       meal.week_days.each do |weekday|
-        if weekday.date == Date.today
+        if weekday.date == Date.today && weekday.last_order_time > Time.now
           @meals << weekday.meal
         end
       end

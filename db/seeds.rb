@@ -62,7 +62,7 @@ Review.create!(user: User.find(5), meal: Meal.find(4), rating: 4, content: 'That
 puts("Creating weekdays...")
 WeekDay.create!(meal: Meal.find(1), pick_up_time_start: Time.zone.local(2018,06,12,18,00,00),
                                     pick_up_time_end:   Time.zone.local(2018,06,12,20,00,00),
-                                    last_order_time:    Time.zone.local(2018,06,12,15,00,00),
+                                    last_order_time:    Time.zone.local(2018,06,12,16,00,00),
                                     doses: 4,
                                     date: Date.new(2018,06,12))
 WeekDay.create!(meal: Meal.find(2), pick_up_time_start: Time.zone.local(2018,06,13,18,30,00),
