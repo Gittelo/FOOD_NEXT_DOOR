@@ -12,4 +12,6 @@ function refreshMap(innerHTMLMap) {
 
 refreshMap('<%= j render "map" %>');
 document.app.initMap(document.getElementById('map'));
+var section = document.querySelectorAll('#cards-section-left > *');
 
+console.log(section);

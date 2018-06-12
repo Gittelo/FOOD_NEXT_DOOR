@@ -22,38 +22,25 @@
 }
 
 .coupon-code-button {
-    background-color: $dark-gray;
-    color: $light-gray;
-    margin: 0 0 0 -6px;
-    padding: 10px 20px;
-    height: 34px;
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-    line-height: 1rem;
-    vertical-align: bottom;
-    border: 1px solid $dark-gray;
+  background-color: $dark-gray;
+  color: $light-gray;
+  margin: 0 0 0 -6px;
+  padding: 10px 20px;
+  height: 34px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1rem;
+  vertical-align: bottom;
+  border: 1px solid $dark-gray;
 }
 
-// .flashing-red {
-//  @-webkit-keyframes glowing {
-//     0% { background-color: $green; box-shadow: 0 0 3px $green; }
-//     50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
-//     100% { background-color: $green; box-shadow: 0 0 3px $green; }
-//   }
-//   @-moz-keyframes glowing {
-//     0% { background-color: $green; box-shadow: 0 0 3px $green; }
-//     50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
-//     100% { background-color: $green; box-shadow: 0 0 3px $green; }
-//   }
-//   @-o-keyframes glowing {
-//     0% { background-color: $green; box-shadow: 0 0 3px $green; }
-//     50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
-//     100% { background-color: $green; box-shadow: 0 0 3px $green; }
-//   }
-//   @keyframes glowing {
-//     0% { background-color: $green; box-shadow: 0 0 3px $green; }
-//     50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
-//     100% { background-color: $green; box-shadow: 0 0 3px $green; }
-//   }
-// }
+#filter-button {
+  color: white;
+  border: none;
+  cursor: auto;
+  width: 0px;
+  &:focus {
+    outline: none !important;
+  }
+}

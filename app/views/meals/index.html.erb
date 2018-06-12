@@ -30,6 +30,20 @@
 </div>
 
 <script>
+  const filterButton = document.getElementById('filter-button');
+  const slider = document.getElementById('price_change');
+
+  function changePrice(value) {
+    slider.innerHTML='Price < '+ value / 100 +'€';
+    filterButton.click();
+  }
+</script>
+
+<script>
+  const map = document.getElementById('map');
+  const mapContainer = document.getElementById('map-container');
+  const button = document.getElementById('show-map');
+
   const hideElement = (element) => {
   if (element.style.display === "none") {
     element.style.display = "block";
@@ -48,12 +62,8 @@
       element.classList.add(class1);
     }
   }
-
-  const section = document.querySelectorAll('.col-lg-4');
-  const map = document.getElementById('map');
-  const mapContainer = document.getElementById('map-container');
-  const button = document.getElementById('show-map');
-
+  var section = document.querySelectorAll('#cards-section-left > *');
+  console.log(section);
   button.addEventListener('click', (event) => {
     hideElement(map);
     hideElement(mapContainer);
@@ -61,17 +71,7 @@
       switchClasses(el, 'col-lg-4', 'col-lg-3');
     })
   })
+
 </script>
 
-<script>
-  function changePrice(value) {
-        document.getElementById('price_change').innerHTML='Price: '+ value / 100 +'€';
-      }
-</script>
-
-<script>
-  function changeDistance(value) {
-        document.getElementById('distance_change').innerHTML='Distance: '+ value +'km';
-      }
-</script>
 
