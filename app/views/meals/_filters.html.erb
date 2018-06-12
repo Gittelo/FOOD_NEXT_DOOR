@@ -3,11 +3,8 @@
       <label for="price" id="price_change" >Price: <%= @max_price_cents / 100 %>€</label>
       <input id="price" name="price" type="range" min="0" max="<%= @max_price_cents%>" value="<%= @max_price_cents %>" onchange="changePrice(this.value);" >
     </div>
-<!--     <div class="filter">
-      <label for="distance" id="distance_change" >Distance: <%= @max_distance %>km</label>
-      <input id="distance" name="distance" type="range" min="0" max="<%= @max_distance %>" value = "<%= @max_distance %>" onchange="changeDistance(this.value);" >
-    </div> -->
     <div class="filter-validation-button">
-      <input type="submit" value="Apply filters" class="btn btn-primary" id="apply-button">
+      <input type="submit" value="Apply filters" id="filter-button">
     </div>
 <% end %>
+
