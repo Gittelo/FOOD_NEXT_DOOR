@@ -51,10 +51,12 @@
 
   const section = document.querySelectorAll('.col-lg-4');
   const map = document.getElementById('map');
+  const mapContainer = document.getElementById('map-container');
   const button = document.getElementById('show-map');
 
   button.addEventListener('click', (event) => {
     hideElement(map);
+    hideElement(mapContainer);
     section.forEach(function(el) {
       switchClasses(el, 'col-lg-4', 'col-lg-3');
     })
