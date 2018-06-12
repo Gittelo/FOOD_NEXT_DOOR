@@ -1,11 +1,10 @@
 <div class="shopping_cart-container">
 
-  <!-- Left part of webpage, contains all items ordered -->
   <div class="items-container">
     <h1>
       Your cart
     </h1>
-    <!-- Iteration over each item to display them in a table -->
+    <!-- Display items in the current_order in a table (shopping cart) -->
     <table id="cart-table">
       <% @items.each do |item| %>
       <tr class="cart-row">
@@ -34,7 +33,7 @@
     <!-- Form for coupon code (this is a fake one) -->
     <div class="form-coupon-code">
       <form action >
-        <div class="cart-coupon-code">
+        <div class="cart-coupon-code" id="cart-coupon">
           <label for="dwfrm_cart_couponCode">
             Do you have a promo code?
           </label>
@@ -86,24 +85,24 @@
 <script>
   const oForm = document.forms[0];
   const formInput = oForm.elements["cart_couponCode"].value;
-  const coupon = () => {
-      const div = document.createElement('div');
-    if (formInput === "CHICKENSGANG") {
-      div.innerHTML = 'Reduction';
-    }
-    else {
-      div.innerHTML = 'Please enter a valid coupon.';
-    }
-      document.getElementById('content').appendChild(div);
-  }
-
-
+  const div = document.getElementById('cart-coupon');
   const button = document.querySelector('.coupon-code-button');
   const applyButton = document.getElementById('add-coupon');
-  applyButton.addEventListener('click', (event) => {
+
+  const coupon = () => {
+    applyButton.addEventListener('click', (event) => {
+    if (formInput === "chickensgang") {
+      div.insertAdjacentHTML('afterend', 'Reduction');
+      button.disabled = true;
+    }
+    else {
+      div.insertAdjacentHTML('afterend', '\<br>Please enter a valid coupon.');
+    }
+    });
+  }
+
   coupon();
-  button.disabled = true;
-  });
+
 </script>
     </div>
   </div>
