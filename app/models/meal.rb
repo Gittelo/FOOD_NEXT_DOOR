@@ -13,6 +13,7 @@ class Meal < ApplicationRecord
       tsearch: { prefix: true }
     }
 
+  scope :price_cents, -> (max_price) { where("price_cents < ?", max_price) }
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
@@ -22,6 +23,7 @@ class Meal < ApplicationRecord
   has_many :users, through: :items
   has_many :reviews, dependent: :destroy
   has_many :line_items, dependent: :destroy
+  has_many :week_days
   belongs_to :cook, class_name: 'User', optional: true
   monetize :price_cents
 end

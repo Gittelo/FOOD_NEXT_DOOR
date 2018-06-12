@@ -1,20 +1,21 @@
 class MealsController < ApplicationController
-  before_action :set_meals, only: [:show, :edit, :destroy, :update]
+  before_action :set_meals, only: [:edit, :destroy, :update]
   skip_before_action :authenticate_user!, only: [ :index, :show]
   #layout 'map', only: :index
 
   def index
-    @meals = policy_scope(Meal).order(created_at: :desc)
-    authorize @meals
+    @all_meals = policy_scope(Meal).order(created_at: :desc)
+    meals_of_the_day(@all_meals)
+    authorize @all_meals
 
+    @all_meals = Meal.all
     # Query location in search bar
-    if params[:location].present?
-         @meals = Meal.near(params[:location], 5, order: 'distance')
-      else
-        @meals = Meal.all
-    end
-
-
+    @all_meals = Meal.near(params[:location], 10, order: 'distance') if params[:location].present?
+    @max_price_cents = 3000
+    @max_distance = 10
+    @meals = @meals.price_cents(params[:price]) if params[:price].present?
+    meals_of_the_day(@meals)
+    
     # Markers placement, icons and info window
     iconmarker = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
     @markers = @meals.map do |meal|
@@ -29,13 +30,20 @@ class MealsController < ApplicationController
     end
 
     # Set max parameters
-    @max_price = 30
-    @max_distance = 10
+
+
+    respond_to do |format|
+      format.html {render layout: "map"}
+      format.js
+    end
 
   end
 
   def show
     @item = Item.new
+    @meal = Meal.find(params[:id])
+    @meal.week_days.select{|item| item[:date] == Date.today}
+    authorize @meal
   end
 
   def new
@@ -74,6 +82,20 @@ class MealsController < ApplicationController
 
 
   private
+  def meals_of_the_day(all_meals)
+  # This was created because we needed to know the meals where the week_day == Date.today
+  # We needed to create a cicle inside of a cicle because we have a 1:N relationship and it was supose to be N:N
+  # We have that 1 meal have N weekdays and 1 weekday have only 1 meal(That is not true. It is only true for one cook!)
+  # One cook can only assign one meal per day.
+    all_meals.each do |meal|
+      @meals = []
+      meal.week_days.each do |weekday|
+        if weekday.date == Date.today && weekday.last_order_time > Time.now
+          @meals << weekday.meal
+        end
+      end
+    end
+  end
 
   def meal_params
     params.require(:meal).permit(:name, :description, :address, :price, :grams_per_dose, :ingredients)
