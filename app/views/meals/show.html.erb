@@ -4,10 +4,12 @@
 
   <div class="main-container">
 
+
     <div class="left-section">
       <div class="meal-header">
         <h4>
           <%= @meal.name %>
+          <%= link_to "See the cook", meal_cook_path(@meal)%>
           <% if current_user == @meal.cook %>
             <%= link_to edit_meal_path do %>
               <i class="fas fa-pencil-alt fa-l"></i>
@@ -51,7 +53,6 @@
           <% end %>
         </div>
 
-  <%= link_to "See the cook", meal_cook_path(@meal) %>
       </div>
     </div>
 

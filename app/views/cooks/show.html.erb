@@ -1,11 +1,51 @@
 <div class="container">
+  <div class="wrapper-others">
+    <h1 style="margin-top:80px";>Cook's Details</h1>
+    <div class="cook-profile">
+      <div class="left">
+        <img src="https://pbs.twimg.com/profile_images/990936890726670336/gApnSP5j_400x400.jpg" alt="" class = "avatar-cook">
+        <!-- <p><%= @cook.photo %></p> -->
+        <h4 class = "text-center"><%= @cook.first_name %> <%= @cook.last_name %></h4>
+        <div class="cook-data">
+          <h5>Details</h5>
+          <p><strong>Email: </strong><br><%= @cook.email %></p>
+          <p><strong>Address:</strong><br><%= @cook.address %></p>
+          <p><strong>Bio:</strong><br>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+          <p><strong>Fun facts:</strong><br>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." </p>
+        </div>
+      </div>
 
+      <div class="right">
+        <h5>Reviews</h5>
+        <% @cook.meals.each do |meal| %>
 
-  <h1>Cook's Details</h1>
-  <p>Name: <%= @cook.first_name %> <%= @cook.last_name %></p>
-  <p>Email: <%= @cook.email %></p>
-  <p>Address: <%= @cook.address %></p>
-  <p><%= @cook.photo %></p>
+        <div class="meals-details">
+        <%= link_to meal_path(meal) do %>
+        <div class="meals-content">
+          <p><strong><%= meal.name %></strong></p>
+            <% ratings = [] %>
+            <% meal.reviews.each do |review| %>
+            <% ratings << review.rating  %>
+            <% end %>
+            <p><% if ratings.empty? %>
+            <% average_rating = 0 %>
+            <% else %>
+            <% average_rating = (ratings.reduce(:+)/ratings.size.to_f).round(0)  %>
+            <% end %>
+            <% average_rating.times do %>
+            <i class="fas fa-star star-yellow"></i>
+            <% end %>
+            <% (5 - average_rating).times do %>
+            <i class="fas fa-star star-grey"></i>
+            <% end %></p>
+            <% end %>
+        </div>
+          <div class="meals-image" style="background-image: url('<%= cl_image_path meal.photo, height: 300, width: 400, crop: :fill %>')"></div>
+        </div>
 
-  <p>Bio</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+
