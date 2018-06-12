@@ -15,32 +15,32 @@
         </div>
       </div>
 
-
-
-
       <div class="right">
         <h5>Reviews</h5>
         <% @cook.meals.each do |meal| %>
-        <%= link_to
 
         <div class="meals-details">
-        <p><strong><%= meal.name %></strong></p>
-          <%= image_tag meal.photo, :style => "width: 100px; border-radius: 10px;" %>
-          <% ratings = [] %>
-          <% meal.reviews.each do |review| %>
-          <% ratings << review.rating  %>
-          <% end %>
-          <p><% if ratings.empty? %>
-          <% average_rating = 0 %>
-          <% else %>
-          <% average_rating = (ratings.reduce(:+)/ratings.size.to_f).round(0)  %>
-          <% end %>
-          <% average_rating.times do %>
-          <i class="fas fa-star star-yellow"></i>
-          <% end %>
-          <% (5 - average_rating).times do %>
-          <i class="fas fa-star star-grey"></i>
-          <% end %></p>
+        <%= link_to meal_path(meal) do %>
+        <div class="meals-content">
+          <p><strong><%= meal.name %></strong></p>
+            <% ratings = [] %>
+            <% meal.reviews.each do |review| %>
+            <% ratings << review.rating  %>
+            <% end %>
+            <p><% if ratings.empty? %>
+            <% average_rating = 0 %>
+            <% else %>
+            <% average_rating = (ratings.reduce(:+)/ratings.size.to_f).round(0)  %>
+            <% end %>
+            <% average_rating.times do %>
+            <i class="fas fa-star star-yellow"></i>
+            <% end %>
+            <% (5 - average_rating).times do %>
+            <i class="fas fa-star star-grey"></i>
+            <% end %></p>
+            <% end %>
+        </div>
+          <div class="meals-image" style="background-image: url('<%= cl_image_path meal.photo, height: 300, width: 400, crop: :fill %>')"></div>
         </div>
 
         <% end %>
