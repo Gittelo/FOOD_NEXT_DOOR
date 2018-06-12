@@ -37,7 +37,7 @@
                 <% if WeekDay.where(date: @selected_day).empty? %>
                     <td><%= render "week_days/form_week_day", form: [@meal, @selected_day] %></td>
                 <% else%>
-                    <td style="background-color: gray;"><%= render "week_days/form_week_day", form: [@meal, @selected_day] %></td>
+                    <td class="submited"><%= render "week_days/form_week_day", form: [@meal, @selected_day] %></td>
                 <% end %>
               <% end %>
             </tr>
