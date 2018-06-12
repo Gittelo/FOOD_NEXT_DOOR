@@ -1,0 +1,10 @@
+var red = [0, 100, 63];
+var orange = [40, 100, 60];
+var green = [75, 100, 40];
+var blue = [196, 77, 55];
+var purple = [280, 50, 60];
+var silver = [250, 250, 250];
+var logo = "FOOD \<br> NEXT DOOR";
+bubbleShape = "circle";
+drawName(logo,  silver);
+bounceBubbles();

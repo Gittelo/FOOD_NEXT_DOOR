@@ -12,5 +12,7 @@ initMapConfirmation(mapElementConfirmation);
 import { autocomplete } from '../components/autocomplete';
 autocomplete();
 
+import { logo } from '../components/logo';
+
 console.log("Hello from app/javascript/packs/application.js!");
 
