@@ -22,22 +22,28 @@
       <h1>Plan the schedule for the next 7 days:</h1>
       <% meal = @my_meals.first %>
       <%#= link_to "Create a new schedule",  new_week_day_path, class: "btn btn-danger" %>
-      <table class="table">
-        <thead>
-          <% (0..2).each do |x| %>
-          <% @selected_day = (@today + x) %>
-          <th><%= @selected_day.strftime('%A') %> - <%= @selected_day.strftime('%x')  %></th>
-          <% end %>
-        </thead>
-        <tbody>
-          <tr>
-            <% (0..2).each do |x| %>
+      <div class="table-scroll">
+        <table class="table">
+          <thead>
+            <% (0..6).each do |x| %>
             <% @selected_day = (@today + x) %>
-            <td><%= render "week_days/form_week_day", form: [@meal, @selected_day] %></td>
+            <th><%= @selected_day.strftime('%A') %> - <%= @selected_day.strftime('%x')  %></th>
             <% end %>
-          </tr>
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            <tr>
+              <% (0..6).each do |x| %>
+                <% @selected_day = (@today + x) %>
+                <% if WeekDay.where(date: @selected_day).empty? %>
+                    <td><%= render "week_days/form_week_day", form: [@meal, @selected_day] %></td>
+                <% else%>
+                    <td style="background-color: gray;"><%= render "week_days/form_week_day", form: [@meal, @selected_day] %></td>
+                <% end %>
+              <% end %>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
     </div>
 
