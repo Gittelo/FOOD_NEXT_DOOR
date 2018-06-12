@@ -5,50 +5,11 @@ function refreshList(innerHTML) {
 
 refreshList('<%= j render "card_list", meals: @meals %>');
 
-// function refreshMap(innerHTMLMap) {
-//   const newMap = document.getElementById('map');
-//   newMap.innerHTML = innerHTMLMap;
-// }
+function refreshMap(innerHTMLMap) {
+  const newMap = document.getElementById('map-container');
+  newMap.innerHTML = innerHTMLMap;
+}
 
-// refreshMap('<%= j render "map" %>');
-  let allCards = document.getElementById('cards-section-left');
-  let markers = JSON.parse(allCards.dataset.markers);
-  console.log(window.map);
-  // window.map.removeMarkers();
-  // window.map.addMarkers(markers);
-  // if (markers.length === 0) {
-  //   window.map.setZoom(2);
-  // } else if (markers.length === 1) {
-  //   window.map.setCenter(markers[0].lat, markers[0].lng);
-  //   window.map.setZoom(14);
-  // } else {
-  //   window.map.fitLatLngBounds(markers);
-  // }
+refreshMap('<%= j render "map" %>');
+document.app.initMap(document.getElementById('map'));
 
-
-// Functions to change markers color on hover on cards
-    // const cards = document.getElementsByClassName("card");
-
-    // function markBlue(i) {
-    //     map.markers[i].setIcon({
-    //          url: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
-    //     })
-    //   }
-
-    // function markRed(i) {
-    //     map.markers[i].setIcon({
-    //       url: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
-    //     })
-    //   }
-
-    // Array.from(cards).forEach(function(card, index) {
-    //   card.addEventListener("mouseover", function() {
-    //     markBlue(index);
-    //   });
-    // });
-
-    // Array.from(cards).forEach(function(card, index) {
-    //   card.addEventListener("mouseout", function() {
-    //     markRed(index);
-    //   });
-    // });
