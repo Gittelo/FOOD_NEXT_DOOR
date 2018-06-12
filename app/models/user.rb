@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_many :orders
   has_many :meals, foreign_key: "cook_id"
+  has_many :week_days, through: :meals
 
   mount_uploader :photo, PhotoUploader
 

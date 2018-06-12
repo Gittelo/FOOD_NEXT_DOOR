@@ -62,15 +62,26 @@ Review.create!(user: User.find(5), meal: Meal.find(4), rating: 4, content: 'That
 puts("Creating weekdays...")
 WeekDay.create!(meal: Meal.find(1), pick_up_time_start: Time.zone.local(2018,06,12,18,00,00),
                                     pick_up_time_end:   Time.zone.local(2018,06,12,20,00,00),
-                                    last_order_time:    Time.zone.local(2018,06,12,16,00,00),
+                                    last_order_time:    Time.zone.local(2018,06,12,17,00,00),
                                     doses: 4,
                                     date: Date.new(2018,06,12))
+WeekDay.create!(meal: Meal.find(4), pick_up_time_start: Time.zone.local(2018,06,12,20,00,00),
+                                    pick_up_time_end:   Time.zone.local(2018,06,12,22,00,00),
+                                    last_order_time:    Time.zone.local(2018,06,12,18,00,00),
+                                    doses: 8,
+                                    date: Date.new(2018,06,12))
+WeekDay.create!(meal: Meal.find(6), pick_up_time_start: Time.zone.local(2018,06,12,19,00,00),
+                                    pick_up_time_end:   Time.zone.local(2018,06,12,21,30,00),
+                                    last_order_time:    Time.zone.local(2018,06,12,17,30,00),
+                                    doses: 3,
+                                    date: Date.new(2018,06,12))
+
 WeekDay.create!(meal: Meal.find(2), pick_up_time_start: Time.zone.local(2018,06,13,18,30,00),
                                     pick_up_time_end:   Time.zone.local(2018,06,13,20,00,00),
                                     last_order_time:    Time.zone.local(2018,06,13,12,00,00),
                                     doses: 2,
                                     date: Date.new(2018,06,13))
-WeekDay.create!(meal: Meal.find(1), pick_up_time_start: Time.zone.local(2018,06,14,17,30,00),
+WeekDay.create!(meal: Meal.find(7), pick_up_time_start: Time.zone.local(2018,06,14,17,30,00),
                                     pick_up_time_end:   Time.zone.local(2018,06,14,21,00,00),
                                     last_order_time:    Time.zone.local(2018,06,14,13,30,00),
                                     doses: 6,
