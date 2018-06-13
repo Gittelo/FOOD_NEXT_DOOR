@@ -9,6 +9,7 @@
 .button:hover{
   opacity: 1;
   text-decoration: none;
+  color: $white;
 }
 
 .button-review{
@@ -44,3 +45,13 @@
     outline: none !important;
   }
 }
+
+#btn_status{
+  border: none;
+  color: $green;
+}
+
+#btn_status:hover{
+  color: black;
+}
+

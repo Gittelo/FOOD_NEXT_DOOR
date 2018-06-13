@@ -27,7 +27,7 @@ meal7 = Meal.create!(cook: user3,name: "Red berries pancakes", description: "I'v
 
 
 puts("Creating Orders...")
-order1 = Order.create!(sku: 'avocato', user: User.find(1), status: 0, total_price: Money.new(0))
+order1 = Order.create!(sku: 'avocato', user: User.find(1), status: 0, total_price: Money.new(20))
 # order3 = Order.create!(user: User.find(3), status: 0)
 # order4 = Order.create!(user: User.find(4), status: 0)
 # order5 = Order.create!(user: User.find(5), status: 0)

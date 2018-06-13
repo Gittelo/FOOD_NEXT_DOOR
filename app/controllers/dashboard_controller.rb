@@ -8,6 +8,20 @@ class DashboardController < ApplicationController
     @items = policy_scope(Item).all
 
 
+    @items_from_cook = []
+    @items.each do |item|
+      if item.meal.cook == current_user
+        @items_from_cook << item
+      end
+    end
+    @items_from_cook
     authorize @my_meals
   end
+
+  def mark_as_delivered(item)
+    item.order.status = 'delivered'
+  end
+
 end
+
+
