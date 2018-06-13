@@ -34,7 +34,7 @@
   const slider = document.getElementById('price_change');
 
   function changePrice(value) {
-    slider.innerHTML='Price < '+ value / 100 +'€';
+    slider.innerHTML='Price < '+ Math.round(value / 100) +'€';
     filterButton.click();
   }
 </script>
