@@ -99,7 +99,7 @@
               <%= cl_image_tag current_user.photo, class: "avatar-review" %>
             <% end %>
             <p><%= review.user.first_name %></p>
-            <p><%= review.user.address %></p>
+            <p class="review-name-address"><%= review.user.address %></p>
           </div>
           <div class="review-body">
             <p class="review-date">
