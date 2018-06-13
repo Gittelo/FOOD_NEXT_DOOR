@@ -1,6 +1,4 @@
-<div id="cards-section-left" >
-  <% meals.each do |meal| %>
-    <%= render 'card', meal: meal %>
-  <% end %>
-</div>
+<% meals.each do |meal| %>
+  <%= render meal %>
+<% end %>
 
