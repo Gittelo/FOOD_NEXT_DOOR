@@ -20,7 +20,6 @@
       </div>
 
       <h1>Plan the schedule for the next 7 days:</h1>
-      <% meal = @my_meals.first %>
       <%#= link_to "Create a new schedule",  new_week_day_path, class: "btn btn-danger" %>
       <div class="table-scroll">
         <table class="table">
@@ -34,10 +33,10 @@
             <tr>
               <% (0..6).each do |x| %>
                 <% @selected_day = (@today + x) %>
-                <% if WeekDay.where(date: @selected_day).empty? %>
-                    <td><%= render "week_days/form_week_day", form: [@meal, @selected_day] %></td>
+                <% if current_user.week_days.where(date: @selected_day).empty? %>
+                    <td><%= render "week_days/form_week_day", form: [@my_meals, @selected_day] %></td>
                 <% else%>
-                    <td class="submited"><%= render "week_days/form_week_day", form: [@meal, @selected_day] %></td>
+                    <td class="submited"><%= render "week_days/form_week_day", form: [@my_meals, @selected_day] %></td>
                 <% end %>
               <% end %>
             </tr>
