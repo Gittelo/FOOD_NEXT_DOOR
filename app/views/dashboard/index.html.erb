@@ -1,10 +1,8 @@
 <div class="container" style="margin-top: 60px">
   <ul class="nav nav-tabs">
     <% if current_user.cook_status == 1 %>
-    <li class="active"><a data-toggle="tab" href="#meals">Meals</a></li>
-    <li><a data-toggle="tab" href="#orders">Orders</a></li>
-    <% else %>
-    <li class="active"><a data-toggle="tab" href="#orders">Orders</a></li>
+      <li class="active"><a data-toggle="tab" href="#meals">Meals</a></li>
+      <li><a data-toggle="tab" href="#orders">Orders</a></li>
     <% end %>
   </ul>
 
@@ -47,18 +45,15 @@
           </table>
         </div>
       </div>
-
       <div id="orders" class="tab-pane fade">
         <div class="row">
           <%= render 'cook_table', items_from_cook: @items_from_cook %>
         </div>
       </div>
     <% else %>
-
-      <div id="orders" class="tab-pane fade in active">
-        <div class="row">
-          <%= render 'user_table', my_orders: @my_orders %>
-        </div>
+      <div class="row">
+        <h4 style="text-align: center">My Orders</h4>
+        <%= render 'user_table', my_orders: @my_orders %>
       </div>
     <% end %>
   </div>
