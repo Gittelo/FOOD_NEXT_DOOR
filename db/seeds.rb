@@ -1,4 +1,3 @@
-puts("Cleaning Database...")
 
 Item.destroy_all
 Order.destroy_all
@@ -9,22 +8,22 @@ Meal.destroy_all
 WeekDay.destroy_all
 
 puts("Creating users...")
-user1 = User.create!(first_name: "Maria", last_name: "B",  address: "Lisbon",  email: "maria@fesf.fr",  password: "123456", cook_status: 0)
-user2 = User.create!(first_name: "Marta", last_name: "C",  address: "Cascais", email: "marta@fesf.fr",  password: "123456", cook_status: 0)
-user3 = User.create!(first_name: "Pedro", last_name: "F",  address: "Porto",   email: "pedro@fesf.fr",  password: "123456", cook_status: 0)
-user4 = User.create!(first_name: "Joana", last_name: "R",  address: "Faro",    email: "joana@fesf.fr",  password: "123456", cook_status: 0)
-user5 = User.create!(first_name: "Vasco", last_name: "C",  address: "Coimbra", email: "vasco@fesf.fr",  password: "123456", cook_status: 0)
+user1 = User.create!(first_name: "Maria", last_name: "B",  address: "6 rua Moeda, Lisboa",  email: "maria@fesf.fr",  password: "123456", cook_status: 0)
+user2 = User.create!(first_name: "Marta", last_name: "C",  address: "R. de São Marçal 170, Lisboa", email: "marta@fesf.fr",  password: "123456", cook_status: 0)
+user3 = User.create!(first_name: "Pedro", last_name: "F",  address: "4 R. da Vitória, Lisboa",   email: "pedro@fesf.fr",  password: "123456", cook_status: 0)
+user4 = User.create!(first_name: "Joana", last_name: "R",  address: "Avenida de Roma, Lisboa",    email: "joana@fesf.fr",  password: "123456", cook_status: 0)
+user5 = User.create!(first_name: "Vasco", last_name: "C",  address: "Avenida da República, Lisboa", email: "vasco@fesf.fr",  password: "123456", cook_status: 0)
 
 puts("Creating meals...")
 
 meal1 = Meal.create!(cook: user1,name: "Meat Balls of Love", description: "Have you had the pleasure of eating meatballs with your hands? If not, it’s time to cross that off your list with these kibbeh meatballs you can hand dip in a refreshing yogurt sauce. It’s finger food in top form, and the thanks goes to A Cedar Spoon.", grams_per_dose: 500, ingredients: "Maionese, tomato and cheese", price: 10, photo: 'https://s33.postimg.cc/gk6sxubpb/Balls_Pigale-12.jpg', address: '6 rua Moeda, Lisboa')
-meal2 = Meal.create!(cook: user1,name: "Le Burger de Papa", description: "A juicy beef patty, an incredibly soft bun, crispy bacon, melted cheddar and homemade cocktail sauce... Your best friend after a tough day.", grams_per_dose: 400, ingredients: "Maionese", price: 10, photo: 'https://s33.postimg.cc/t1dgl2c0v/BIIIM_Kardashian.jpg', address: '26 Avenida Liberdade, Lisboa')
+meal2 = Meal.create!(cook: user1,name: "Le Burger de Papa", description: "A juicy beef patty, an incredibly soft bun, crispy bacon, melted cheddar and homemade cocktail sauce... Your best friend after a tough day.", grams_per_dose: 400, ingredients: "Maionese", price: 10, photo: 'https://s33.postimg.cc/t1dgl2c0v/BIIIM_Kardashian.jpg', address: '6 rua Moeda, Lisboa')
 meal3 = Meal.create!(cook: user2,name: "Chicken Noodle Soup", description: "A slow-cooked and tasteful Chicken Noodle Soup perfect for any day of the week! You will be craving this often! Healthy, low calorie, filling with incredible flavours!", grams_per_dose: 300, ingredients: "tomato and cheese", price: 10, photo: 'https://images.unsplash.com/photo-1503764654157-72d979d9af2f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=71cdddf5cc615224cf2c26614d20154d&auto=format&fit=crop&w=2553&q=80', address: 'R. de São Marçal 170, Lisboa')
-meal4 = Meal.create!(cook: user2,name: "Garden Fresh Salad", description: "I've had Chinese food in 45 states , Toronto and British Columbia  Hands down ... NO JOKE the best DIM SUM and fresh Chinese dishes ever that have crossed my taste buds !!", grams_per_dose: 100, ingredients: "carrot", price: 10, photo: 'https://images.unsplash.com/photo-1484980972926-edee96e0960d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f791b5847ff52ab502255c37c7e78498&auto=format&fit=crop&w=668&q=80', address: 'R. Academia das Ciências 19, Lisboa ')
-meal5 = Meal.create!(cook: user2,name: "Pasta e polpette", description: "I've had Chinese food in 45 states , Toronto and British Columbia  Hands down ... NO JOKE the best DIM SUM and fresh Chinese dishes ever that have crossed my taste buds !!", grams_per_dose: 100, ingredients: "carrot", price: 10, photo: 'https://images.unsplash.com/photo-1513096010416-a2d75c794cf9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e966da6f823c4750779d8f8a10c6a205&auto=format&fit=crop&w=1302&q=80', address: '401, R. de Santa Catarina, 1200-012 Lisboa')
+meal4 = Meal.create!(cook: user2,name: "Garden Fresh Salad", description: "I've had Chinese food in 45 states , Toronto and British Columbia  Hands down ... NO JOKE the best DIM SUM and fresh Chinese dishes ever that have crossed my taste buds !!", grams_per_dose: 100, ingredients: "carrot", price: 10, photo: 'https://images.unsplash.com/photo-1484980972926-edee96e0960d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f791b5847ff52ab502255c37c7e78498&auto=format&fit=crop&w=668&q=80', address: 'R. de São Marçal 170, Lisboa ')
+meal5 = Meal.create!(cook: user2,name: "Pasta e polpette", description: "I've had Chinese food in 45 states , Toronto and British Columbia  Hands down ... NO JOKE the best DIM SUM and fresh Chinese dishes ever that have crossed my taste buds !!", grams_per_dose: 100, ingredients: "carrot", price: 10, photo: 'https://images.unsplash.com/photo-1513096010416-a2d75c794cf9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e966da6f823c4750779d8f8a10c6a205&auto=format&fit=crop&w=1302&q=80', address: 'R. de São Marçal 170, Lisboa')
 meal8 = Meal.create!(cook: user3,name: "Blueberry pancakes", description: "I've had Chinese food in 45 states , Toronto and British Columbia  Hands down ... NO JOKE the best DIM SUM and fresh Chinese dishes ever that have crossed my taste buds !!", grams_per_dose: 100, ingredients: "carrot", price: 10, photo: 'https://images.unsplash.com/photo-1490457843367-34b21b6ccd85?ixlib=rb-0.3.5&s=0c64f21bce4b02fb267b1900ccc2b523&auto=format&fit=crop&w=938&q=80', address: '4 R. da Vitória, Lisboa')
-meal6 = Meal.create!(cook: user3,name: "Summer Couscous", description: "I've had Chinese food in 45 states , Toronto and British Columbia  Hands down ... NO JOKE the best DIM SUM and fresh Chinese dishes ever that have crossed my taste buds !!", grams_per_dose: 100, ingredients: "carrot", price: 10, photo: 'https://images.unsplash.com/photo-1519996409144-56c88c9aa612?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3637911ee7fd91ef9087dae6efc0114f&auto=format&fit=crop&w=668&q=80', address: 'R. do Carmo 51-1, 1200-094, Lisboa')
-meal7 = Meal.create!(cook: user3,name: "Red berries pancakes", description: "I've had Chinese food in 45 states , Toronto and British Columbia  Hands down ... NO JOKE the best DIM SUM and fresh Chinese dishes ever that have crossed my taste buds !!", grams_per_dose: 100, ingredients: "carrot", price: 10, photo: 'https://images.unsplash.com/photo-1502114586089-b9480c602e18?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2a76f872362e6c5ec393cedd3b098cc2&auto=format&fit=crop&w=668&q=80', address: 'R. Augusta 24, Lisboa')
+meal6 = Meal.create!(cook: user3,name: "Summer Couscous", description: "I've had Chinese food in 45 states , Toronto and British Columbia  Hands down ... NO JOKE the best DIM SUM and fresh Chinese dishes ever that have crossed my taste buds !!", grams_per_dose: 100, ingredients: "carrot", price: 10, photo: 'https://images.unsplash.com/photo-1519996409144-56c88c9aa612?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3637911ee7fd91ef9087dae6efc0114f&auto=format&fit=crop&w=668&q=80', address: '4 R. da Vitória, Lisboa')
+meal7 = Meal.create!(cook: user3,name: "Red berries pancakes", description: "I've had Chinese food in 45 states , Toronto and British Columbia  Hands down ... NO JOKE the best DIM SUM and fresh Chinese dishes ever that have crossed my taste buds !!", grams_per_dose: 100, ingredients: "carrot", price: 10, photo: 'https://images.unsplash.com/photo-1502114586089-b9480c602e18?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2a76f872362e6c5ec393cedd3b098cc2&auto=format&fit=crop&w=668&q=80', address: '4 R. da Vitória, Lisboa')
 
 
 puts("Creating Orders...")
@@ -60,30 +59,30 @@ Review.create!(user: User.find(4), meal: Meal.find(4), rating: 4, content: 'That
 Review.create!(user: User.find(5), meal: Meal.find(4), rating: 4, content: 'That was really good')
 
 puts("Creating weekdays...")
-WeekDay.create!(meal: Meal.find(1), pick_up_time_start: Time.zone.local(2018,06,12,18,00,00),
-                                    pick_up_time_end:   Time.zone.local(2018,06,12,20,00,00),
-                                    last_order_time:    Time.zone.local(2018,06,12,17,00,00),
-                                    doses: 4,
-                                    date: Date.new(2018,06,12))
-WeekDay.create!(meal: Meal.find(4), pick_up_time_start: Time.zone.local(2018,06,12,20,00,00),
-                                    pick_up_time_end:   Time.zone.local(2018,06,12,22,00,00),
-                                    last_order_time:    Time.zone.local(2018,06,12,18,00,00),
-                                    doses: 8,
-                                    date: Date.new(2018,06,12))
-WeekDay.create!(meal: Meal.find(6), pick_up_time_start: Time.zone.local(2018,06,12,19,00,00),
-                                    pick_up_time_end:   Time.zone.local(2018,06,12,21,30,00),
-                                    last_order_time:    Time.zone.local(2018,06,12,17,30,00),
-                                    doses: 3,
-                                    date: Date.new(2018,06,12))
-
-WeekDay.create!(meal: Meal.find(2), pick_up_time_start: Time.zone.local(2018,06,13,18,30,00),
+WeekDay.create!(meal: Meal.find(1), pick_up_time_start: Time.zone.local(2018,06,13,18,00,00),
                                     pick_up_time_end:   Time.zone.local(2018,06,13,20,00,00),
-                                    last_order_time:    Time.zone.local(2018,06,13,12,00,00),
-                                    doses: 2,
+                                    last_order_time:    Time.zone.local(2018,06,13,17,00,00),
+                                    doses: 4,
                                     date: Date.new(2018,06,13))
-WeekDay.create!(meal: Meal.find(7), pick_up_time_start: Time.zone.local(2018,06,14,17,30,00),
-                                    pick_up_time_end:   Time.zone.local(2018,06,14,21,00,00),
-                                    last_order_time:    Time.zone.local(2018,06,14,13,30,00),
-                                    doses: 6,
-                                    date: Date.new(2018,06,14))
+WeekDay.create!(meal: Meal.find(4), pick_up_time_start: Time.zone.local(2018,06,13,20,00,00),
+                                    pick_up_time_end:   Time.zone.local(2018,06,13,22,00,00),
+                                    last_order_time:    Time.zone.local(2018,06,13,18,00,00),
+                                    doses: 8,
+                                    date: Date.new(2018,06,13))
+WeekDay.create!(meal: Meal.find(6), pick_up_time_start: Time.zone.local(2018,06,13,19,00,00),
+                                    pick_up_time_end:   Time.zone.local(2018,06,13,21,30,00),
+                                    last_order_time:    Time.zone.local(2018,06,13,17,30,00),
+                                    doses: 3,
+                                    date: Date.new(2018,06,13))
+
+# WeekDay.create!(meal: Meal.find(2), pick_up_time_start: Time.zone.local(2018,06,13,18,30,00),
+#                                     pick_up_time_end:   Time.zone.local(2018,06,13,20,00,00),
+#                                     last_order_time:    Time.zone.local(2018,06,13,12,00,00),
+#                                     doses: 2,
+#                                     date: Date.new(2018,06,13))
+# WeekDay.create!(meal: Meal.find(7), pick_up_time_start: Time.zone.local(2018,06,13,17,30,00),
+#                                     pick_up_time_end:   Time.zone.local(2018,06,13,21,00,00),
+#                                     last_order_time:    Time.zone.local(2018,06,13,13,30,00),
+#                                     doses: 6,
+#                                     date: Date.new(2018,06,13))
 
