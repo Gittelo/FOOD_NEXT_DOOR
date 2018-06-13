@@ -6,14 +6,11 @@ class MealsController < ApplicationController
   def index
     @meals = policy_scope(Meal).order(created_at: :desc)
     authorize @meals
-
     # Query location in search bar
-    # @meals = Meal.near(current_user.address, 10, order: 'distance') if !current_user.nil?
     @meals = Meal.near(params[:location], 10, order: 'distance') if params[:location].present?
     @max_price_cents = 3000
     @meals = @meals.price_cents(params[:price]) if params[:price].present?
     # @max_distance = 10
-
     @meals = meals_of_the_day(@meals)
     # Markers placement, icons and info window
     iconmarker = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
@@ -23,7 +20,7 @@ class MealsController < ApplicationController
         lng: meal.longitude,
         icon: iconmarker,
         infoWindow: {
-          content: render_to_string(partial: "/shared/info_window", locals: { meal: meal})
+          content: meal.name
         }
       }
     end
