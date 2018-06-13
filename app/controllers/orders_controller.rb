@@ -25,9 +25,8 @@ class OrdersController < ApplicationController
         icon: redicon
 
         infoWindow: {
-          content: render_to_string(partial: "/shared/info_window", locals: { tour: tour})
+          content: render_to_string(partial: "/shared/info_window", locals: { meal: meal})
         }
-
       }
     end
   end
