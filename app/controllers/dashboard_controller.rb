@@ -2,6 +2,8 @@ class DashboardController < ApplicationController
   def index
     @week_day = WeekDay.new
     @today = Date.today
+    @my_meals = policy_scope(Meal).where(cook_id: current_user.id)
+    authorize @my_meals
 
     @orders = policy_scope(Order).all
     authorize @orders
