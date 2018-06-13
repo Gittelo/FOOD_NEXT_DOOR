@@ -24,9 +24,9 @@ class OrdersController < ApplicationController
         lng: item.meal.longitude,
         icon: redicon
 
-        # infoWindow: {
-        #   content: render_to_string(partial: "/shared/info_window", locals: { tour: tour})
-        # }
+        infoWindow: {
+          content: render_to_string(partial: "/shared/info_window", locals: { tour: tour})
+        }
 
       }
     end
