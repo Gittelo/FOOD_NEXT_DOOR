@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "/become_cook", to: "pages#apply"
   get '/confirmation', to: 'orders#confirmation'
   get '/calendar', to: 'pages#calendar'
+  get '/users/:id/update', to: 'pages#update', as: :update_user
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -25,3 +26,5 @@ Rails.application.routes.draw do
   resources :dashboard, only: :index
 
 end
+
+

@@ -61,13 +61,11 @@
           <p><strong>Last name: </strong><br> <%= current_user.last_name %> </p>
           <p><strong>Email: </strong><br> <%= current_user.email %></p>
           <p><strong>Address: </strong><br> <%= current_user.address %> </p>
-          <div class="modal-confirm">
           <p><em>* If you press "Apply", one of our members will contact you within 24 hours. </em></p>
-          </div>
         </div>
       </div>
       <div class="modal-footer">
-        <%= link_to "Apply *", meals_path, class: "btn btn-primary" %>
+        <%= link_to "Apply *", update_user_path(current_user)%>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>

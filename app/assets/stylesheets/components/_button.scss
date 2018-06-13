@@ -9,6 +9,7 @@
 .button:hover{
   opacity: 1;
   text-decoration: none;
+  color: $white;
 }
 
 .button-review{
@@ -35,12 +36,22 @@
   border: 1px solid $dark-gray;
 }
 
-// #filter-button {
-//   color: white;
-//   border: none;
-//   cursor: auto;
-//   width: 0px;
-//   &:focus {
-//     outline: none !important;
-//   }
-// }
+#filter-button {
+  color: white;
+  border: none;
+  cursor: auto;
+  width: 0px;
+  &:focus {
+    outline: none !important;
+  }
+}
+
+#btn_status{
+  border: none;
+  color: $green;
+}
+
+#btn_status:hover{
+  color: black;
+}
+
