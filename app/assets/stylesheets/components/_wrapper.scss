@@ -23,14 +23,19 @@
 }
 
 .confirmation-box {
-  padding: 20px;
   border: 2px solid $light-gray;
   border-radius: 2px;
+  padding: 10px;
+  margin-top: 60px;
+  li {
+    list-style: none;
+  }
 }
 
 .confirmation-map-container {
   margin-bottom: 50px;
   display: block;
+  height: calc(100vh - 60px);
 }
 
 .info-cook {
@@ -45,5 +50,4 @@
    padding-bottom: 40px;
    color: $green;
   }
-  }
-
+}

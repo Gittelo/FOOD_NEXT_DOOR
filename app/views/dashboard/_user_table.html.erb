@@ -1,0 +1,34 @@
+<% @my_orders.each do |order| %>
+  <% if order.status != 'pending' %>
+    <table class="table-dashboard-user">
+      <caption style="text-align: center; font-size: 16px;">
+        <span>Order #<%= order.id %></span> |
+        <span>Date: <%= order.created_at.strftime('%d %b %Y') %></span> |
+        <span>Status: <%= order.status.capitalize %></span>
+      </caption>
+      <thead>
+        <th>Meal</th>
+        <th>Cook</th>
+        <th>Doses</th>
+        <th>Price</th>
+      </thead>
+      <tbody>
+        <% order.items.each do |item| %>
+          <tr>
+            <td><%= item.meal.name %></td>
+            <td><%= link_to item.meal.cook.first_name, meal_cook_path(item, item.meal) %></td>
+            <td><%= item.doses %></td>
+            <td><%= item.meal.price %>€</td>
+          </tr>
+        <% end %>
+          <tr class="table-row">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Total: <strong> <%= order.total_price %>€</strong></td>
+          </tr>
+      </tbody>
+    </table>
+  <% end %>
+<% end %>
+
