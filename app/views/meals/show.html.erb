@@ -43,8 +43,13 @@
       <% weekday_meal = @meal.week_days.where(date: Date.today)[0] %>
       <div class="meal-footer">
         <div class="meal-time">
-          <p>Pickup time: <%#= weekday_meal.pick_up_time_start.strftime('%Hh%M') %> / <%#= weekday_meal.pick_up_time_end.strftime('%Hh%M') %></p>
+          <% if weekday_meal.nil? %>
+             <p>Today this meal is not available</p>
+          <% else %>
+          <p>Pickup time: <%= weekday_meal.pick_up_time_start.strftime('%Hh%M') %> / <%= weekday_meal.pick_up_time_end.strftime('%Hh%M') %></p>
+          <% end %>
         </div>
+        <% if !weekday_meal.nil? %>
         <div class="meal-dose">
           <%= simple_form_for [@meal, @item] do |f| %>
             <div class="form-actions">
@@ -56,6 +61,8 @@
             </div>
           <% end %>
         </div>
+
+        <% end %>
 
       </div>
     </div>
