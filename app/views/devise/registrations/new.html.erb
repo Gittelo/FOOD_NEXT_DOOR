@@ -10,7 +10,7 @@
     <div class="form-inputs" style="color: black">
       <%= f.input :first_name, required: true, autofocus: true, placeholder: 'John', input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'} %>
       <%= f.input :last_name, required: true, autofocus: true, placeholder: 'Doe', input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'} %>
-      <%= f.input :address, required: true, autofocus: true, placeholder: 'Rua Casa da Moeda, 6, Lisboa', input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'} %>
+      <%= f.input :address, required: true, autofocus: true, placeholder: 'Rua Casa da Moeda, 6, Lisboa', input_html: { class: 'detailStyling_user autocomplete'}, label_html: { class: 'detailLabelStyling'} %>
       <%= f.input :email, required: true, autofocus: true, placeholder: 'johndoe@foodnextdoor.app', input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'} %>
       <%= f.input :photo, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'}  %>
       <%= f.input :photo_cache, as: :hidden %>
