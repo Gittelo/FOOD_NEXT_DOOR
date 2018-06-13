@@ -1,66 +1,60 @@
 <div class="container" style="margin-top: 60px">
   <ul class="nav nav-tabs">
     <% if current_user.cook_status == 1 %>
-    <li class="active"><a data-toggle="tab" href="#meals">Meals</a></li>
-    <li><a data-toggle="tab" href="#orders">Orders</a></li>
-    <% else %>
-    <li class="active"><a data-toggle="tab" href="#orders">Orders</a></li>
+      <li class="active"><a data-toggle="tab" href="#meals">Meals</a></li>
+      <li><a data-toggle="tab" href="#orders">Orders</a></li>
     <% end %>
   </ul>
 
   <div class="tab-content">
-
     <% if current_user.cook_status == 1 %>
-    <div id="meals" class="tab-pane fade in active">
-      <h3>Submit a new meal for approval</h3>
+      <div id="meals" class="tab-pane fade in active">
+        <h3>Submit a new meal for approval</h3>
 
-      <%= link_to "Submit a meal for approval", new_meal_path, class: "btn btn-info" %>
-      <h2>My Meals repository</h2>
-      <h4>Approved Meals</h4>
-      <div class="row">
-        <% @my_meals.each do |meal| %>
-        <%= link_to render("drag_card", meal: meal), meal_path(meal) %>
-        <% end %>
-      </div>
+        <%= link_to "Submit a meal for approval", new_meal_path, class: "btn btn-info" %>
+        <h2>My Meals repository</h2>
+        <h4>Approved Meals</h4>
+        <div class="row">
+          <% @my_meals.each do |meal| %>
+          <%= link_to render("drag_card", meal: meal), meal_path(meal) %>
+          <% end %>
+        </div>
 
-      <h1>Plan the schedule for the next 7 days:</h1>
-      <%#= link_to "Create a new schedule",  new_week_day_path, class: "btn btn-danger" %>
-      <div class="table-scroll">
-        <table class="table">
-          <thead>
-            <% (0..6).each do |x| %>
-            <% @selected_day = (@today + x) %>
-            <th><%= @selected_day.strftime('%A') %> - <%= @selected_day.strftime('%x')  %></th>
-            <% end %>
-          </thead>
-          <tbody>
-            <tr>
+        <h1>Plan the schedule for the next 7 days:</h1>
+        <%#= link_to "Create a new schedule",  new_week_day_path, class: "btn btn-danger" %>
+        <div class="table-scroll">
+          <table class="table">
+            <thead>
               <% (0..6).each do |x| %>
               <% @selected_day = (@today + x) %>
-              <% if current_user.week_days.where(date: @selected_day).empty? %>
-              <td><%= render "week_days/form_week_day", form: [@my_meals, @selected_day] %></td>
-              <% else%>
-              <td class="submited"><%= render "week_days/form_week_day", form: [@my_meals, @selected_day] %></td>
+              <th><%= @selected_day.strftime('%A') %> - <%= @selected_day.strftime('%x')  %></th>
               <% end %>
-              <% end %>
-            </tr>
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              <tr>
+                <% (0..6).each do |x| %>
+                <% @selected_day = (@today + x) %>
+                <% if current_user.week_days.where(date: @selected_day).empty? %>
+                <td><%= render "week_days/form_week_day", form: [@my_meals, @selected_day] %></td>
+                <% else%>
+                <td class="submited"><%= render "week_days/form_week_day", form: [@my_meals, @selected_day] %></td>
+                <% end %>
+                <% end %>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
-
-    <div id="orders" class="tab-pane fade">
-      <div class="row">
-        <%= render 'orders_table', items_from_cook: @items_from_cook %>
+      <div id="orders" class="tab-pane fade">
+        <div class="row">
+          <%= render 'cook_table', items_from_cook: @items_from_cook %>
+        </div>
       </div>
-    </div>
-   <% else %>
-
-     <div id="orders" class="tab-pane fade in active">
+    <% else %>
       <div class="row">
-        <%= render 'orders_table', orders: @orders %>
+        <h4 style="text-align: center">My Orders</h4>
+        <%= render 'user_table', my_orders: @my_orders %>
       </div>
     <% end %>
-
   </div>
 </div>
