@@ -58,6 +58,7 @@ const initMap = function(mapElement) {
         markRed(index);
       });
     });
+
   }
 }
 
@@ -92,6 +93,15 @@ const initMapConfirmation = function(mapElement) {
       mapTypeId: 'map_style'
     });
     map.setStyle('map_style');
+    function showInfoWindow() {
+      const displayedMarkers = document.querySelectorAll('.gmnoprint');
+      const click = new Event('click');
+      displayedMarkers.forEach((marker) => {
+        marker.dispatchEvent(click);
+        clearInterval(showInfoWindow, 1000);
+      });
+      }
+      setTimeout(showInfoWindow, 1000);
   }
 }
 
