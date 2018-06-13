@@ -11,7 +11,8 @@ class MealsController < ApplicationController
     @max_price_cents = 3000
     @meals = @meals.price_cents(params[:price]) if params[:price].present?
     # @max_distance = 10
-    # @meals = meals_of_the_day(@meals)
+
+    @meals = meals_of_the_day(@meals)
     # Markers placement, icons and info window
     iconmarker = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
     @markers = @meals.map do |meal|
