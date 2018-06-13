@@ -36,6 +36,15 @@
   border: 1px solid $dark-gray;
 }
 
+#btn_status{
+  border: none;
+  color: $green;
+}
+
+#btn_status:hover{
+  color: black;
+}
+
 // #filter-button {
 //   color: white;
 //   border: none;

@@ -1,21 +1,37 @@
 <table class="table-dashboard">
-  <caption>My Orders</caption>
+  <caption>Orders</caption>
   <thead>
-    <th>Order #</th>
     <th>Ordered By</th>
+    <th>Meal</th>
+    <th>Doses</th>
     <th>Date</th>
-    <th>Total Price</th>
+    <th>Price</th>
     <th>Status</th>
+    <th></th>
   </thead>
   <tbody>
-    <% @my_orders.each do |order| %>
+    <% @items_from_cook.each do |item| %>
       <tr>
-        <td><%= order.id %></td>
-        <td><%= order.user.first_name %></td>
-        <td><%= order.created_at.strftime('%d %b %Y') %></td>
-        <td><%= order.total_price %>€</td>
-        <td><%= order.status.capitalize %></td>
+        <td><%= item.order.user.first_name %></td>
+        <td><%= item.meal.name %></td>
+        <td><%= item.doses %></td>
+        <td><%= item.order.created_at.strftime('%d %b %Y') %></td>
+        <td><%= item.item_price %>€</td>
+        <td id="order_status"><%= item.order.status.capitalize %></td>
+        <% if item.order.status == 'paid' %>
+          <td><button id='btn_status'>Mark as delivered</button></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+
+<script>
+  const button = document.getElementById('btn_status');
+  let status = document.getElementById('order_status');
+  button.addEventListener('click', (event) => {
+    status.innerText = 'Delivered';
+    button.style.display = 'none';
+  })
+</script>
