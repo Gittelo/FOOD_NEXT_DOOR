@@ -32,6 +32,7 @@ const initMap = function(mapElement) {
     });
     map.setStyle('map_style');
 
+
     // Functions to change markers color on hover on cards
     const cards = document.getElementsByClassName("card");
 
@@ -93,10 +94,17 @@ const initMapConfirmation = function(mapElement) {
     });
     map.setStyle('map_style');
   }
+
+  function showInfoWindow() {
+    const displayedMarkers = document.querySelectorAll('.gmnoprint');
+    const click = new Event('click');
+    displayedMarkers.forEach((marker) => {
+      marker.dispatchEvent(click);
+      clearInterval(showInfoWindow, 1000);
+    });
+  }
+  setTimeout(showInfoWindow, 1000);
 }
-
-// pass html.erb
-
 
 export { initMap, initMapConfirmation };
 
