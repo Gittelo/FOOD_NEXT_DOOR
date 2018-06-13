@@ -22,12 +22,12 @@ class OrdersController < ApplicationController
       {
         lat: item.meal.latitude,
         lng: item.meal.longitude,
-        icon: redicon
+        icon: redicon,
 
         infoWindow: {
-          content: render_to_string(partial: "/shared/info_window", locals: { meal: meal})
-        }
+          content: item.meal.name
       }
+    }
     end
   end
 

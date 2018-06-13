@@ -49,7 +49,7 @@
           <%= simple_form_for [@meal, @item] do |f| %>
             <div class="form-actions">
               <i class="fas fa-minus" onclick="decrease()"></i>
-              <input name="item[doses]" type="number" min="1" max="<%= weekday_meal.doses %>" value="1" class="val" id="item_doses" disabled>
+              <input name="item[doses]" type="number" min="1" max="<%= weekday_meal.doses %>" value="1" class="val" id="item_doses" readonly>
               <i class="fas fa-plus" onclick="increase()"></i>
               <%#= f.button :submit, 'Add to Cart', class: "button" %>
               <input type="submit" name="commit" value="Add to Cart" class="button" data-toggle="modal" data-target="#exampleModal">
