@@ -6,6 +6,7 @@ class MealsController < ApplicationController
   def index
     @meals = policy_scope(Meal).order(created_at: :desc)
     authorize @meals
+
     # Query location in search bar
     # @meals = Meal.near(current_user.address, 10, order: 'distance') if !current_user.nil?
     @meals = Meal.near(params[:location], 10, order: 'distance') if params[:location].present?
@@ -77,8 +78,8 @@ class MealsController < ApplicationController
   # We needed to create a cicle inside of a cicle because we have a 1:N relationship and it was supose to be N:N
   # We have that 1 meal have N weekdays and 1 weekday have only 1 meal(That is not true. It is only true for one cook!)
   # One cook can only assign one meal per day.
+  @filtered_meals = []
     all_meals.each do |meal|
-      @filtered_meals = []
       meal.week_days.each do |weekday|
         if weekday.date == Date.today && weekday.last_order_time > Time.now
           @filtered_meals << weekday.meal
