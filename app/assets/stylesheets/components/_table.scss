@@ -4,8 +4,12 @@
   overflow-y: hidden;
 }
 
-.submited{
+.submited-card{
   background-color: $green;
+  width: 100%;
+  height: 607px;
+  padding: 15px;
+  box-shadow: 6px 6px 26px -4px rgba(0, 0, 0, 0.75);
 }
 
 

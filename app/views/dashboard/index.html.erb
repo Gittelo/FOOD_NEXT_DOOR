@@ -36,7 +36,14 @@
                 <% if current_user.week_days.where(date: @selected_day).empty? %>
                     <td><%= render "week_days/form_week_day", form: [@my_meals, @selected_day] %></td>
                 <% else%>
-                    <td class="submited"><%= render "week_days/form_week_day", form: [@my_meals, @selected_day] %></td>
+                    <td>
+                      <div class="col-md-12">
+                        <div class="submited-card">
+                              <h2>This card was submited sdadad</h2>
+                        </div>
+
+                      </div>
+                    </td>
                 <% end %>
               <% end %>
             </tr>
