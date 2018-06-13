@@ -7,3 +7,19 @@
 .submited{
   background-color: $green;
 }
+
+
+.table-dashboard {
+   border-top: 2px solid rgb(200, 200, 200);
+   border-bottom: 2px solid rgb(200, 200, 200);
+   width: 70%;
+   margin: 60px auto;
+   font-size: 14px;
+   text-align: center;
+   th, td {
+    align: center;
+    text-align: center;
+    height: 40px;
+    vertical-align: middle;
+   }
+}

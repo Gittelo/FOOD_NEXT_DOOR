@@ -8,7 +8,8 @@ class MealsController < ApplicationController
     authorize @meals
 
     # Query location in search bar
-    @meals = Meal.near(params[:location], 100, order: 'distance') if params[:location].present?
+    # @meals = Meal.near(current_user.address, 10, order: 'distance') if !current_user.nil?
+    @meals = Meal.near(params[:location], 10, order: 'distance') if params[:location].present?
     @max_price_cents = 3000
     @meals = @meals.price_cents(params[:price]) if params[:price].present?
     # @max_distance = 10
@@ -22,8 +23,8 @@ class MealsController < ApplicationController
         lng: meal.longitude,
         icon: iconmarker,
         infoWindow: {
-                    content: meal.name
-                    }
+          content: render_to_string(partial: "/shared/info_window", locals: { meal: meal})
+        }
       }
     end
 

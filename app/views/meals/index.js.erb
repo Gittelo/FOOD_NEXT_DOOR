@@ -1,9 +1,9 @@
+var newCards = document.querySelectorAll('.js-card');
 function refreshList(innerHTML) {
-  const newList = document.getElementById('cards-section-left');
-  newList.innerHTML = innerHTML;
+  document.querySelector('.cards-container').innerHTML = innerHTML;
 }
-
-refreshList('<%= j render "card_list", meals: @meals %>');
+// store meals in variable
+var mealsHTML = '<%= j render @meals %>'
 
 function refreshMap(innerHTMLMap) {
   const newMap = document.getElementById('map-container');
@@ -12,6 +12,11 @@ function refreshMap(innerHTMLMap) {
 
 refreshMap('<%= j render "map" %>');
 document.app.initMap(document.getElementById('map'));
-var section = document.querySelectorAll('#cards-section-left > *');
+  if (!window.isMapOpen) {
+    mealsHTML = mealsHTML.replace(/col-lg-4/g, 'col-lg-3')
+  }
+  console.log(mealsHTML);
+  refreshList(mealsHTML);
 
-console.log(section);
+
+console.log(window.isMapOpen);

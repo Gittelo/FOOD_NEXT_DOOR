@@ -21,7 +21,7 @@
 
 <div class="wrapper">
   <div class="cards-container">
-    <%= render 'card_list', meals: @meals %>
+    <%= render @meals%>
   </div>
   <div id="map-container">
     <%= render 'map' %>
@@ -34,7 +34,7 @@
   const slider = document.getElementById('price_change');
 
   function changePrice(value) {
-    slider.innerHTML='Price < '+ value / 100 +'€';
+    slider.innerHTML='Price < '+ Math.round(value / 100) +'€';
     filterButton.click();
   }
 </script>
@@ -43,33 +43,28 @@
   const map = document.getElementById('map');
   const mapContainer = document.getElementById('map-container');
   const button = document.getElementById('show-map');
-
+  window.isMapOpen = true;
   const hideElement = (element) => {
   if (element.style.display === "none") {
     element.style.display = "block";
+    window.isMapOpen = true;
   } else {
     element.style.display = "none";
+    window.isMapOpen = false;
   }
 }
   const switchClasses = (element, class1, class2) => {
-    if (element.classList.contains(class1))
-    {
-      element.classList.remove(class1);
-      element.classList.add(class2);
-    } else if (element.classList.contains(class2))
-    {
-      element.classList.remove(class2);
-      element.classList.add(class1);
+      element.classList.toggle(class1);
+      element.classList.toggle(class2);
     }
-  }
-  var section = document.querySelectorAll('#cards-section-left > *');
-  console.log(section);
+
   button.addEventListener('click', (event) => {
+  var cards = document.querySelectorAll('.js-card');
     hideElement(map);
     hideElement(mapContainer);
-    section.forEach(function(el) {
+    cards.forEach(function(el) {
       switchClasses(el, 'col-lg-4', 'col-lg-3');
-    })
+    });
   })
 
 </script>
