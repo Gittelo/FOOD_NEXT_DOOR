@@ -3,10 +3,9 @@
     <%= link_to meal_path(meal) do %>
       <div class="card-picture"
           style="background: url('<%= meal.photo %>')"></div>
-      <div class="description">
+      <div class="card-title">
         <div>
           <p><%= meal.name %></p>
-          <p class="sub"><%= meal.description %></p>
         </div>
       </div>
     <% end %>
@@ -14,8 +13,8 @@
       <% weekday_meal = meal.week_days.where(date: Date.today)[0] %>
       <div class="card-footer">
         <div><p><%= meal.price %>€</p></div>
-        <div class="card-time">pick-up time: <%= weekday_meal.pick_up_time_start.strftime('%Hh%M') %> / <%= weekday_meal.pick_up_time_end.strftime('%Hh%M') %></div>
-        <div><i class="fas fa-cart-plus fa-lg"></i></div>
+        <div class="card-time"><span class="sub">pick-up time</span> <%= weekday_meal.pick_up_time_start.strftime('%Hh%M') %> / <%= weekday_meal.pick_up_time_end.strftime('%Hh%M') %></div>
+        <div><i class="fas fa-clock fa-lg"></i></div>
       </div>
     </div>
 </div>
