@@ -26,7 +26,7 @@
             <%= f.input :pick_up_time_end,  as: :time, minute_step: 30, :label => "Pick up end time", input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'}%>
           </div>
 
-          <%= f.input :doses,  input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'}%>
+          <%= f.input :doses, :label => "Number of doses", input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'}%>
         </div>
         <div class="form-actions flexing-box">
           <%= f.button :submit, class: "btn btn-primary" %>

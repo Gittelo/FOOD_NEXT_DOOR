@@ -45,14 +45,13 @@
                           <div class="submited-card-title">
                               <% meal_name = current_user.week_days.where(date: @selected_day)[0].meal.name %>
                               <h2><%= "#{meal_name} was submited" %></h2>
-
                               <hr>
                               <% @weekday = current_user.week_days.where(date: @selected_day)[0] %>
                               <p>Orders until:</p>
-                              <p> <%= @weekday.last_order_time.strftime("%Hh%m") %></p>
+                              <p> <%= @weekday.last_order_time.strftime("%Hh%M") %></p>
                               <hr>
                               <p> Pick up time:   </p>
-                              <p>  <%= @weekday.pick_up_time_start.strftime("%Hh%m")%> - <%= @weekday.pick_up_time_end.strftime("%Hh%m")%> </p>
+                              <p>  <%= @weekday.pick_up_time_start.strftime("%Hh%M")%> - <%= @weekday.pick_up_time_end.strftime("%Hh%M")%> </p>
                           </div>
 
 
