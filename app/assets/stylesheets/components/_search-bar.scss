@@ -35,11 +35,11 @@
 
 
 .form-control-search-home {
-  border: none !important;
-  box-shadow: none !important;
-  outline: none !important;
+  border: none ;
+  box-shadow: none ;
+  outline: none ;
   font-size: 17px;
-  width: 250px;
+  width: 400px;
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 10px;
@@ -49,6 +49,7 @@
 
 .search-home {
     position: center;
+    margin: 0;
 }
 
 // New Search bar with JS
