@@ -86,6 +86,8 @@ class MealsController < ApplicationController
     @filtered_meals
   end
 
+
+
   def meal_params
     params.require(:meal).permit(:name, :description, :address, :price, :grams_per_dose, :ingredients)
   end
