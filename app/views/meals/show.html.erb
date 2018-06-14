@@ -21,13 +21,14 @@
 
             <div class="more-about-cook text-center">
             <% if @meal.cook.photo.model[:photo] == nil %>
-            <%= image_tag @meal.cook.photo_fake, class: "avatar-review", id: "navbar-wagon-menu", "data-toggle" => "dropdown"%>
+            <%= image_tag @meal.cook.photo_fake, id: "navbar-wagon-menu", "data-toggle" => "dropdown"%>
             <% else %>
             <%= cl_image_tag @meal.cook.photo, width: 160, height: 160, crop: :thumb, gravity: :face, class: "avatar-review", id: "navbar-wagon-menu", "data-toggle" => "dropdown"%>
             <% end %>
             <%= link_to  meal_cook_path(@meal) do %>
 
-              <p><%= "More about #{@meal.cook.first_name}" %></p>
+              <p> More about <br>
+             <%= "#{@meal.cook.first_name}" %></p>
             </div>
             <% end%>
 
@@ -35,9 +36,17 @@
           </div>
 
         </h4>
-        <p><%= @meal.price %>€</p>
+        <p><strong>Price:</strong> <%= @meal.price %>€</p>
       </div>
 
+    <% weekday_meal = @meal.week_days.where(date: Date.today)[0] %>
+      <div class="meal-time">
+        <% if weekday_meal.nil? %>
+        <p>Today this meal is not available</p>
+        <% else %>
+        <p><strong>Pickup time: </strong><%= weekday_meal.pick_up_time_start.strftime('%Hh%M') %> / <%= weekday_meal.pick_up_time_end.strftime('%Hh%M') %></p>
+        <% end %>
+      </div>
       <div class="meal-info">
         <p><%= @meal.description %></p>
         <h5>Ingredients</h5>
@@ -52,15 +61,7 @@
       <p>Contact datails: <%= @meal.cook.email %></p>
       <p>Pick up food address: <%= @meal.cook.address %></p>
     </div> -->
-    <% weekday_meal = @meal.week_days.where(date: Date.today)[0] %>
     <div class="meal-footer">
-      <div class="meal-time">
-        <% if weekday_meal.nil? %>
-        <p>Today this meal is not available</p>
-        <% else %>
-        <p>Pickup time: <%= weekday_meal.pick_up_time_start.strftime('%Hh%M') %> / <%= weekday_meal.pick_up_time_end.strftime('%Hh%M') %></p>
-        <% end %>
-      </div>
       <% if !weekday_meal.nil? %>
       <div class="meal-dose">
         <%= simple_form_for [@meal, @item] do |f| %>
@@ -73,9 +74,7 @@
         </div>
         <% end %>
       </div>
-
       <% end %>
-
     </div>
   </div>
 
