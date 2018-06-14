@@ -10,17 +10,29 @@
         <h4>
           <%= @meal.name %>
           <% if current_user == @meal.cook %>
-            <%= link_to edit_meal_path do %>
-              <i class="fas fa-pencil-alt fa-l"></i>
-            <% end %>
-            <%= link_to meal_path, method: :delete, data: {confirm: 'Are you sure?'} do %>
-              <i class="fas fa-trash-alt fa-l"></i>
-            <% end %>
+          <%= link_to edit_meal_path do %>
+          <i class="fas fa-pencil-alt fa-l"></i>
           <% end %>
-           <div class="meal-cook">
-           <%= link_to "More about the cook", meal_cook_path(@meal)%>
+          <%= link_to meal_path, method: :delete, data: {confirm: 'Are you sure?'} do %>
+          <i class="fas fa-trash-alt fa-l"></i>
+          <% end %>
+          <% end %>
+          <div class="meal-cook">
 
-           </div>
+            <div class="more-about-cook text-center">
+            <% if @meal.cook.photo.model[:photo] == nil %>
+            <%= image_tag @meal.cook.photo_fake, class: "avatar-review", id: "navbar-wagon-menu", "data-toggle" => "dropdown"%>
+            <% else %>
+            <%= cl_image_tag @meal.cook.photo, width: 160, height: 160, crop: :thumb, gravity: :face, class: "avatar-review", id: "navbar-wagon-menu", "data-toggle" => "dropdown"%>
+            <% end %>
+            <%= link_to  meal_cook_path(@meal) do %>
+
+              <p><%= "More about #{@meal.cook.first_name}" %></p>
+            </div>
+            <% end%>
+
+
+          </div>
 
         </h4>
         <p><%= @meal.price %>€</p>
@@ -40,90 +52,90 @@
       <p>Contact datails: <%= @meal.cook.email %></p>
       <p>Pick up food address: <%= @meal.cook.address %></p>
     </div> -->
-      <% weekday_meal = @meal.week_days.where(date: Date.today)[0] %>
-      <div class="meal-footer">
-        <div class="meal-time">
-          <% if weekday_meal.nil? %>
-             <p>Today this meal is not available</p>
-          <% else %>
-          <p>Pickup time: <%= weekday_meal.pick_up_time_start.strftime('%Hh%M') %> / <%= weekday_meal.pick_up_time_end.strftime('%Hh%M') %></p>
-          <% end %>
-        </div>
-        <% if !weekday_meal.nil? %>
-        <div class="meal-dose">
-          <%= simple_form_for [@meal, @item] do |f| %>
-            <div class="form-actions">
-              <i class="fas fa-minus" onclick="decrease()"></i>
-              <input name="item[doses]" type="number" min="1" max="<%= weekday_meal.doses %>" value="1" class="val" id="item_doses" readonly>
-              <i class="fas fa-plus" onclick="increase()"></i>
-              <%#= f.button :submit, 'Add to Cart', class: "button" %>
-              <input type="submit" name="commit" value="Add to Cart" class="button" data-toggle="modal" data-target="#exampleModal">
-            </div>
-          <% end %>
-        </div>
-
+    <% weekday_meal = @meal.week_days.where(date: Date.today)[0] %>
+    <div class="meal-footer">
+      <div class="meal-time">
+        <% if weekday_meal.nil? %>
+        <p>Today this meal is not available</p>
+        <% else %>
+        <p>Pickup time: <%= weekday_meal.pick_up_time_start.strftime('%Hh%M') %> / <%= weekday_meal.pick_up_time_end.strftime('%Hh%M') %></p>
         <% end %>
+      </div>
+      <% if !weekday_meal.nil? %>
+      <div class="meal-dose">
+        <%= simple_form_for [@meal, @item] do |f| %>
+        <div class="form-actions">
+          <i class="fas fa-minus" onclick="decrease()"></i>
+          <input name="item[doses]" type="number" min="1" max="<%= weekday_meal.doses %>" value="1" class="val" id="item_doses" readonly>
+          <i class="fas fa-plus" onclick="increase()"></i>
+          <%#= f.button :submit, 'Add to Cart', class: "button" %>
+          <input type="submit" name="commit" value="Add to Cart" class="button" data-toggle="modal" data-target="#exampleModal">
+        </div>
+        <% end %>
+      </div>
 
+      <% end %>
+
+    </div>
+  </div>
+
+</div>
+
+<% ratings = [] %>
+<% @meal.reviews.each do |review| %>
+<% ratings << review.rating  %>
+<% end %>
+
+<% if ratings.empty? %>
+<% average_rating = 0 %>
+<% else %>
+<% average_rating = (ratings.reduce(:+)/ratings.size.to_f).round(0)  %>
+<% end %>
+
+<div class="right-section">
+  <div class="star-rating">
+    <p>
+      <% average_rating.times do %>
+      <i class="fas fa-star star-yellow"></i>
+      <% end %>
+      <% (5 - average_rating).times do %>
+      <i class="fas fa-star star-grey"></i>
+      <% end %>
+    </p>
+    <p>
+      <a class="button" id="show-reviews-btn" style="cursor: pointer">
+        Reviews (<%= @meal.reviews.count %>)
+      </a>
+    </p>
+  </div>
+  <div class="meal-review" style="display: none;">
+    <% @meal.reviews.each do |review| %>
+    <div class="card-review">
+      <div class="review-name">
+        <% if review.user.photo.model[:photo] == nil %>
+        <%= image_tag review.user.photo_fake, class: "avatar-review" %>
+        <% else %>
+        <%= cl_image_tag review.user.photo, class: "avatar-review" %>
+        <% end %>
+        <p><%= review.user.first_name %></p>
+        <p class="review-name-address"><%= review.user.address %></p>
+      </div>
+      <div class="review-body">
+        <p class="review-date">
+          <% review.rating.times do %>
+          <i class="fas fa-star star-yellow"></i>
+          <% end %>
+          <% (5 - review.rating).times do %>
+          <i class="fas fa-star star-grey"></i>
+          <% end %>
+          <span><%= review.created_at.strftime('%d %b %Y') %></span>
+        </p>
+        <p>"<em><%= review.content %></em>"</p>
       </div>
     </div>
-
+    <% end %>
   </div>
-
-  <% ratings = [] %>
-  <% @meal.reviews.each do |review| %>
-    <% ratings << review.rating  %>
-  <% end %>
-
-  <% if ratings.empty? %>
-    <% average_rating = 0 %>
-  <% else %>
-    <% average_rating = (ratings.reduce(:+)/ratings.size.to_f).round(0)  %>
-  <% end %>
-
-  <div class="right-section">
-    <div class="star-rating">
-      <p>
-        <% average_rating.times do %>
-          <i class="fas fa-star star-yellow"></i>
-        <% end %>
-        <% (5 - average_rating).times do %>
-          <i class="fas fa-star star-grey"></i>
-        <% end %>
-      </p>
-      <p>
-        <a class="button" id="show-reviews-btn" style="cursor: pointer">
-          Reviews (<%= @meal.reviews.count %>)
-        </a>
-      </p>
-    </div>
-    <div class="meal-review" style="display: none;">
-      <% @meal.reviews.each do |review| %>
-        <div class="card-review">
-          <div class="review-name">
-            <% if review.user.photo.model[:photo] == nil %>
-              <%= image_tag "https://www.myfirestorm.com/img/placeholder_user.png", class: "avatar-review" %>
-            <% else %>
-              <%= cl_image_tag current_user.photo, class: "avatar-review" %>
-            <% end %>
-            <p><%= review.user.first_name %></p>
-            <p class="review-name-address"><%= review.user.address %></p>
-          </div>
-          <div class="review-body">
-            <p class="review-date">
-              <% review.rating.times do %>
-                <i class="fas fa-star star-yellow"></i>
-              <% end %>
-               <% (5 - review.rating).times do %>
-                <i class="fas fa-star star-grey"></i>
-              <% end %>
-              <span><%= review.created_at.strftime('%d %b %Y') %></span>
-            </p>
-            <p>"<em><%= review.content %></em>"</p>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
+</div>
 </div>
 
 </div>
@@ -172,12 +184,12 @@
   }
 
   const hideElement = (element) => {
-  if (element.style.display === "none") {
-    element.style.display = "block";
-  } else {
-    element.style.display = "none";
+    if (element.style.display === "none") {
+      element.style.display = "block";
+    } else {
+      element.style.display = "none";
+    }
   }
-}
 
   const buttonReview = document.getElementById('show-reviews-btn');
   const reviewContainer = document.querySelector('.meal-review');
