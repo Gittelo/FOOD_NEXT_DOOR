@@ -52,4 +52,15 @@
 .more-about-cook{
   text-align: center;
   font-size: 10px;
+  margin-left: 30px;
+  height: 250px;
+  img {
+    width: 120px ;
+    border-radius: 50%;
+  }
+  p {
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+  }
 }
