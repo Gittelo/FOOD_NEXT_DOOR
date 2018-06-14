@@ -49,17 +49,16 @@ user9  = User.create!(first_name: "Rute",      last_name: "Amaral",     address:
 user10 = User.create!(first_name: "Manuel",    last_name: "Machado",    address: "Avenida da Liberdade 2, Lisboa",         email: "manuel@fesf.fr",     password: "123456", cook_status: 0, photo_fake: 'https://www.menshairstyletrends.com/wp-content/uploads/2014/10/Stephen-Rahman-Hughes-Round-Face-Men.jpg')
 user11 = User.create!(first_name: "Sara",      last_name: "Guedes",     address: "Avenida do Brasil 30, Lisboa",           email: "sara@fesf.fr",       password: "123456", cook_status: 0, photo_fake: 'https://s3-eu-west-1.amazonaws.com/gtglive/public/image/nancy.jpg')
 
-userJ1 = User.create!(first_name: "Ana",       last_name: "G",          address: "Estrada de Benfica, 277, Lisboa",        email: "ana.g@fesf.fr",      password: "123456", cook_status: 0, photo_fake: 'https://pbs.twimg.com/profile_images/894021283582750720/HoGy2kAV_400x400.jpg')
-userJ2 = User.create!(first_name: "Francisco", last_name: "G",          address: "Rua 4 de Infantaria, 20, Lisboa",        email: "franscisco@fesf.fr", password: "123456", cook_status: 0, photo_fake: 'http://ecfr.eu/page/-/Borjas_profile_picture_II.jpg?v=1463746828')
-userJ3 = User.create!(first_name: "Sofia",     last_name: "G",          address: "Travessa de Santa Quitéria, 25, Lisboa", email: "sofia@fesf.fr",      password: "123456", cook_status: 0, photo_fake: "http://r.fod4.com/c=sq/s=w250,pd2/o=80/http://p.fod4.com/p/channels/kqswu/profile/duSTMEv6TRycZmqilwGk_Sofia%20Black%20D'elia.jpg")
-userJ4 = User.create!(first_name: "João",      last_name: "G",          address: "Rua Luciano Cordeiro, 14, Lisboa",       email: "joao@fesf.fr",       password: "123456", cook_status: 0, photo_fake: "http://www.guengl.eu/images/made/uploads/mep-pictures/FERREIRA_JOAO_PT_400_500_70_c1_c_t.JPG")
-userJ5 = User.create!(first_name: "Manuel",    last_name: "G",          address: "Rua Tomás Ribero 15, Lisboa",            email: "manuel.g@fesf.fr",   password: "123456", cook_status: 0, photo_fake: 'https://wit.edu/sites/default/files/delgado-manuel.jpg')
+userJ6 = User.create!(first_name: "Ana",       last_name: "G",          address: "Estrada de Benfica, 277, Lisboa",        email: "ana.g@fesf.fr",      password: "123456", cook_status: 0, photo_fake: 'https://pbs.twimg.com/profile_images/894021283582750720/HoGy2kAV_400x400.jpg')
+userJ7 = User.create!(first_name: "Francisco", last_name: "G",          address: "Rua 4 de Infantaria, 20, Lisboa",        email: "franscisco@fesf.fr", password: "123456", cook_status: 0, photo_fake: 'http://ecfr.eu/page/-/Borjas_profile_picture_II.jpg?v=1463746828')
+userJ8 = User.create!(first_name: "Sofia",     last_name: "G",          address: "Travessa de Santa Quitéria, 25, Lisboa", email: "sofia@fesf.fr",      password: "123456", cook_status: 0, photo_fake: "http://r.fod4.com/c=sq/s=w250,pd2/o=80/http://p.fod4.com/p/channels/kqswu/profile/duSTMEv6TRycZmqilwGk_Sofia%20Black%20D'elia.jpg")
+userJ9 = User.create!(first_name: "João",      last_name: "G",          address: "Rua Luciano Cordeiro, 14, Lisboa",       email: "joao@fesf.fr",       password: "123456", cook_status: 0, photo_fake: "http://www.guengl.eu/images/made/uploads/mep-pictures/FERREIRA_JOAO_PT_400_500_70_c1_c_t.JPG")
+userJ10 = User.create!(first_name: "Manuel",    last_name: "G",          address: "Rua Tomás Ribero 15, Lisboa",            email: "manuel.g@fesf.fr",   password: "123456", cook_status: 0, photo_fake: 'https://wit.edu/sites/default/files/delgado-manuel.jpg')
 
-#change pictures
-userA1 = User.create!(first_name: "Typhany",   last_name: "G",          address: "Avenida do Brasil 23, Lisboa",           email: "typhany@fesf.fr",    password: "123456", cook_status: 0, photo_fake: 'https://i.pinimg.com/originals/2f/9d/4f/2f9d4f05948c5fe1c2aa06aebb69088c.jpg')
-userA2 = User.create!(first_name: "Elise",     last_name: "G",          address: "Rua Seara Nova 1, Lisboa",               email: "elise@fesf.fr",      password: "123456", cook_status: 0, photo_fake: 'http://www.lovely-hairstyles.com/wp-content/uploads/2016/11/Hair-Style-for-Black-Women.jpg')
-userA3 = User.create!(first_name: "Lea",       last_name: "G",          address: "Avenida de Roma 1, Lisboa",              email: "lea@fesf.fr",        password: "123456", cook_status: 0, photo_fake: 'https://www.womeninbiznetwork.com/wp-content/uploads/2017/02/2-500x500.png')
-userA4 = User.create!(first_name: "Tim",       last_name: "G",          address: "Rua Telhal 1, Lisboa",                   email: "tim@fesf.fr",        password: "123456", cook_status: 0, photo_fake: 'https://wit.edu/sites/default/files/delgado-manuel.jpg')
+userA6 = User.create!(first_name: "Typhany",   last_name: "G",          address: "Avenida do Brasil 23, Lisboa",           email: "typhany@fesf.fr",    password: "123456", cook_status: 0, photo_fake: 'https://i.pinimg.com/originals/2f/9d/4f/2f9d4f05948c5fe1c2aa06aebb69088c.jpg')
+userA7 = User.create!(first_name: "Elise",     last_name: "G",          address: "Rua Seara Nova 1, Lisboa",               email: "elise@fesf.fr",      password: "123456", cook_status: 0, photo_fake: 'http://www.lovely-hairstyles.com/wp-content/uploads/2016/11/Hair-Style-for-Black-Women.jpg')
+userA8 = User.create!(first_name: "Lea",       last_name: "G",          address: "Avenida de Roma 1, Lisboa",              email: "lea@fesf.fr",        password: "123456", cook_status: 0, photo_fake: 'https://www.womeninbiznetwork.com/wp-content/uploads/2017/02/2-500x500.png')
+userA9 = User.create!(first_name: "Tim",       last_name: "G",          address: "Rua Telhal 1, Lisboa",                   email: "tim@fesf.fr",        password: "123456", cook_status: 0, photo_fake: 'https://wit.edu/sites/default/files/delgado-manuel.jpg')
 
 
 puts("Creating Meals...")
@@ -184,7 +183,7 @@ mealA4 = Meal.create!(cook: userA4,
                       address: userA4. address,
                       photo: 'https://i.pinimg.com/originals/87/d1/57/87d157cdeb19dbdf7b6136bd9fa99273.jpg')
 mealA5 = Meal.create!(cook: userA5,
-                      name: "Argentinian Whole Prime Rib Roast a la Parilla and Chimichurri",
+                      name: "Argentinian Whole Prime Rib Roast a la Parilla",
                       description: "This is a classic of the Argentinian Cuisine. This high quality prime rib roast is whole grilled on the parilla. The meat comes directly from Argentinian producers and the chimichurri is, of course, homemade with only fresh ingredients.",
                       grams_per_dose: 1600,
                       ingredients: "Beef, various spicies, pepper, red wine vinegar, garlic cloves, shallot, fresh cilantro, fresh flat-leaf parsley, fresh oregano, extra-virgin olive oil",

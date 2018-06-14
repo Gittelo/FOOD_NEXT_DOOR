@@ -10,7 +10,7 @@
 .card{
   overflow: hidden;
   color: $dark-gray;
-  height: 350px;
+  height: 400px;
   max-width: 320px;
   background: $light-gray;
   margin: 20px 10px;
@@ -34,32 +34,18 @@
   }
 }
 
-.card .description{
+.card .card-title{
   padding: 0 5%;
   height: 20%;
+
 }
 
-.card .description p{
+.card .card-title p{
   margin: 0;
-  font-size: 16px;
-  padding: 1% 0;
+  font-size: 20px;
+  padding: 3% 0;
   color: $dark-gray;
-}
-
-
-.card .description .sub{
-  color: $medium-gray;
-  //display: block; /* Fallback for non-webkit */
-  //display: -webkit-box;
-  //height: $font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
-  margin: 0 auto;
-  font-size: 12px;
-  //line-height: $line-height;
-  //-webkit-line-clamp: $lines-to-show;
-  //-webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  position: center;
 }
 
 .card .card-footer {
@@ -80,9 +66,17 @@
 }
 
 .card-time{
-  font-size: 12px;
+  font-size: 14px;
   width: 100px;
   color: $dark-gray;
+  font-weight: 700;
+  margin-left: 80px;
+}
+
+.card-time .sub{
+  font-size: 13px;
+  color: $dark-gray;
+  font-weight: 400;
 }
 
 .card-review{
