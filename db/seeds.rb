@@ -50,13 +50,12 @@ user9  = User.create!(first_name: "Rute",      last_name: "Amaral",     address:
 user10 = User.create!(first_name: "Manuel",    last_name: "Machado",    address: "Avenida da Liberdade 2, Lisboa",         email: "manuel@fesf.fr",     password: "123456", cook_status: 0, photo_fake: 'https://www.menshairstyletrends.com/wp-content/uploads/2014/10/Stephen-Rahman-Hughes-Round-Face-Men.jpg')
 user11 = User.create!(first_name: "Sara",      last_name: "Guedes",     address: "Avenida do Brasil 30, Lisboa",           email: "sara@fesf.fr",       password: "123456", cook_status: 0, photo_fake: 'https://s3-eu-west-1.amazonaws.com/gtglive/public/image/nancy.jpg')
 
-userJ1 = User.create!(first_name: "Ana",       last_name: "G",          address: "Estrada de Benfica, 277, Lisboa",        email: "ana.g@fesf.fr",      password: "123456", cook_status: 0, photo_fake: 'https://pbs.twimg.com/profile_images/894021283582750720/HoGy2kAV_400x400.jpg')
-userJ2 = User.create!(first_name: "Francisco", last_name: "G",          address: "Rua 4 de Infantaria, 20, Lisboa",        email: "franscisco@fesf.fr", password: "123456", cook_status: 0, photo_fake: 'http://ecfr.eu/page/-/Borjas_profile_picture_II.jpg?v=1463746828')
-userJ3 = User.create!(first_name: "Sofia",     last_name: "G",          address: "Travessa de Santa Quitéria, 25, Lisboa", email: "sofia@fesf.fr",      password: "123456", cook_status: 0, photo_fake: "http://r.fod4.com/c=sq/s=w250,pd2/o=80/http://p.fod4.com/p/channels/kqswu/profile/duSTMEv6TRycZmqilwGk_Sofia%20Black%20D'elia.jpg")
-userJ4 = User.create!(first_name: "João",      last_name: "G",          address: "Rua Luciano Cordeiro, 14, Lisboa",       email: "joao@fesf.fr",       password: "123456", cook_status: 0, photo_fake: "http://www.guengl.eu/images/made/uploads/mep-pictures/FERREIRA_JOAO_PT_400_500_70_c1_c_t.JPG")
-userJ5 = User.create!(first_name: "Manuel",    last_name: "G",          address: "Rua Tomás Ribero 15, Lisboa",            email: "manuel.g@fesf.fr",   password: "123456", cook_status: 0, photo_fake: 'https://wit.edu/sites/default/files/delgado-manuel.jpg')
+userJ6 = User.create!(first_name: "Ana",       last_name: "G",          address: "Estrada de Benfica, 277, Lisboa",        email: "ana.g@fesf.fr",      password: "123456", cook_status: 0, photo_fake: 'https://pbs.twimg.com/profile_images/894021283582750720/HoGy2kAV_400x400.jpg')
+userJ7 = User.create!(first_name: "Francisco", last_name: "G",          address: "Rua 4 de Infantaria, 20, Lisboa",        email: "franscisco@fesf.fr", password: "123456", cook_status: 0, photo_fake: 'http://ecfr.eu/page/-/Borjas_profile_picture_II.jpg?v=1463746828')
+userJ8 = User.create!(first_name: "Sofia",     last_name: "G",          address: "Travessa de Santa Quitéria, 25, Lisboa", email: "sofia@fesf.fr",      password: "123456", cook_status: 0, photo_fake: "http://r.fod4.com/c=sq/s=w250,pd2/o=80/http://p.fod4.com/p/channels/kqswu/profile/duSTMEv6TRycZmqilwGk_Sofia%20Black%20D'elia.jpg")
+userJ9 = User.create!(first_name: "João",      last_name: "G",          address: "Rua Luciano Cordeiro, 14, Lisboa",       email: "joao@fesf.fr",       password: "123456", cook_status: 0, photo_fake: "http://www.guengl.eu/images/made/uploads/mep-pictures/FERREIRA_JOAO_PT_400_500_70_c1_c_t.JPG")
+userJ10 = User.create!(first_name: "Manuel",    last_name: "G",          address: "Rua Tomás Ribero 15, Lisboa",            email: "manuel.g@fesf.fr",   password: "123456", cook_status: 0, photo_fake: 'https://wit.edu/sites/default/files/delgado-manuel.jpg')
 
-#change pictures
 userA6 = User.create!(first_name: "Typhany",   last_name: "G",          address: "Avenida do Brasil 23, Lisboa",           email: "typhany@fesf.fr",    password: "123456", cook_status: 0, photo_fake: 'https://i.pinimg.com/originals/2f/9d/4f/2f9d4f05948c5fe1c2aa06aebb69088c.jpg')
 userA7 = User.create!(first_name: "Elise",     last_name: "G",          address: "Rua Seara Nova 1, Lisboa",               email: "elise@fesf.fr",      password: "123456", cook_status: 0, photo_fake: 'http://www.lovely-hairstyles.com/wp-content/uploads/2016/11/Hair-Style-for-Black-Women.jpg')
 userA8 = User.create!(first_name: "Lea",       last_name: "G",          address: "Avenida de Roma 1, Lisboa",              email: "lea@fesf.fr",        password: "123456", cook_status: 0, photo_fake: 'https://www.womeninbiznetwork.com/wp-content/uploads/2017/02/2-500x500.png')
@@ -124,7 +123,7 @@ mealJ1 = Meal.create!(cook: userJ1,
                                     Our version of Quiche Lorraine is just that: made with a creamy, cheesy, savory center and baked on a flaky, warm crust for a brunch recipe that’s filling',
                       grams_per_dose: 300,
                       ingredients: 'Bacon, gruyère, eggs, pastry, olive oil, eggs, milk, cream',
-                      price: 7.5,
+                      price: 4.5,
                       address: userJ1.address,
                       photo: 'https://img.taste.com.au/yzM49jFu/taste/2017/02/classic-quiche-lorraine-121391-2.jpg')
 mealJ2 = Meal.create!(cook: userJ2,
@@ -142,7 +141,7 @@ mealJ3 = Meal.create!(cook: userJ3,
                                     The dish is a common meal on many tables throughout the country, though many claim the dish hails from the Beiras, a strip of land between the South of the Douro River and the North of the Tagus River.',
                       grams_per_dose: 700,
                       ingredients: 'Octupus, potatoes, onions, coriander, garlic, olive oil, bay leaves, salt and pepper.',
-                      price: 4.5,
+                      price: 8.5,
                       address: userJ3.address,
                       photo: 'https://labohemie.pt/wp-content/uploads/2017/12/Fama-dAlfama-polvo-%C3%A0-lagareiro.jpg')
 mealJ4 = Meal.create!(cook: userJ4,
@@ -193,16 +192,17 @@ mealA4 = Meal.create!(cook: userA3,
                       description: "This exotic revisited dish fits in perfectly with the French South West cuisine. This octopus stew takes plenty of time to prepare, since it requires long and slow simmering. The end result is a very tender octopus in a stew which will delight the most demanding taste buds. The chorizo and grass sublimate the fine and tasteful flesh of this mysterious animal. ",
                       grams_per_dose: 800,
                       ingredients: "Eggs, milk, butter, mushrooms, cheese, ham, spinach, tomatoes, salad, salt, pepper",
-                      price: 4.5,
-                      address: userA3. address,
+
+                      price: 8.5,
+                      address: userA4. address,
                       photo: 'https://i.pinimg.com/originals/87/d1/57/87d157cdeb19dbdf7b6136bd9fa99273.jpg')
-mealA5 = Meal.create!(cook: userA3,
-                      name: "Argentinian Whole Prime Rib Roast a la Parilla and Chimichurri",
+mealA5 = Meal.create!(cook: userA5,
+                      name: "Argentinian Whole Prime Rib Roast a la Parilla",
                       description: "This is a classic of the Argentinian Cuisine. This high quality prime rib roast is whole grilled on the parilla. The meat comes directly from Argentinian producers and the chimichurri is, of course, homemade with only fresh ingredients.",
                       grams_per_dose: 1600,
                       ingredients: "Beef, various spicies, pepper, red wine vinegar, garlic cloves, shallot, fresh cilantro, fresh flat-leaf parsley, fresh oregano, extra-virgin olive oil",
-                      price: 22,
-                      address: userA3. address,
+                      price: 14,
+                      address: userA5. address,
                       photo: 'https://www.viandesuisse.ch/filemount/_processed_/csm_3676892_ac83a123f7.jpg')
 
 mealD1 = Meal.create!(cook: userD1,
@@ -221,21 +221,19 @@ mealD2 = Meal.create!(cook: userD2,
                                     and tomato stew with rice, almost like a risotto, to become arroz de tamboril.",
                       grams_per_dose: 350,
                       ingredients: "Cilantro, onion,  cloves of garlic, cup parsley, pepper, tomato, paprika, green pepper, salt, pepper, extra virgin olive oil.",
-                      price: 3.20,
+                      price: 6.20,
                       address: userD2.address,
                       photo: 'https://fotos.web.sapo.io/i/o1b06043a/18261602_AjELi.jpeg')
 
 
-puts("Creating Orders...")
-# order1 = Order.create!(sku: 'a', user: user6,  status: 1, total_price: item1.item_price  + item2.item_price   + item3.item_price)
-# order2 = Order.create!(sku: 'b', user: user7,  status: 1, total_price: item4.item_price)
-# order3 = Order.create!(sku: 'c', user: user8,  status: 1, total_price: item5.item_price  + item6.item_price)
-# order4 = Order.create!(sku: 'd', user: user9,  status: 1, total_price: item7.item_price  + item8.item_price)
+# puts("Creating Orders...")
+# order1 = Order.create!(sku: 'a', user: user6,  status: 1, total_price: )
+# order2 = Order.create!(sku: 'b', user: user7,  status: 1, total_price: )
+# order3 = Order.create!(sku: 'c', user: user8,  status: 1, total_price: )
+# order4 = Order.create!(sku: 'd', user: user9,  status: 1, total_price: )
 
-# order5 = Order.create!(sku: 'd', user: user10, status: 0, total_price: item9.item_price)
-# order6 = Order.create!(sku: 'd', user: user11, status: 0, total_price: item10.item_price + item11.item_price)
 
-puts("Creating Items...")
+# puts("Creating Items...")
 # item1  = Item.create!(order: order1, meal: mealC1, doses: 2, item_price: mealC1.price * 2)
 # item2  = Item.create!(order: order1, meal: mealC2, doses: 1, item_price: mealC2.price * 1)
 # item3  = Item.create!(order: order1, meal: mealC3, doses: 3, item_price: mealC3.price * 3)
@@ -248,10 +246,6 @@ puts("Creating Items...")
 # item7  = Item.create!(order: order4, meal: mealC1, doses: 2, item_price: mealC1.price * 2)
 # item8  = Item.create!(order: order4, meal: mealC4, doses: 2, item_price: mealC4.price * 2)
 
-# item9  = Item.create!(order: order5, meal: mealC5, doses: 3, item_price: mealC5.price * 3)
-
-# item10 = Item.create!(order: order6, meal: mealC1, doses: 1, item_price: mealC1.price * 1)
-# item10 = Item.create!(order: order6, meal: mealC2, doses: 3, item_price: mealC2.price * 3)
 
 # sum = 0
 # order1.items.each do |item|
