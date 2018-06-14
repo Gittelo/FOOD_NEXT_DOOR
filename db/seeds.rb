@@ -117,7 +117,7 @@ mealJ2 = Meal.create!(cook: userJ2,
                       grams_per_dose: 650,
                       ingredients: 'Picanha, garlic, rice, polenta, corn, lettuce, tomato, salt and pepper.',
                       price: 9,
-                      address: userj2.address,
+                      address: userJ2.address,
                       photo: 'http://www.pamonhasdocezar.com.br/uploads/3226d0672c5162538c1ec3898c63bb44.jpg')
 mealJ3 = Meal.create!(cook: userJ3,
                       name: 'Polvo à Lagareiro',
@@ -145,7 +145,7 @@ mealJ5 = Meal.create!(cook: userJ5,
                       grams_per_dose: 800,
                       ingredients: 'Beef, rice, egg, potatoes, butter, garlic, onion, olive oil, salt and pepper and vegetable oil.',
                       price: 6,
-                      address: userj5.address,
+                      address: userJ5.address,
                       photo: 'https://media.timeout.com/images/103701660/image.jpg')
 
 mealA1 = Meal.create!(cook: userA1,
@@ -264,7 +264,7 @@ item10 = Item.create!(order: order6, meal: mealC2, doses: 3, item_price: mealC2.
 # Review.create!(user: User.find(8), meal: Meal.find(5), rating: 4, content: 'That was good')
 # Review.create!(user: User.find(8), meal: Meal.find(6), rating: 5, content: 'That was really good')
 # Review.create!(user: User.find(9), meal: Meal.find(7), rating: 5, content: 'That was really good')
-                           
+
 
 puts("Creating Reviews...")
 
