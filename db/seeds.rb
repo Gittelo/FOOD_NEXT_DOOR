@@ -10,26 +10,26 @@ WeekDay.destroy_all
 
 puts("Creating Cooks...")
 user1 = User.create!(first_name: "Maria",    last_name: "Belo",       address: "Rua da Moeda 6, Lisboa",               email: "maria@fesf.fr",     password: "123456", cook_status: 1, photo_fake: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSARxPiIB8cCL-xCX9CW9lyOq75poVh842vdlsYfAJEMPj5J4uLyA")
-user2 = User.create!(first_name: "Marta",    last_name: "Carmo",      address: "Rua de São Marçal 170, Lisboa",        email: "marta@fesf.fr",     password: "123456", cook_status: 1, photo_fake: "https://avatars2.githubusercontent.com/u/398893?s=400&v=4")
-user3 = User.create!(first_name: "Pedro",    last_name: "Fargo",      address: "Rua da Vitória 4, Lisboa",             email: "pedro@fesf.fr",     password: "123456", cook_status: 1, photo_fake: "")
-user4 = User.create!(first_name: "Joana",    last_name: "Rosa",       address: "Avenida de Roma 39, Lisboa",           email: "joana@fesf.fr",     password: "123456", cook_status: 1, photo_fake: "")
-user5 = User.create!(first_name: "Vasco",    last_name: "Castro",     address: "Avenida São João de Deus 35, Lisboa",  email: "vasco@fesf.fr",     password: "123456", cook_status: 1, photo_fake: "")
-userd1 = User.create!(first_name: "Mitch",   last_name: "Rodrigues",  address: "Avenida do Brasil 2, Lisboa",          email: "mitch@gmail.pt",    password: "123456", cook_status: 1, photo_fake: "")
-userd2 = User.create!(first_name: "Emanuel", last_name: "Herculano",  address: "R. Vítor Cordon 2-20, Lisboa",         email: "emanuel@gmail.pt",  password: "123456", cook_status: 1, photo_fake: "")
-userd3 = User.create!(first_name: "Henrique",last_name: "Sousa",      address: "Rua da Penha de França 1, Lisboa",     email: "henrique@gmail.pt", password: "123456", cook_status: 1, photo_fake: "")
+user2 = User.create!(first_name: "Marta",    last_name: "Carmo",      address: "Rua de São Marçal 170, Lisboa",        email: "marta@fesf.fr",     password: "123456", cook_status: 1, photo_fake: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTttXIwKVB1fejI-XxRuMxRDbtv7HBt67g4wMA1_MvUiyxhTz4Ag")
+user3 = User.create!(first_name: "Pedro",    last_name: "Fargo",      address: "Rua da Vitória 4, Lisboa",             email: "pedro@fesf.fr",     password: "123456", cook_status: 1, photo_fake: "https://s3.amazonaws.com/typekit-production-public-assets/designers/profile_images/000/000/391/original/400x400-ellmerstefan.jpg?1507307338")
+user4 = User.create!(first_name: "Joana",    last_name: "Rosa",       address: "Avenida de Roma 39, Lisboa",           email: "joana@fesf.fr",     password: "123456", cook_status: 1, photo_fake: "https://b3be987d4a14cedde80d-7c1ee3a3cf06785b3e2b618873b759ef.ssl.cf5.rackcdn.com/person_21674.png")
+user5 = User.create!(first_name: "Vasco",    last_name: "Castro",     address: "Avenida São João de Deus 35, Lisboa",  email: "vasco@fesf.fr",     password: "123456", cook_status: 1, photo_fake: "https://avatars2.githubusercontent.com/u/398893?s=400&v=4")
+userd1 = User.create!(first_name: "Mitch",   last_name: "Rodrigues",  address: "Avenida do Brasil 2, Lisboa",          email: "mitch@gmail.pt",    password: "123456", cook_status: 1, photo_fake: "https://res.cloudinary.com/www-virgin-com/w_400,c_scale,dpr_1.0,f_auto,fl_lossy,q_auto/virgin-com-prod/sites/virgin.com/files/kirk.jpeg")
+userd2 = User.create!(first_name: "Emanuel", last_name: "Herculano",  address: "R. Vítor Cordon 2-20, Lisboa",         email: "emanuel@gmail.pt",  password: "123456", cook_status: 1, photo_fake: "https://1z1pdp2cr5ea30i3a81fh4af-wpengine.netdna-ssl.com/wp-content/uploads/2017/11/Cast-J-Quinton-Johnson.jpg")
+userd3 = User.create!(first_name: "Henrique",last_name: "Sousa",      address: "Rua da Penha de França 1, Lisboa",     email: "henrique@gmail.pt", password: "123456", cook_status: 1, photo_fake: "https://static1.squarespace.com/static/59e133d3f7e0ab03b64d8616/t/5a21cc69f9619a124de1cffb/1512165821929/Chris+Finlay")
 
-userd4 = User.create!(first_name: "Julia",   last_name: "Martins",    address: "R. Ferragial 33-1, Lisboa",            email: "julia@gmail.pt",    password: "123456", cook_status: 1, photo_fake: "")
-userd5 = User.create!(first_name: "Ricardo", last_name: "Lobo",       address: "R. Portas de Santo Antão 5, Lisboa",   email: "ricardo@gmail.pt",  password: "123456", cook_status: 1, photo_fake: "")
+userd4 = User.create!(first_name: "Julia",   last_name: "Martins",    address: "R. Ferragial 33-1, Lisboa",            email: "julia@gmail.pt",    password: "123456", cook_status: 1, photo_fake: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG0zvS3WQ5srTvunf4bY5COPg9hkbAHKke3Ycsx7WSyp34U_Qo")
+userd5 = User.create!(first_name: "Ricardo", last_name: "Lobo",       address: "R. Portas de Santo Antão 5, Lisboa",   email: "ricardo@gmail.pt",  password: "123456", cook_status: 1, photo_fake: "https://static.hltv.org/images/playerprofile/thumb/203/400.jpeg?v=5")
 
 
 
 puts("Creating Users...")
-user6  = User.create!(first_name: "Diogo",    last_name: "Rato",      address: "Avenida da Igreja 28, Lisboa",         email: "diogo@fesf.fr",    password: "123456", cook_status: 0, photo_fake: "")
-user7  = User.create!(first_name: "Ana",      last_name: "Mendonça",  address: "Rua Alexandre Herculano 2, Lisboa",    email: "ana@fesf.fr",      password: "123456", cook_status: 0, photo_fake: "")
-user8  = User.create!(first_name: "Catarina", last_name: "Vidal",     address: "Avenida Elias Garcia 76, Lisboa",      email: "catarina@fesf.fr", password: "123456", cook_status: 0, photo_fake: "")
-user9  = User.create!(first_name: "Rute",     last_name: "Almada",    address: "Rua da Penha de França 94, Lisboa",    email: "rute@fesf.fr",     password: "123456", cook_status: 0, photo_fake: "")
-user10 = User.create!(first_name: "Manuel",   last_name: "Morato",    address: "Avenida da Liberdade 2, Lisboa",       email: "manuel@fesf.fr",   password: "123456", cook_status: 0, photo_fake: "")
-user11 = User.create!(first_name: "Sara",     last_name: "Guerra",    address: "Avenida do Brasil 30, Lisboa",         email: "sara@fesf.fr",     password: "123456", cook_status: 0, photo_fake: "")
+user6  = User.create!(first_name: "Diogo",    last_name: "Rato",      address: "Avenida da Igreja 28, Lisboa",         email: "diogo@fesf.fr",    password: "123456", cook_status: 0, photo_fake: "https://mbi.nus.edu.sg/wp-content/uploads/2017/03/portraits-shiva-jf-rupprecht-400w.jpg")
+user7  = User.create!(first_name: "Ana",      last_name: "Mendonça",  address: "Rua Alexandre Herculano 2, Lisboa",    email: "ana@fesf.fr",      password: "123456", cook_status: 0, photo_fake: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYMHC8GJ7Gm4Rn0hoqZoItF68fNWb-Mnzb5gKGx5bZJY2n_dUrVA")
+user8  = User.create!(first_name: "Catarina", last_name: "Vidal",     address: "Avenida Elias Garcia 76, Lisboa",      email: "catarina@fesf.fr", password: "123456", cook_status: 0, photo_fake: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlxb7ZeEPqLBVg_tOBv_DJCSEYbnGYMX6QipshLMQT0B4qRNMeOA")
+user9  = User.create!(first_name: "Rute",     last_name: "Almada",    address: "Rua da Penha de França 94, Lisboa",    email: "rute@fesf.fr",     password: "123456", cook_status: 0, photo_fake: "https://cdn.shopify.com/s/files/1/2308/1525/files/5kDgVHUw_400x400_0f5f45d5-04b3-4d4e-b514-a4b73d797657_large.jpg?v=1504917606")
+user10 = User.create!(first_name: "Manuel",   last_name: "Morato",    address: "Avenida da Liberdade 2, Lisboa",       email: "manuel@fesf.fr",   password: "123456", cook_status: 0, photo_fake: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYJesooy7hw18Gt69HThUhnVopMPyLfYf1RnskfiHLl8nEOIrqRw")
+user11 = User.create!(first_name: "Sara",     last_name: "Guerra",    address: "Avenida do Brasil 30, Lisboa",         email: "sara@fesf.fr",     password: "123456", cook_status: 0, photo_fake: "https://www.posttraumainstitute.com/blog/wp-content/uploads/2017/04/Marjorie-Person-1.jpg")
 
 
 puts("Creating Meals...")

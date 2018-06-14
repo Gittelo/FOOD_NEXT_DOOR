@@ -3,7 +3,12 @@
     <h1 style="margin-top:80px";>Cook's Details</h1>
     <div class="cook-profile">
       <div class="left">
-        <img src="https://pbs.twimg.com/profile_images/990936890726670336/gApnSP5j_400x400.jpg" alt="" class = "avatar-cook">
+
+        <% if @cook.photo.model[:photo] == nil %>
+          <%= image_tag @cook.photo_fake, class: "avatar-cook", id: "navbar-wagon-menu", "data-toggle" => "dropdown"%>
+        <% else %>
+          <%= cl_image_tag @cook.photo, width: 160, height: 160, crop: :thumb, gravity: :face, class: "avatar-cook", id: "navbar-wagon-menu", "data-toggle" => "dropdown"%>
+        <% end %>
         <!-- <p><%= @cook.photo %></p> -->
         <h4 class = "text-center"><%= @cook.first_name %> <%= @cook.last_name %></h4>
         <div class="cook-data">
