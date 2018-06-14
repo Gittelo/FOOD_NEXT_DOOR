@@ -9,19 +9,25 @@ Meal.destroy_all
 WeekDay.destroy_all
 
 puts("Creating Cooks...")
-user1 = User.create!(first_name: "Maria",    last_name: "B",  address: "Rua da Moeda 6, Lisboa",               email: "maria@fesf.fr",     password: "123456", cook_status: 1)
-user2 = User.create!(first_name: "Marta",    last_name: "C",  address: "Rua de São Marçal 170, Lisboa",        email: "marta@fesf.fr",     password: "123456", cook_status: 1)
-user3 = User.create!(first_name: "Pedro",    last_name: "F",  address: "Rua da Vitória 4, Lisboa",             email: "pedro@fesf.fr",     password: "123456", cook_status: 1)
-user4 = User.create!(first_name: "Joana",    last_name: "R",  address: "Avenida de Roma 39, Lisboa",           email: "joana@fesf.fr",     password: "123456", cook_status: 1)
-user5 = User.create!(first_name: "Vasco",    last_name: "C",  address: "Avenida São João de Deus 35, Lisboa",  email: "vasco@fesf.fr",     password: "123456", cook_status: 1)
+user1 = User.create!(first_name: "Maria",    last_name: "Belo",       address: "Rua da Moeda 6, Lisboa",               email: "maria@fesf.fr",     password: "123456", cook_status: 1)
+user2 = User.create!(first_name: "Marta",    last_name: "Carmo",      address: "Rua de São Marçal 170, Lisboa",        email: "marta@fesf.fr",     password: "123456", cook_status: 1)
+user3 = User.create!(first_name: "Pedro",    last_name: "Fargo",      address: "Rua da Vitória 4, Lisboa",             email: "pedro@fesf.fr",     password: "123456", cook_status: 1)
+user4 = User.create!(first_name: "Joana",    last_name: "Rosa",       address: "Avenida de Roma 39, Lisboa",           email: "joana@fesf.fr",     password: "123456", cook_status: 1)
+user5 = User.create!(first_name: "Vasco",    last_name: "Castro",     address: "Avenida São João de Deus 35, Lisboa",  email: "vasco@fesf.fr",     password: "123456", cook_status: 1)
+userd1 = User.create!(first_name: "Mitch",   last_name: "Rodrigues",  address: "Avenida do Brasil 2, Lisboa",          email: "mitch@gmail.pt",    password: "123456", cook_status: 1)
+userd2 = User.create!(first_name: "Emanuel", last_name: "Herculano",  address: "Rua Alexandre Herculano 5, Lisboa",    email: "emanuel@gmail.pt",  password: "123456", cook_status: 1)
+userd3 = User.create!(first_name: "Henrique",last_name: "Sousa",      address: "Rua da Penha de França 1, Lisboa",     email: "henrique@gmail.pt", password: "123456", cook_status: 1)
+userd4 = User.create!(first_name: "Julia",   last_name: "Martins",    address: "R. Ferragial 33-1, Lisboa",            email: "julia@gmail.pt",    password: "123456", cook_status: 1)
+
+
 
 puts("Creating Users...")
-user6  = User.create!(first_name: "Diogo",    last_name: "R",  address: "Avenida da Igreja 28, Lisboa",         email: "diogo@fesf.fr",    password: "123456", cook_status: 0)
-user7  = User.create!(first_name: "Ana",      last_name: "M",  address: "Rua Alexandre Herculano 2, Lisboa",    email: "ana@fesf.fr",      password: "123456", cook_status: 0)
-user8  = User.create!(first_name: "Catarina", last_name: "V",  address: "Avenida Elias Garcia 76, Lisboa",      email: "catarina@fesf.fr", password: "123456", cook_status: 0)
-user9  = User.create!(first_name: "Rute",     last_name: "A",  address: "Rua da Penha de França 94, Lisboa",    email: "rute@fesf.fr",     password: "123456", cook_status: 0)
-user10 = User.create!(first_name: "Manuel",   last_name: "M",  address: "Avenida da Liberdade 2, Lisboa",       email: "manuel@fesf.fr",   password: "123456", cook_status: 0)
-user11 = User.create!(first_name: "Sara",     last_name: "G",  address: "Avenida do Brasil 30, Lisboa",         email: "sara@fesf.fr",     password: "123456", cook_status: 0)
+user6  = User.create!(first_name: "Diogo",    last_name: "Rato",      address: "Avenida da Igreja 28, Lisboa",         email: "diogo@fesf.fr",    password: "123456", cook_status: 0)
+user7  = User.create!(first_name: "Ana",      last_name: "Mendonça",  address: "Rua Alexandre Herculano 2, Lisboa",    email: "ana@fesf.fr",      password: "123456", cook_status: 0)
+user8  = User.create!(first_name: "Catarina", last_name: "Vidal",     address: "Avenida Elias Garcia 76, Lisboa",      email: "catarina@fesf.fr", password: "123456", cook_status: 0)
+user9  = User.create!(first_name: "Rute",     last_name: "Almada",    address: "Rua da Penha de França 94, Lisboa",    email: "rute@fesf.fr",     password: "123456", cook_status: 0)
+user10 = User.create!(first_name: "Manuel",   last_name: "Morato",    address: "Avenida da Liberdade 2, Lisboa",       email: "manuel@fesf.fr",   password: "123456", cook_status: 0)
+user11 = User.create!(first_name: "Sara",     last_name: "Guerra",    address: "Avenida do Brasil 30, Lisboa",         email: "sara@fesf.fr",     password: "123456", cook_status: 0)
 
 
 puts("Creating Meals...")
@@ -45,6 +51,37 @@ meal12 = Meal.create!(cook: user4, name: Faker::Food.unique.dish, description: F
 meal13 = Meal.create!(cook: user5, name: Faker::Food.unique.dish, description: Faker::Food.description, grams_per_dose: 300, ingredients: Faker::Food.ingredient, price: 5.0, address: "Avenida São João de Deus 35, Lisboa", photo: 'https://images.unsplash.com/photo-1490457843367-34b21b6ccd85?ixlib=rb-0.3.5&s=0c64f21bce4b02fb267b1900ccc2b523&auto=format&fit=crop&w=938&q=80')
 meal14 = Meal.create!(cook: user5, name: Faker::Food.unique.dish, description: Faker::Food.description, grams_per_dose: 250, ingredients: Faker::Food.ingredient, price: 3.0, address: "Avenida São João de Deus 35, Lisboa", photo: 'https://images.unsplash.com/photo-1490457843367-34b21b6ccd85?ixlib=rb-0.3.5&s=0c64f21bce4b02fb267b1900ccc2b523&auto=format&fit=crop&w=938&q=80')
 meal15 = Meal.create!(cook: user5, name: Faker::Food.unique.dish, description: Faker::Food.description, grams_per_dose: 450, ingredients: Faker::Food.ingredient, price: 4.5, address: "Avenida São João de Deus 35, Lisboa", photo: 'https://images.unsplash.com/photo-1490457843367-34b21b6ccd85?ixlib=rb-0.3.5&s=0c64f21bce4b02fb267b1900ccc2b523&auto=format&fit=crop&w=938&q=80')
+
+meald1 = Meal.create!(cook: userd1,
+                      name: "Mirandela's Alheira",
+                      description: "The alheira, a type of fowl sausage, is one of the cheapest and most common Portuguese dishes with a fascinating history. When the Jewish population was expelled from Portugal in 1498, many hid in the mountainous region of Trás-os-Montes in the northeast
+                                    of Portugal, practising their religion in secret while pretending they had converted to Catholicism. One way to do this was to ostensibly make, display and eat sausages so that everyone would think they were no longer keeping kosher. Nowadays, the dish is available in any corner eatery.",
+                      grams_per_dose: 300,
+                      ingredients: "Beef, poultry, bread, lard, garlic, paprika,salt, pepper, extra virgin olive oil.",
+                      price: 5.5,
+                      address: userd1.address,
+                      photo: 'https://cdn.teleculinaria.pt/wp-content/uploads/2016/01/alheiras-no-forno-com-grelos-e-batatas-cozidas.jpg')
+meald2 = Meal.create!(cook: userd2,
+                      name: "Tamboril Rice",
+                      description: "Tamboril is Portuguese for monkfish and while not as locally popular as the traditional cod, there is still an
+                                    astounding variety of dishes served on the Portuguese coast that include it. It is often cooked in a laurel, garlic
+                                    and tomato stew with rice, almost like a risotto, to become arroz de tamboril.",
+                      grams_per_dose: 350,
+                      ingredients: "Cilantro, onion,  cloves of garlic, cup parsley, pepper, tomato, paprika, green pepper, salt, pepper, extra virgin olive oil.",
+                      price: 3.20,
+                      address: userd2.address,
+                      photo: 'https://cdn.teleculinaria.pt/wp-content/uploads/2016/01/alheiras-no-forno-com-grelos-e-batatas-cozidas.jpg')
+meald3 = Meal.create!(cook: userd3,
+                      name: "Eel Stews",
+                      description: "Aveiro is famous for its eels which are most often eaten simply fried or in a soup.
+                                    Fishermen at Murtosa and Torreira beaches, just outside Aveiro, make an eel stew seasoned with saffron and accompanied by bell
+                                    peppers, combining beautifully with the crisp white wines of the Bairrada region, just south of Aveiro. The best place to try the
+                                    caldeirada is Bastos, a restaurant on the Torreira Beach, just five miles from Aveiro.",
+                      grams_per_dose: 200,
+                      ingredients: "Eel, tomato, aromatic herb, garlic, onion, salt, pepper, extra virgin olive oil, polenta",
+                      price: 6.20,
+                      address: userd3.address,
+                      photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Grilled_eel.jpg/1200px-Grilled_eel.jpg')
 
 
 puts("Creating Orders...")
