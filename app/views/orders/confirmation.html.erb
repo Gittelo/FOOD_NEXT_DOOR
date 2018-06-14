@@ -1,16 +1,16 @@
 <div class="wrapper confirmation-map-container">
   <div class="text-center confirmation-box">
-    <h2>Thank you for your order <%= @order.user.first_name %>!</h2>
+    <h2>Thank you for your order, <%= @order.user.first_name %>!</h2>
     <br>
-    You can pick up your meal between at
+    You can pick up your meal
       <ul>
         <% @order.items.each do |item| %>
           <li>
-            <%= item.meal.week_days.first.pick_up_time_start.strftime('%I:%M %p') %> -
+            between <%= item.meal.week_days.first.pick_up_time_start.strftime('%I:%M %p') %> -
             <%= item.meal.week_days.first.pick_up_time_end.strftime('%I:%M %p') %>
 
             <strong>
-              <%= item.meal.address %>
+              at <%= item.meal.address %>
             </strong>
           </li>
         <% end %>
