@@ -44,14 +44,14 @@
   const button = document.getElementById('show-map');
   window.isMapOpen = true;
   const hideElement = (element) => {
-  if (element.style.display === "none") {
-    element.style.display = "block";
-    window.isMapOpen = true;
-  } else {
-    element.style.display = "none";
-    window.isMapOpen = false;
+    if (element.style.display === "none") {
+      element.style.display = "block";
+      window.isMapOpen = true;
+    } else {
+      element.style.display = "none";
+      window.isMapOpen = false;
+    }
   }
-}
   const switchClasses = (element, class1, class2) => {
       element.classList.toggle(class1);
       element.classList.toggle(class2);
