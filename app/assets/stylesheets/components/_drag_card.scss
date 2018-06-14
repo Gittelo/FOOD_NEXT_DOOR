@@ -1,20 +1,16 @@
-.drag_card{
+.drag_card {
   overflow:hidden;
   width:300px;
-  background: #F5F5F5;
-  top:0; left:0; right:0; bottom:0;
-  border: red 1px solid;
+  height: 200px;
   border-radius: 5px;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: #ffd6d6;
-  .description {
-  p {
-    padding-bottom: 13px;
-    font-size: 17px;
-  }
+  background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+  background-size: cover;
+  background-position: center;
+  position: relative;
   .sub {
-  color: black;
+  color: $light-gray;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -22,42 +18,13 @@
   font-size: 14px;
   }
 }
-}
 
-
-.drag_card .description{
-  padding: 0 5%;
-  height: 20%;
-  }
-
-// $font-size: 12px;
-// $line-height: 1.4;
-// $lines-to-show: 2;
-
-// .drag_card .description .sub{
-//   color:#aaa;
-//   //display: block; /* Fallback for non-webkit */
-//   //display: -webkit-box;
-//   //height: $font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
-//   // margin: 0 auto;
-//   // font-size: 12px;
-//   //line-height: $line-height;
-//   //-webkit-line-clamp: $lines-to-show;
-//   //-webkit-box-orient: vertical;
-// }
-
-.drag_card .drag_card-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.drag_card-footer {
   height: 15%;
   padding: 0 5%;
   float:right;
   p {
-  font-size: 15px;
-  margin: 0;
-  padding: 0;
-
+  font-size: 20px;
   }
 }
 
