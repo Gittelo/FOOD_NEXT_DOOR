@@ -24,6 +24,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   # Add letter opener for emails
   gem "letter_opener"
+  gem 'rails_real_favicon'
 end
 
 group :development, :test do
