@@ -125,3 +125,20 @@
   background-color: $dark-gray;
   color: white;
 }
+
+.logo {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5vh;
+  vertical-align: middle;
+  h3 {
+    color: $green;
+  }
+}
+
+#brand {
+  margin-bottom: 10px;
+  padding: 0 20px;
+}

@@ -30,7 +30,8 @@ userJ5 = User.create!(first_name: "Mariana",   last_name: "Pires",      address:
 
 userA1 = User.create!(first_name: "François",  last_name: "Martin",     address: "Rua do Conde de Redondo 1, Lisboa",      email: "francois@gmail.com", password: "123456", cook_status: 1, photo_fake: 'https://menhairstylesworld.com/wp-content/uploads/2017/12/Business-Casual-Hairstyles-for-Men-with-Receding-Hairlines.jpg')
 userA2 = User.create!(first_name: "Valentin",  last_name: "Pons",       address: "Rua Silva Carvalho 18, Lisboa",          email: "valentin@gmail.com", password: "123456", cook_status: 1, photo_fake: 'https://images-na.ssl-images-amazon.com/images/I/61BSyQG1DGL.jpg')
-userA3 = User.create!(first_name: "Henri",     last_name: "Quélin",     address: "Rua Seara Nova 24, Lisboa",              email: "henri@gmail.com",    password: "123456", cook_status: 1, photo_fake: 'https://www.menshairstylestoday.com/wp-content/uploads/2016/08/Fringe-Haircut-For-Men.jpg')
+# Cook choosen
+userA3 = User.create!(first_name: "Antoine",   last_name: "Quellier",   address: "Rua Seara Nova 24, Lisboa",              email: "antoine@gmail.com",  password: "123456", cook_status: 1, photo_fake: 'https://www.menshairstylestoday.com/wp-content/uploads/2016/08/Fringe-Haircut-For-Men.jpg')
 userA4 = User.create!(first_name: "Julia",     last_name: "Estagnasié", address: "Rua Ferreira Lapa 17, Lisboa",           email: "julia@gmail.com",    password: "123456", cook_status: 1, photo_fake: 'https://i.pinimg.com/originals/84/d2/0e/84d20eb6d69995bbbc178df518b1ea96.jpg')
 userA5 = User.create!(first_name: "Ines",      last_name: "Zanoni",     address: "Rua Telhal 19, Lisboa",                  email: "ines@gmail.com",     password: "123456", cook_status: 1, photo_fake: 'http://media.philly.com/images/RS_500x500_20180215_STAFFHEADSHOT_N_456751562.JPG')
 
@@ -42,7 +43,7 @@ userD5 = User.create!(first_name: "Ricardo",   last_name: "Lobo",       address:
 
 
 puts("Creating Users...")
-user6  = User.create!(first_name: "Diogo",     last_name: "Rato",       address: "Avenida da Igreja 28, Lisboa",           email: "diogo@fesf.fr",      password: "123456", cook_status: 0, photo_fake: 'https://i.pinimg.com/736x/34/e5/21/34e5211511e66557dd7b40353185e946--mens-hairstyle-images-mens-undercut-hairstyle.jpg')
+user6  = User.create!(first_name: "Diogo",     last_name: "Telo",       address: "Avenida da Igreja 28, Lisboa",           email: "diogo@fesf.fr",      password: "123456", cook_status: 0, photo_fake: 'https://i.pinimg.com/736x/34/e5/21/34e5211511e66557dd7b40353185e946--mens-hairstyle-images-mens-undercut-hairstyle.jpg')
 user7  = User.create!(first_name: "Ana",       last_name: "Silva",      address: "Rua Alexandre Herculano 2, Lisboa",      email: "ana@fesf.fr",        password: "123456", cook_status: 0, photo_fake: 'https://www.telegraph.co.uk/content/dam/beauty/2016/01/29/facelift-main_trans_NvBQzQNjv4BqqVzuuqpFlyLIwiB6NTmJwfSVWeZ_vEN7c6bHu2jJnT8.jpg?imwidth=450')
 user8  = User.create!(first_name: "Catarina",  last_name: "Toste",      address: "Avenida Elias Garcia 76, Lisboa",        email: "catarina@fesf.fr",   password: "123456", cook_status: 0, photo_fake: 'https://www.bolde.com/wp-content/uploads/2016/01/iStock_000083904633_Small-400x400.jpg')
 user9  = User.create!(first_name: "Rute",      last_name: "Amaral",     address: "Rua da Penha de França 94, Lisboa",      email: "rute@fesf.fr",       password: "123456", cook_status: 0, photo_fake: 'http://boomerinas.com/wp-content/uploads/2013/11/how-to-wear-infinity-scarf-betty-barclay.jpg')
@@ -56,13 +57,25 @@ userJ4 = User.create!(first_name: "João",      last_name: "G",          address
 userJ5 = User.create!(first_name: "Manuel",    last_name: "G",          address: "Rua Tomás Ribero 15, Lisboa",            email: "manuel.g@fesf.fr",   password: "123456", cook_status: 0, photo_fake: 'https://wit.edu/sites/default/files/delgado-manuel.jpg')
 
 #change pictures
-userA1 = User.create!(first_name: "Typhany",   last_name: "G",          address: "Avenida do Brasil 23, Lisboa",           email: "typhany@fesf.fr",    password: "123456", cook_status: 0, photo_fake: 'https://wit.edu/sites/default/files/delgado-manuel.jpg')
-userA2 = User.create!(first_name: "Elise",     last_name: "G",          address: "Rua Seara Nova 1, Lisboa",               email: "elise@fesf.fr",      password: "123456", cook_status: 0, photo_fake: 'https://wit.edu/sites/default/files/delgado-manuel.jpg')
-userA3 = User.create!(first_name: "Lea",       last_name: "G",          address: "Avenida de Roma 1, Lisboa",              email: "lea@fesf.fr",        password: "123456", cook_status: 0, photo_fake: 'https://wit.edu/sites/default/files/delgado-manuel.jpg')
-userA4 = User.create!(first_name: "Tim",       last_name: "G",          address: "Rua Telhal 1, Lisboa",                   email: "tim@fesf.fr",        password: "123456", cook_status: 0, photo_fake: 'https://wit.edu/sites/default/files/delgado-manuel.jpg')
+userA6 = User.create!(first_name: "Typhany",   last_name: "G",          address: "Avenida do Brasil 23, Lisboa",           email: "typhany@fesf.fr",    password: "123456", cook_status: 0, photo_fake: 'https://i.pinimg.com/originals/2f/9d/4f/2f9d4f05948c5fe1c2aa06aebb69088c.jpg')
+userA7 = User.create!(first_name: "Elise",     last_name: "G",          address: "Rua Seara Nova 1, Lisboa",               email: "elise@fesf.fr",      password: "123456", cook_status: 0, photo_fake: 'http://www.lovely-hairstyles.com/wp-content/uploads/2016/11/Hair-Style-for-Black-Women.jpg')
+userA8 = User.create!(first_name: "Lea",       last_name: "G",          address: "Avenida de Roma 1, Lisboa",              email: "lea@fesf.fr",        password: "123456", cook_status: 0, photo_fake: 'https://www.womeninbiznetwork.com/wp-content/uploads/2017/02/2-500x500.png')
+userA9 = User.create!(first_name: "Tim",       last_name: "G",          address: "Rua Telhal 1, Lisboa",                   email: "tim@fesf.fr",        password: "123456", cook_status: 0, photo_fake: 'https://wit.edu/sites/default/files/delgado-manuel.jpg')
 
 
 puts("Creating Meals...")
+
+mealD3 = Meal.create!(cook: userD3,
+                      name: "Eel Stews",
+                      description: "Aveiro is famous for its eels which are most often eaten simply fried or in a soup.
+                                    Fishermen at Murtosa and Torreira beaches, just outside Aveiro, make an eel stew seasoned with saffron and accompanied by bell
+                                    peppers, combining beautifully with the crisp white wines of the Bairrada region, just south of Aveiro. The best place to try the
+                                    caldeirada is Bastos, a restaurant on the Torreira Beach, just five miles from Aveiro.",
+                      grams_per_dose: 200,
+                      ingredients: "Eel, tomato, aromatic herb, garlic, onion, salt, pepper, extra virgin olive oil, polenta",
+                      price: 6.20,
+                      address: userD3.address,
+                      photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Grilled_eel.jpg/1200px-Grilled_eel.jpg')
 
 mealC1 = Meal.create!(cook: user2,
                       name: 'Red Bean, Carrot and Kale Stew',
@@ -159,13 +172,13 @@ mealA1 = Meal.create!(cook: userA1,
                       price: 4.5,
                       address: userA1. address,
                       photo: 'https://4.bp.blogspot.com/-c7gRAH_aZlA/VBAC1IdQewI/AAAAAAAAC4s/ErZKSMyRFIU/s1600/IMG_9291.JPG')
-mealA2 = Meal.create!(cook: userA2,
+mealA2 = Meal.create!(cook: userA3,
                       name: "Zucchini Gratin",
                       description: "This Easy Cheesy Zucchini Gratin has become a classic on Food Next Door! It’s cheesy and creamy, super easy to warm up, and the perfect low carb side dish for your keto diet! Can also be eaten cold.",
                       grams_per_dose: 400,
                       ingredients: "Zucchini, Butter, eggs, Parmigiano Regiano, mint, basil, sal, pepper, piment d'espelette, salt, pepper",
                       price: 6,
-                      address: userA2. address,
+                      address: userA3. address,
                       photo: 'http://cdn-elle.ladmedia.fr/var/plain_site/storage/images/elle-a-table/recettes-de-cuisine/gratin-de-courgettes-menthe-et-noisettes-2594127/42424635-1-fre-FR/Gratin-de-courgettes-menthe-et-noisettes.jpg')
 mealA3 = Meal.create!(cook: userA3,
                       name: "Slow-cooked Salmon",
@@ -175,21 +188,21 @@ mealA3 = Meal.create!(cook: userA3,
                       price: 13,
                       address: userA3. address,
                       photo: 'http://cdn3-elle.ladmedia.fr/var/plain_site/storage/images/elle-a-table/toutes-vos-questions-cuisine/cuisson-saumon/51398714-2-fre-FR/Cuisson-saumon.jpg')
-mealA4 = Meal.create!(cook: userA4,
+mealA4 = Meal.create!(cook: userA3,
                       name: "French South West Style Octopus Stew",
                       description: "This exotic revisited dish fits in perfectly with the French South West cuisine. This octopus stew takes plenty of time to prepare, since it requires long and slow simmering. The end result is a very tender octopus in a stew which will delight the most demanding taste buds. The chorizo and grass sublimate the fine and tasteful flesh of this mysterious animal. ",
                       grams_per_dose: 800,
                       ingredients: "Eggs, milk, butter, mushrooms, cheese, ham, spinach, tomatoes, salad, salt, pepper",
                       price: 4.5,
-                      address: userA4. address,
+                      address: userA3. address,
                       photo: 'https://i.pinimg.com/originals/87/d1/57/87d157cdeb19dbdf7b6136bd9fa99273.jpg')
-mealA5 = Meal.create!(cook: userA5,
+mealA5 = Meal.create!(cook: userA3,
                       name: "Argentinian Whole Prime Rib Roast a la Parilla and Chimichurri",
                       description: "This is a classic of the Argentinian Cuisine. This high quality prime rib roast is whole grilled on the parilla. The meat comes directly from Argentinian producers and the chimichurri is, of course, homemade with only fresh ingredients.",
                       grams_per_dose: 1600,
                       ingredients: "Beef, various spicies, pepper, red wine vinegar, garlic cloves, shallot, fresh cilantro, fresh flat-leaf parsley, fresh oregano, extra-virgin olive oil",
                       price: 22,
-                      address: userA5. address,
+                      address: userA3. address,
                       photo: 'https://www.viandesuisse.ch/filemount/_processed_/csm_3676892_ac83a123f7.jpg')
 
 mealD1 = Meal.create!(cook: userD1,
@@ -211,17 +224,7 @@ mealD2 = Meal.create!(cook: userD2,
                       price: 3.20,
                       address: userD2.address,
                       photo: 'https://fotos.web.sapo.io/i/o1b06043a/18261602_AjELi.jpeg')
-mealD3 = Meal.create!(cook: userD3,
-                      name: "Eel Stews",
-                      description: "Aveiro is famous for its eels which are most often eaten simply fried or in a soup.
-                                    Fishermen at Murtosa and Torreira beaches, just outside Aveiro, make an eel stew seasoned with saffron and accompanied by bell
-                                    peppers, combining beautifully with the crisp white wines of the Bairrada region, just south of Aveiro. The best place to try the
-                                    caldeirada is Bastos, a restaurant on the Torreira Beach, just five miles from Aveiro.",
-                      grams_per_dose: 200,
-                      ingredients: "Eel, tomato, aromatic herb, garlic, onion, salt, pepper, extra virgin olive oil, polenta",
-                      price: 6.20,
-                      address: userD3.address,
-                      photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Grilled_eel.jpg/1200px-Grilled_eel.jpg')
+
 
 puts("Creating Orders...")
 # order1 = Order.create!(sku: 'a', user: user6,  status: 1, total_price: item1.item_price  + item2.item_price   + item3.item_price)
@@ -278,15 +281,23 @@ Review.create!(user: userJ3, meal: mealJ3, rating: 3, content: 'I did not love i
 Review.create!(user: userJ4, meal: mealJ4, rating: 4, content: 'Very very good!')
 Review.create!(user: userJ5, meal: mealJ5, rating: 5, content: "Couldn't recommend this more")
 
-Review.create!(user: userA1, meal: mealA1, rating: 4, content: 'Nice and fluffly, this guy definitely knows how to cook eggs')
-Review.create!(user: userA1, meal: mealA2, rating: 5, content: 'This wonderful gratin reminded of my childhood in countryside. The mint and basil make it modern and fresh. Excellent!')
-Review.create!(user: userA2, meal: mealA2, rating: 4, content: 'A very creamy and generous gratin. Loved it!')
-Review.create!(user: userA2, meal: mealA3, rating: 5, content: 'Very fine dish, the salmon is just perfectly cooked. It impressed all my friends coming for dinner. Will definitely order again.')
-Review.create!(user: userA3, meal: mealA3, rating: 5, content: 'Octopus in another way, I was a bit skeptical at first but the chorizo brings this classic to a whole new level. Amazing!')
-Review.create!(user: userA3, meal: mealA4, rating: 5, content: 'Just wow!')
-Review.create!(user: userA4, meal: mealA4, rating: 4, content: 'I really loved it. Warning, it can be a bit spicy.')
-Review.create!(user: userA4, meal: mealA5, rating: 5, content: '(Almost) better of the one of my grandmother.')
-Review.create!(user: userA4, meal: mealA5, rating: 5, content: "Best Salmon I've ever eaten")
+Review.create!(user: userA5, meal: mealA1, rating: 4, content: 'Nice and fluffly, this guy definitely knows how to cook eggs')
+Review.create!(user: userA5, meal: mealA2, rating: 5, content: 'This wonderful gratin reminded of my childhood in countryside. The mint and basil make it modern and fresh. Excellent!')
+Review.create!(user: userA6, meal: mealA2, rating: 4, content: 'A very creamy and generous gratin. Loved it!')
+Review.create!(user: userA6, meal: mealA3, rating: 5, content: 'Very fine dish, the salmon is just perfectly cooked. It impressed all my friends coming for dinner. Will definitely order again.')
+Review.create!(user: userA7, meal: mealA3, rating: 5, content: 'Octopus in another way, I was a bit skeptical at first but the chorizo brings this classic to a whole new level. Amazing!')
+Review.create!(user: userD1, meal: mealA4, rating: 5, content: 'Just wow!')
+Review.create!(user: userD2, meal: mealA4, rating: 4, content: 'I really loved it. Warning, it can be a bit spicy.')
+Review.create!(user: userA5, meal: mealA5, rating: 5, content: '(Almost) better of the one of my grandmother.')
+Review.create!(user: userA7, meal: mealA5, rating: 5, content: "Best Salmon I've ever eaten")
+Review.create!(user: userA7, meal: mealA4, rating: 5, content: 'Henri... Les filles lui disent merci!')
+Review.create!(user: userA5, meal: mealA4, rating: 5, content: 'This stew will is delicious, I highly recommend!')
+Review.create!(user: userA8, meal: mealA4, rating: 4, content: 'Loved the octopus! I had a hard time trying to find the door though... a better explanation would be appreciated')
+Review.create!(user: userA9, meal: mealA4, rating: 5, content: 'Amazing, simply amazing!')
+Review.create!(user: userJ3, meal: mealA4, rating: 3, content: 'The octopus is perfeclty cooked but overall it was too spicy for mee.')
+Review.create!(user: userJ4, meal: mealA4, rating: 5, content: 'Henri is passionate and cooks amazingly well. Will order again!')
+Review.create!(user: userJ1, meal: mealA4, rating: 5, content: 'Perfect')
+Review.create!(user: userJ1, meal: mealA4, rating: 4, content: 'I ordered the octopus stew for my wife and my self. We just loved it!')
 
 
 puts("Creating Weekdays...")
