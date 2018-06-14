@@ -9,6 +9,7 @@ Meal.destroy_all
 WeekDay.destroy_all
 
 puts("Creating Cooks...")
+
 #change pictures
 user1  = User.create!(first_name: "Maria",     last_name: "Fonseca",    address: "Rua da Moeda 6, Lisboa",                 email: "maria@fesf.fr",      password: "123456", cook_status: 1, photo_fake: 'https://www.chefxchange.com/media/CACHE/images/image/chefs/3084/avatar_934891/bad3aef21bba6ebd359a340db9723814.jpg')
 user2  = User.create!(first_name: "Marta",     last_name: "Costa",      address: "Rua de São Marçal 170, Lisboa",          email: "marta@fesf.fr",      password: "123456", cook_status: 1, photo_fake: 'https://www.chefxchange.com/media/CACHE/images/image/chefs/3084/avatar_934891/bad3aef21bba6ebd359a340db9723814.jpg')
@@ -57,6 +58,7 @@ userA1 = User.create!(first_name: "Typhany",   last_name: "G",          address:
 userA2 = User.create!(first_name: "Elise",     last_name: "G",          address: "Rua Seara Nova 1, Lisboa",               email: "elise@fesf.fr",      password: "123456", cook_status: 0, photo_fake: 'https://wit.edu/sites/default/files/delgado-manuel.jpg')
 userA3 = User.create!(first_name: "Lea",       last_name: "G",          address: "Avenida de Roma 1, Lisboa",              email: "lea@fesf.fr",        password: "123456", cook_status: 0, photo_fake: 'https://wit.edu/sites/default/files/delgado-manuel.jpg')
 userA4 = User.create!(first_name: "Tim",       last_name: "G",          address: "Rua Telhal 1, Lisboa",                   email: "tim@fesf.fr",        password: "123456", cook_status: 0, photo_fake: 'https://wit.edu/sites/default/files/delgado-manuel.jpg')
+
 
 puts("Creating Meals...")
 

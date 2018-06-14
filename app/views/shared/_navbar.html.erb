@@ -24,7 +24,11 @@
       <div class="dropdown">
         <span class="navbar-wagon-item-name">Hello <strong><%= current_user.first_name %>!</strong></span>
         <% if current_user.photo.model[:photo] == nil %>
-          <%= image_tag current_user.photo_fake, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown"%>
+          <% if current_user.photo_fake.nil? %>
+          <%= image_tag "https://collaborativecbt.com/wp-content/uploads/2016/12/default-avatar.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown"%>
+          <% else %>
+           <%= image_tag current_user.photo_fake, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown"%>
+          <% end %>
         <% else %>
           <%= cl_image_tag current_user.photo, width: 150, height: 150, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown"%>
         <% end %>
