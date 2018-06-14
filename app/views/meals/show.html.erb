@@ -44,7 +44,7 @@
         <% if weekday_meal.nil? %>
         <p>Today this meal is not available</p>
         <% else %>
-        <p><strong>Pickup time: </strong><%= weekday_meal.pick_up_time_start.strftime('%Hh%M') %> / <%= weekday_meal.pick_up_time_end.strftime('%Hh%M') %></p>
+        <p><strong>Pickup time: </strong><%= weekday_meal.pick_up_time_start.strftime('%Hh%M') %> - <%= weekday_meal.pick_up_time_end.strftime('%Hh%M') %></p>
         <% end %>
       </div>
       <div class="meal-info">
