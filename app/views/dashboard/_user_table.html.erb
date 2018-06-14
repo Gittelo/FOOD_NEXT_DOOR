@@ -18,7 +18,7 @@
             <td><%= item.meal.name %></td>
             <td><%= link_to item.meal.cook.first_name, meal_cook_path(item, item.meal) %></td>
             <td><%= item.doses %></td>
-            <td><%= item.meal.price %>€</td>
+            <td><%= item.meal.price * item.doses %>€</td>
           </tr>
         <% end %>
           <tr class="table-row">
