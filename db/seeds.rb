@@ -150,7 +150,7 @@ mealJ5 = Meal.create!(cook: userJ5,
 
 mealA1 = Meal.create!(cook: userA1,
                       name: "Protein Delight : Morning Omelette",
-                      description: "“This is a great quick meal at any time of the day! This omelette is a fantastic source of protein, helping our muscles to grow and repair and helping us to feel fuller for longer. Served with wholemeal bread and a vegtables for a healthy, balanced meal. ”",
+                      description: "This is a great quick meal at any time of the day! This omelette is a fantastic source of protein, helping our muscles to grow and repair and helping us to feel fuller for longer. Served with wholemeal bread and a vegtables for a healthy, balanced meal.",
                       grams_per_dose: 450, ingredients: "Eggs, milk, butter, mushrooms, cheese, ham, spinach, tomatoes, salad, salt, pepper",
                       price: 4.5,
                       address: userA1. address,
@@ -178,7 +178,7 @@ mealA4 = Meal.create!(cook: userA4,
                       ingredients: "Eggs, milk, butter, mushrooms, cheese, ham, spinach, tomatoes, salad, salt, pepper",
                       price: 4.5,
                       address: userA4. address,
-                      photo: 'https://4.bp.blogspot.com/-c7gRAH_aZlA/VBAC1IdQewI/AAAAAAAAC4s/ErZKSMyRFIU/s1600/IMG_9291.JPG')
+                      photo: 'https://i.pinimg.com/originals/87/d1/57/87d157cdeb19dbdf7b6136bd9fa99273.jpg')
 mealA5 = Meal.create!(cook: userA5,
                       name: "Argentinian Whole Prime Rib Roast a la Parilla and Chimichurri",
                       description: "This is a classic of the Argentinian Cuisine. This high quality prime rib roast is whole grilled on the parilla. The meat comes directly from Argentinian producers and the chimichurri is, of course, homemade with only fresh ingredients.",
@@ -206,7 +206,7 @@ mealD2 = Meal.create!(cook: userD2,
                       ingredients: "Cilantro, onion,  cloves of garlic, cup parsley, pepper, tomato, paprika, green pepper, salt, pepper, extra virgin olive oil.",
                       price: 3.20,
                       address: userD2.address,
-                      photo: 'https://cdn.teleculinaria.pt/wp-content/uploads/2016/01/alheiras-no-forno-com-grelos-e-batatas-cozidas.jpg')
+                      photo: 'https://fotos.web.sapo.io/i/o1b06043a/18261602_AjELi.jpeg')
 mealD3 = Meal.create!(cook: userD3,
                       name: "Eel Stews",
                       description: "Aveiro is famous for its eels which are most often eaten simply fried or in a soup.
@@ -220,31 +220,31 @@ mealD3 = Meal.create!(cook: userD3,
                       photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Grilled_eel.jpg/1200px-Grilled_eel.jpg')
 
 puts("Creating Orders...")
-order1 = Order.create!(sku: 'a', user: user6,  status: 1, total_price: item1.item_price  + item2.item_price   + item3.item_price)
-order2 = Order.create!(sku: 'b', user: user7,  status: 1, total_price: item4.item_price)
-order3 = Order.create!(sku: 'c', user: user8,  status: 1, total_price: item5.item_price  + item6.item_price)
-order4 = Order.create!(sku: 'd', user: user9,  status: 1, total_price: item7.item_price  + item8.item_price)
+# order1 = Order.create!(sku: 'a', user: user6,  status: 1, total_price: item1.item_price  + item2.item_price   + item3.item_price)
+# order2 = Order.create!(sku: 'b', user: user7,  status: 1, total_price: item4.item_price)
+# order3 = Order.create!(sku: 'c', user: user8,  status: 1, total_price: item5.item_price  + item6.item_price)
+# order4 = Order.create!(sku: 'd', user: user9,  status: 1, total_price: item7.item_price  + item8.item_price)
 
-order5 = Order.create!(sku: 'd', user: user10, status: 0, total_price: item9.item_price)
-order6 = Order.create!(sku: 'd', user: user11, status: 0, total_price: item10.item_price + item11.item_price)
+# order5 = Order.create!(sku: 'd', user: user10, status: 0, total_price: item9.item_price)
+# order6 = Order.create!(sku: 'd', user: user11, status: 0, total_price: item10.item_price + item11.item_price)
 
 puts("Creating Items...")
-item1  = Item.create!(order: order1, meal: mealC1, doses: 2, item_price: mealC1.price * 2)
-item2  = Item.create!(order: order1, meal: mealC2, doses: 1, item_price: mealC2.price * 1)
-item3  = Item.create!(order: order1, meal: mealC3, doses: 3, item_price: mealC3.price * 3)
+# item1  = Item.create!(order: order1, meal: mealC1, doses: 2, item_price: mealC1.price * 2)
+# item2  = Item.create!(order: order1, meal: mealC2, doses: 1, item_price: mealC2.price * 1)
+# item3  = Item.create!(order: order1, meal: mealC3, doses: 3, item_price: mealC3.price * 3)
 
-item4  = Item.create!(order: order2, meal: mealC2, doses: 4, item_price: mealC2.price * 4)
+# item4  = Item.create!(order: order2, meal: mealC2, doses: 4, item_price: mealC2.price * 4)
 
-item5  = Item.create!(order: order3, meal: mealC3, doses: 1, item_price: mealC3.price * 1)
-item6  = Item.create!(order: order3, meal: mealC5, doses: 2, item_price: mealC5.price * 2)
+# item5  = Item.create!(order: order3, meal: mealC3, doses: 1, item_price: mealC3.price * 1)
+# item6  = Item.create!(order: order3, meal: mealC5, doses: 2, item_price: mealC5.price * 2)
 
-item7  = Item.create!(order: order4, meal: mealC1, doses: 2, item_price: mealC1.price * 2)
-item8  = Item.create!(order: order4, meal: mealC4, doses: 2, item_price: mealC4.price * 2)
+# item7  = Item.create!(order: order4, meal: mealC1, doses: 2, item_price: mealC1.price * 2)
+# item8  = Item.create!(order: order4, meal: mealC4, doses: 2, item_price: mealC4.price * 2)
 
-item9  = Item.create!(order: order5, meal: mealC5, doses: 3, item_price: mealC5.price * 3)
+# item9  = Item.create!(order: order5, meal: mealC5, doses: 3, item_price: mealC5.price * 3)
 
-item10 = Item.create!(order: order6, meal: mealC1, doses: 1, item_price: mealC1.price * 1)
-item10 = Item.create!(order: order6, meal: mealC2, doses: 3, item_price: mealC2.price * 3)
+# item10 = Item.create!(order: order6, meal: mealC1, doses: 1, item_price: mealC1.price * 1)
+# item10 = Item.create!(order: order6, meal: mealC2, doses: 3, item_price: mealC2.price * 3)
 
 # sum = 0
 # order1.items.each do |item|
@@ -302,7 +302,7 @@ WeekDay.create!(meal: mealC1, pick_up_time_start: Time.zone.local(2018,06,day,20
                               last_order_time:    Time.zone.local(2018,06,day,19,30,00),
                               doses: 4,
                               date: Date.new(2018,06,day))
-WeekDay.create!(meal: mealA1, pick_up_time_start: Time.zone.local(2018,06,day,20,30,00),
+WeekDay.create!(meal: mealD1, pick_up_time_start: Time.zone.local(2018,06,day,20,30,00),
                               pick_up_time_end:   Time.zone.local(2018,06,day,21,30,00),
                               last_order_time:    Time.zone.local(2018,06,day,20,00,00),
                               doses: 6,
@@ -316,6 +316,66 @@ WeekDay.create!(meal: mealA2, pick_up_time_start: Time.zone.local(2018,06,day,20
                               pick_up_time_end:   Time.zone.local(2018,06,day,21,00,00),
                               last_order_time:    Time.zone.local(2018,06,day,19,00,00),
                               doses: 3,
+                              date: Date.new(2018,06,day))
+WeekDay.create!(meal: mealC2, pick_up_time_start: Time.zone.local(2018,06,day,20,00,00),
+                              pick_up_time_end:   Time.zone.local(2018,06,day,21,00,00),
+                              last_order_time:    Time.zone.local(2018,06,day,19,30,00),
+                              doses: 8,
+                              date: Date.new(2018,06,day))
+WeekDay.create!(meal: mealD2, pick_up_time_start: Time.zone.local(2018,06,day,20,00,00),
+                              pick_up_time_end:   Time.zone.local(2018,06,day,21,00,00),
+                              last_order_time:    Time.zone.local(2018,06,day,19,30,00),
+                              doses: 6,
+                              date: Date.new(2018,06,day))
+WeekDay.create!(meal: mealJ3, pick_up_time_start: Time.zone.local(2018,06,day,19,00,00),
+                              pick_up_time_end:   Time.zone.local(2018,06,day,20,30,00),
+                              last_order_time:    Time.zone.local(2018,06,day,18,30,00),
+                              doses: 7,
+                              date: Date.new(2018,06,day))
+WeekDay.create!(meal: mealA3, pick_up_time_start: Time.zone.local(2018,06,day,19,30,00),
+                              pick_up_time_end:   Time.zone.local(2018,06,day,21,30,00),
+                              last_order_time:    Time.zone.local(2018,06,day,19,00,00),
+                              doses: 5,
+                              date: Date.new(2018,06,day))
+WeekDay.create!(meal: mealC3, pick_up_time_start: Time.zone.local(2018,06,day,20,30,00),
+                              pick_up_time_end:   Time.zone.local(2018,06,day,21,30,00),
+                              last_order_time:    Time.zone.local(2018,06,day,19,30,00),
+                              doses: 9,
+                              date: Date.new(2018,06,day))
+WeekDay.create!(meal: mealD3, pick_up_time_start: Time.zone.local(2018,06,day,21,00,00),
+                              pick_up_time_end:   Time.zone.local(2018,06,day,22,30,00),
+                              last_order_time:    Time.zone.local(2018,06,day,19,30,00),
+                              doses: 5,
+                              date: Date.new(2018,06,day))
+WeekDay.create!(meal: mealJ4, pick_up_time_start: Time.zone.local(2018,06,day,21,00,00),
+                              pick_up_time_end:   Time.zone.local(2018,06,day,22,00,00),
+                              last_order_time:    Time.zone.local(2018,06,day,20,00,00),
+                              doses: 12,
+                              date: Date.new(2018,06,day))
+WeekDay.create!(meal: mealA4, pick_up_time_start: Time.zone.local(2018,06,day,20,00,00),
+                              pick_up_time_end:   Time.zone.local(2018,06,day,23,00,00),
+                              last_order_time:    Time.zone.local(2018,06,day,19,00,00),
+                              doses: 15,
+                              date: Date.new(2018,06,day))
+WeekDay.create!(meal: mealC4, pick_up_time_start: Time.zone.local(2018,06,day,20,00,00),
+                              pick_up_time_end:   Time.zone.local(2018,06,day,21,00,00),
+                              last_order_time:    Time.zone.local(2018,06,day,19,30,00),
+                              doses: 4,
+                              date: Date.new(2018,06,day))
+WeekDay.create!(meal: mealJ5, pick_up_time_start: Time.zone.local(2018,06,day,20,30,00),
+                              pick_up_time_end:   Time.zone.local(2018,06,day,21,30,00),
+                              last_order_time:    Time.zone.local(2018,06,day,20,00,00),
+                              doses: 10,
+                              date: Date.new(2018,06,day))
+WeekDay.create!(meal: mealA5, pick_up_time_start: Time.zone.local(2018,06,day,20,00,00),
+                              pick_up_time_end:   Time.zone.local(2018,06,day,22,30,00),
+                              last_order_time:    Time.zone.local(2018,06,day,19,30,00),
+                              doses: 7,
+                              date: Date.new(2018,06,day))
+WeekDay.create!(meal: mealC5, pick_up_time_start: Time.zone.local(2018,06,day,20,30,00),
+                              pick_up_time_end:   Time.zone.local(2018,06,day,22,00,00),
+                              last_order_time:    Time.zone.local(2018,06,day,19,00,00),
+                              doses: 11,
                               date: Date.new(2018,06,day))
 #puts day
 end
