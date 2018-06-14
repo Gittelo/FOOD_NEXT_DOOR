@@ -11,6 +11,7 @@ WeekDay.destroy_all
 puts("Creating Cooks...")
 
 
+usercook  = User.create!(first_name: "Telo",     last_name: "Castro",    address: "Rua da Moeda 6, Lisboa",                 email: "telo@gmail.com",      password: "123456", cook_status: 1, photo_fake: 'https://s3.amazonaws.com/typekit-production-public-assets/designers/profile_images/000/000/391/original/400x400-ellmerstefan.jpg?1507307338')
 
 user1  = User.create!(first_name: "Maria",     last_name: "Fonseca",    address: "Rua da Moeda 6, Lisboa",                 email: "maria@fesf.fr",      password: "123456", cook_status: 1, photo_fake: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSARxPiIB8cCL-xCX9CW9lyOq75poVh842vdlsYfAJEMPj5J4uLyA')
 user2  = User.create!(first_name: "Marta",     last_name: "Costa",      address: "Rua de São Marçal 170, Lisboa",          email: "marta@fesf.fr",      password: "123456", cook_status: 1, photo_fake: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTttXIwKVB1fejI-XxRuMxRDbtv7HBt67g4wMA1_MvUiyxhTz4Ag')
@@ -29,7 +30,7 @@ userJ4 = User.create!(first_name: "Pedro",     last_name: "Carneiro",   address:
 userJ5 = User.create!(first_name: "Mariana",   last_name: "Pires",      address: "Avenida Rainha Dona Amélia, 50, Lisboa", email: "mariana@fesf.fr",    password: "123456", cook_status: 1, photo_fake: 'https://pbs.twimg.com/profile_images/834967283751583744/WDcI47m-_400x400.jpg')
 
 userA1 = User.create!(first_name: "François",  last_name: "Martin",     address: "Rua do Conde de Redondo 1, Lisboa",      email: "francois@gmail.com", password: "123456", cook_status: 1, photo_fake: 'https://menhairstylesworld.com/wp-content/uploads/2017/12/Business-Casual-Hairstyles-for-Men-with-Receding-Hairlines.jpg')
-userA2 = User.create!(first_name: "Valentin",  last_name: "Pons",       address: "Rua Silva Carvalho 18, Lisboa",          email: "valentin@gmail.com", password: "123456", cook_status: 1, photo_fake: 'https://images-na.ssl-images-amazon.com/images/I/61BSyQG1DGL.jpg')
+userA2 = User.create!(first_name: "Henri",     last_name: "Quélin",     address: "Rua Silva Carvalho 18, Lisboa",          email: "valentin@gmail.com", password: "123456", cook_status: 1, photo_fake: 'https://images-na.ssl-images-amazon.com/images/I/61BSyQG1DGL.jpg')
 # Cook choosen
 userA3 = User.create!(first_name: "Antoine",   last_name: "Quellier",   address: "Rua Seara Nova 24, Lisboa",              email: "antoine@gmail.com",  password: "123456", cook_status: 1, photo_fake: 'https://www.menshairstylestoday.com/wp-content/uploads/2016/08/Fringe-Haircut-For-Men.jpg')
 userA4 = User.create!(first_name: "Julia",     last_name: "Estagnasié", address: "Rua Ferreira Lapa 17, Lisboa",           email: "julia@gmail.com",    password: "123456", cook_status: 1, photo_fake: 'https://i.pinimg.com/originals/84/d2/0e/84d20eb6d69995bbbc178df518b1ea96.jpg')
@@ -64,6 +65,27 @@ userA9 = User.create!(first_name: "Tim",       last_name: "G",          address:
 
 puts("Creating Meals...")
 
+mealD3 = Meal.create!(cook: usercook,
+                      name: "Eel Stews",
+                      description: "Aveiro is famous for its eels which are most often eaten simply fried or in a soup.
+                                    Fishermen at Murtosa and Torreira beaches, just outside Aveiro, make an eel stew seasoned with saffron and accompanied by bell
+                                    peppers, combining beautifully with the crisp white wines of the Bairrada region, just south of Aveiro. The best place to try the
+                                    caldeirada is Bastos, a restaurant on the Torreira Beach, just five miles from Aveiro.",
+                      grams_per_dose: 200,
+                      ingredients: "Eel, tomato, aromatic herb, garlic, onion, salt, pepper, extra virgin olive oil, polenta",
+                      price: 6.20,
+                      address: usercook.address,
+                      photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Grilled_eel.jpg/1200px-Grilled_eel.jpg')
+mealC1 = Meal.create!(cook: usercook,
+                      name: 'Red Bean, Carrot and Kale Stew',
+                      description: 'This is a tasty bean stew, made ​​with only the essentials of any portuguese bean stew: Beans, Carrot and Cabbage, Kale in this case, but, like the Spiced Lima Bean Soup, is packed with nutrients and is a great way to enjoy the last bunches of Kale at the market while we dream with all the new vegetables and fruits that soon will fill the stalls!',
+                      grams_per_dose: 300,
+                      ingredients: 'Red Beans, Carrots, Kale, Tomatos and Onions.',
+                      price: 7.5,
+                      address: usercook.address,
+                      photo: 'https://minimalistbaker.com/wp-content/uploads/2016/02/1-POT-AMAZING-Lentil-and-Black-Bean-Chili-Smoky-hearty-PROTEIN-and-fiber-packed-vegan-glutenfree-lentils-chili-healthy-recipe-768x1152.jpg')
+
+
 mealD3 = Meal.create!(cook: userD3,
                       name: "Eel Stews",
                       description: "Aveiro is famous for its eels which are most often eaten simply fried or in a soup.
@@ -84,6 +106,7 @@ mealC1 = Meal.create!(cook: user2,
                       price: 7.5,
                       address: user2.address,
                       photo: 'https://minimalistbaker.com/wp-content/uploads/2016/02/1-POT-AMAZING-Lentil-and-Black-Bean-Chili-Smoky-hearty-PROTEIN-and-fiber-packed-vegan-glutenfree-lentils-chili-healthy-recipe-768x1152.jpg')
+
 mealC2 = Meal.create!(cook: user4,
                       name: 'Caldo Verde',
                       description: 'The most traditional of Portuguese soups is as simple as it gets: onions, potatoes and kale, cooked with garlic and olive oil. Nothing says winter comfort food like a good serving of caldo verde in a traditional clay pot. This soup would normally be served with a slice of “linguiça” (typical smoked pork sausage) and cornbread. Dip it and enjoy!',
@@ -92,6 +115,7 @@ mealC2 = Meal.create!(cook: user4,
                       price: 3.0,
                       address: user4.address,
                       photo: 'https://www.suwanneerose.com/wp-content/uploads/2016/02/caldoverde1.jpg')
+
 mealC3 = Meal.create!(cook: userC1,
                       name: 'Bulhão Pato Clams',
                       description: 'More than a meal, clams Bulhão Pato style are a snack, best enjoyed with ice-cold beer. It’s very popular as appetizer as well, and a tasty way to get your juices flowing. Clams are cooked until tender in olive oil, garlic, salt, pepper and plenty of cilantro. Other similar clam dishes might feature this seafood cooked in white whine, butter and herbs, which is as good! Very important: you will need bread to dip into the sauces, as we can guarantee you wouldn’t want a drop to be left on the plate.',
@@ -177,7 +201,7 @@ mealA2 = Meal.create!(cook: userA1,
                       grams_per_dose: 400,
                       ingredients: "Zucchini, Butter, eggs, Parmigiano Regiano, mint, basil, sal, pepper, piment d'espelette, salt, pepper",
                       price: 6,
-                      address: userA3. address,
+                      address: userA1. address,
                       photo: 'http://cdn-elle.ladmedia.fr/var/plain_site/storage/images/elle-a-table/recettes-de-cuisine/gratin-de-courgettes-menthe-et-noisettes-2594127/42424635-1-fre-FR/Gratin-de-courgettes-menthe-et-noisettes.jpg')
 mealA3 = Meal.create!(cook: userA3,
                       name: "Slow-cooked Salmon",
@@ -188,15 +212,14 @@ mealA3 = Meal.create!(cook: userA3,
                       address: userA3. address,
                       photo: 'http://cdn3-elle.ladmedia.fr/var/plain_site/storage/images/elle-a-table/toutes-vos-questions-cuisine/cuisson-saumon/51398714-2-fre-FR/Cuisson-saumon.jpg')
 mealA4 = Meal.create!(cook: userA3,
-                      name: "French South West Style Octopus Stew",
+                      name: "Octopus Chorizo Stew",
                       description: "This exotic revisited dish fits in perfectly with the French South West cuisine. This octopus stew takes plenty of time to prepare, since it requires long and slow simmering. The end result is a very tender octopus in a stew which will delight the most demanding taste buds. The chorizo and grass sublimate the fine and tasteful flesh of this mysterious animal. ",
                       grams_per_dose: 800,
                       ingredients: "Eggs, milk, butter, mushrooms, cheese, ham, spinach, tomatoes, salad, salt, pepper",
-
-                      price: 8.5,
-                      address: userA4. address,
+                      price: 12.5,
+                      address: userA3. address,
                       photo: 'https://i.pinimg.com/originals/87/d1/57/87d157cdeb19dbdf7b6136bd9fa99273.jpg')
-mealA5 = Meal.create!(cook: userA5,
+mealA5 = Meal.create!(cook: userA3,
                       name: "Argentinian Whole Prime Rib Roast a la Parilla",
                       description: "This is a classic of the Argentinian Cuisine. This high quality prime rib roast is whole grilled on the parilla. The meat comes directly from Argentinian producers and the chimichurri is, of course, homemade with only fresh ingredients.",
                       grams_per_dose: 1600,
@@ -279,19 +302,36 @@ Review.create!(user: userA5, meal: mealA1, rating: 4, content: 'Nice and fluffly
 Review.create!(user: userA5, meal: mealA2, rating: 5, content: 'This wonderful gratin reminded of my childhood in countryside. The mint and basil make it modern and fresh. Excellent!')
 Review.create!(user: userA6, meal: mealA2, rating: 4, content: 'A very creamy and generous gratin. Loved it!')
 Review.create!(user: userA6, meal: mealA3, rating: 5, content: 'Very fine dish, the salmon is just perfectly cooked. It impressed all my friends coming for dinner. Will definitely order again.')
-Review.create!(user: userA7, meal: mealA3, rating: 5, content: 'Octopus in another way, I was a bit skeptical at first but the chorizo brings this classic to a whole new level. Amazing!')
+Review.create!(user: userA7, meal: mealA3, rating: 5, content: "Best Salmon I've ever eaten")
 Review.create!(user: userD1, meal: mealA4, rating: 5, content: 'Just wow!')
 Review.create!(user: userD2, meal: mealA4, rating: 4, content: 'I really loved it. Warning, it can be a bit spicy.')
 Review.create!(user: userA5, meal: mealA5, rating: 5, content: '(Almost) better of the one of my grandmother.')
 Review.create!(user: userA7, meal: mealA5, rating: 5, content: "Best Salmon I've ever eaten")
+
+# Review for the octopus
 Review.create!(user: userA7, meal: mealA4, rating: 5, content: 'Henri... Les filles lui disent merci!')
 Review.create!(user: userA5, meal: mealA4, rating: 5, content: 'This stew will is delicious, I highly recommend!')
-Review.create!(user: userA8, meal: mealA4, rating: 4, content: 'Loved the octopus! I had a hard time trying to find the door though... a better explanation would be appreciated')
+Review.create!(user: userA8, meal: mealA4, rating: 4, content: 'Loved the octopus! ')
 Review.create!(user: userA9, meal: mealA4, rating: 5, content: 'Amazing, simply amazing!')
 Review.create!(user: userJ3, meal: mealA4, rating: 3, content: 'The octopus is perfeclty cooked but overall it was too spicy for mee.')
 Review.create!(user: userJ4, meal: mealA4, rating: 5, content: 'Henri is passionate and cooks amazingly well. Will order again!')
 Review.create!(user: userJ1, meal: mealA4, rating: 5, content: 'Perfect')
-Review.create!(user: userJ1, meal: mealA4, rating: 4, content: 'I ordered the octopus stew for my wife and my self. We just loved it!')
+
+# Review for the zucchini gratin
+Review.create!(user: userJ1, meal: mealA2, rating: 4, content: 'I ordered the Zucchini Gratin for my whole family. We just loved it!')
+Review.create!(user: userA5, meal: mealA2, rating: 5, content: 'This gratin is really good, I recommend!')
+Review.create!(user: userA8, meal: mealA2, rating: 4, content: 'Loved the Zucchini! ')
+Review.create!(user: userA9, meal: mealA2, rating: 5, content: 'Perfect for the summer')
+Review.create!(user: userJ3, meal: mealA2, rating: 3, content: 'The zucchini are perfeclty cooked but overall it was a bit too creamy for mee.')
+Review.create!(user: userJ4, meal: mealA2, rating: 5, content: 'Henri is passionate and cooks amazingly well. Will order again!')
+Review.create!(user: userJ1, meal: mealA2, rating: 5, content: 'Perfect')
+
+# Review for the Red bean, carrot and kale stew
+Review.create!(user: userJ6,  meal: mealC1, rating: 4, content: 'Nice and tasteful, this guy definitely knows how to cook vegetables')
+Review.create!(user: userJ7,  meal: mealC1, rating: 5, content: 'This wonderful stew reminded of my trip to Sri Lanka. Generous and conforting!')
+Review.create!(user: userJ8,  meal: mealC1, rating: 4, content: 'Finally vegan food on Food Next Door. So Happy :) Keep the good work guys.')
+Review.create!(user: userJ9,  meal: mealC1, rating: 5, content: 'Very fine stew, the vegetables release their full taste. A pleasure !')
+Review.create!(user: userJ10, meal: mealC1, rating: 5, content: 'Really tasteful!')
 
 
 puts("Creating Weekdays...")

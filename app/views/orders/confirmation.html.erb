@@ -2,10 +2,13 @@
   <div class="text-center confirmation-box">
     <h2>Thank you for your order <%= @order.user.first_name %>!</h2>
     <br>
-    You can pick up your meal between 6:00 and 8:00 pm at
+    You can pick up your meal between at
       <ul>
         <% @order.items.each do |item| %>
           <li>
+            <%= item.meal.week_days.first.pick_up_time_start.strftime('%I:%M %p') %> -
+            <%= item.meal.week_days.first.pick_up_time_end.strftime('%I:%M %p') %>
+
             <strong>
               <%= item.meal.address %>
             </strong>
