@@ -222,16 +222,14 @@ mealD3 = Meal.create!(cook: userD3,
                       address: userD3.address,
                       photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Grilled_eel.jpg/1200px-Grilled_eel.jpg')
 
-puts("Creating Orders...")
-# order1 = Order.create!(sku: 'a', user: user6,  status: 1, total_price: item1.item_price  + item2.item_price   + item3.item_price)
-# order2 = Order.create!(sku: 'b', user: user7,  status: 1, total_price: item4.item_price)
-# order3 = Order.create!(sku: 'c', user: user8,  status: 1, total_price: item5.item_price  + item6.item_price)
-# order4 = Order.create!(sku: 'd', user: user9,  status: 1, total_price: item7.item_price  + item8.item_price)
+# puts("Creating Orders...")
+# order1 = Order.create!(sku: 'a', user: user6,  status: 1, total_price: )
+# order2 = Order.create!(sku: 'b', user: user7,  status: 1, total_price: )
+# order3 = Order.create!(sku: 'c', user: user8,  status: 1, total_price: )
+# order4 = Order.create!(sku: 'd', user: user9,  status: 1, total_price: )
 
-# order5 = Order.create!(sku: 'd', user: user10, status: 0, total_price: item9.item_price)
-# order6 = Order.create!(sku: 'd', user: user11, status: 0, total_price: item10.item_price + item11.item_price)
 
-puts("Creating Items...")
+# puts("Creating Items...")
 # item1  = Item.create!(order: order1, meal: mealC1, doses: 2, item_price: mealC1.price * 2)
 # item2  = Item.create!(order: order1, meal: mealC2, doses: 1, item_price: mealC2.price * 1)
 # item3  = Item.create!(order: order1, meal: mealC3, doses: 3, item_price: mealC3.price * 3)
@@ -244,10 +242,6 @@ puts("Creating Items...")
 # item7  = Item.create!(order: order4, meal: mealC1, doses: 2, item_price: mealC1.price * 2)
 # item8  = Item.create!(order: order4, meal: mealC4, doses: 2, item_price: mealC4.price * 2)
 
-# item9  = Item.create!(order: order5, meal: mealC5, doses: 3, item_price: mealC5.price * 3)
-
-# item10 = Item.create!(order: order6, meal: mealC1, doses: 1, item_price: mealC1.price * 1)
-# item10 = Item.create!(order: order6, meal: mealC2, doses: 3, item_price: mealC2.price * 3)
 
 # sum = 0
 # order1.items.each do |item|
