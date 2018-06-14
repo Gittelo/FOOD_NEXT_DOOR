@@ -3,8 +3,8 @@
 <div class="col-md-12">
   <div class="form-body">
     <div class="form-inputs form-control-lg">
-      <div class="form-details">
-        <h4 style= "border-bottom: 0.5px dotted gray;padding-bottom: 10px;">Week day Details</h4>
+      <div class="form-details repository">
+        <h4 style= "border-bottom: 0.5px dotted gray;padding-bottom: 10px;"></h4>
         <div class="form-inputs" style="color: black">
           <div class="form-inline">
             <%= f.association :meal, collection: @my_meals,  input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'} %>
@@ -28,9 +28,9 @@
 
           <%= f.input :doses, :label => "Number of doses", input_html: { class: 'detailStyling'}, label_html: { class: 'detailLabelStyling'}%>
         </div>
-        <div class="form-actions flexing-box">
-          <%= f.button :submit, class: "btn btn-primary" %>
-          <%= link_to "Back",  dashboard_index_path, class: "btn btn-default" %>
+        <div class="form-actions flexing-box flexing-stuff">
+          <%= f.button :submit, :value => "Post a meal", class: "btn btn-primary" %>
+          <%= link_to "Reset",  dashboard_index_path, class: "btn btn-default" %>
         </div>
       </div>
     </div>
