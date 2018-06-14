@@ -1,4 +1,4 @@
-<div class="container" style="margin-top: 60px">
+<div style="margin: 60px 130px;">
   <ul class="nav nav-tabs">
     <% if current_user.cook_status == 1 %>
       <li class="active"><a class='detail' data-toggle="tab" href="#meals">Meals</a></li>
@@ -33,7 +33,7 @@
           <thead>
             <% (0..6).each do |x| %>
               <% @selected_day = (@today + x) %>
-              <th><%= @selected_day.strftime('%A') %> - <%= @selected_day.strftime('%x') %></th>
+              <th class='text-center'><%= @selected_day.strftime('%A') %> - <%= @selected_day.strftime('%x') %></th>
             <% end %>
           </thead>
           <tbody>
@@ -48,7 +48,7 @@
                       <div class="submited-card">
                         <div class="submited-card-title">
                           <% meal_name = current_user.week_days.where(date: @selected_day)[0].meal.name %>
-                          <h2><%= "#{meal_name} was submited" %></h2>
+                          <h2><%= "#{meal_name} was submitted" %></h2>
                           <hr>
                           <% @weekday = current_user.week_days.where(date: @selected_day)[0] %>
                           <p>Orders until:</p>
