@@ -11,6 +11,7 @@ WeekDay.destroy_all
 puts("Creating Cooks...")
 
 
+
 user1  = User.create!(first_name: "Maria",     last_name: "Fonseca",    address: "Rua da Moeda 6, Lisboa",                 email: "maria@fesf.fr",      password: "123456", cook_status: 1, photo_fake: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSARxPiIB8cCL-xCX9CW9lyOq75poVh842vdlsYfAJEMPj5J4uLyA')
 user2  = User.create!(first_name: "Marta",     last_name: "Costa",      address: "Rua de São Marçal 170, Lisboa",          email: "marta@fesf.fr",      password: "123456", cook_status: 1, photo_fake: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTttXIwKVB1fejI-XxRuMxRDbtv7HBt67g4wMA1_MvUiyxhTz4Ag')
 user3  = User.create!(first_name: "Pedro",     last_name: "Oliveira",   address: "Rua da Vitória 4, Lisboa",               email: "pedro@fesf.fr",      password: "123456", cook_status: 1, photo_fake: 'https://s3.amazonaws.com/typekit-production-public-assets/designers/profile_images/000/000/391/original/400x400-ellmerstefan.jpg?1507307338')
@@ -38,6 +39,7 @@ userD2 = User.create!(first_name: "Emanuel",   last_name: "Herculano",  address:
 userD3 = User.create!(first_name: "Henrique",  last_name: "Sousa",      address: "Rua da Penha de França 1, Lisboa",       email: "henrique@gmail.pt",  password: "123456", cook_status: 1, photo_fake: "https://static1.squarespace.com/static/59e133d3f7e0ab03b64d8616/t/5a21cc69f9619a124de1cffb/1512165821929/Chris+Finlay")
 userD4 = User.create!(first_name: "Julia",     last_name: "Martins",    address: "Rua Ferragial 33, Lisboa",               email: "julia@gmail.pt",     password: "123456", cook_status: 1, photo_fake: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG0zvS3WQ5srTvunf4bY5COPg9hkbAHKke3Ycsx7WSyp34U_Qo")
 userD5 = User.create!(first_name: "Ricardo",   last_name: "Lobo",       address: "Rua Portas de Santo Antão 5, Lisboa",    email: "ricardo@gmail.pt",   password: "123456", cook_status: 1, photo_fake: "https://static.hltv.org/images/playerprofile/thumb/203/400.jpeg?v=5")
+
 
 puts("Creating Users...")
 user6  = User.create!(first_name: "Diogo",     last_name: "Rato",       address: "Avenida da Igreja 28, Lisboa",           email: "diogo@fesf.fr",      password: "123456", cook_status: 0, photo_fake: 'https://i.pinimg.com/736x/34/e5/21/34e5211511e66557dd7b40353185e946--mens-hairstyle-images-mens-undercut-hairstyle.jpg')

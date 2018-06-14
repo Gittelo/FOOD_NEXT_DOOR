@@ -1,8 +1,8 @@
 <div class="container" style="margin-top: 60px">
   <ul class="nav nav-tabs">
     <% if current_user.cook_status == 1 %>
-      <li class="active"><a class='detail' data-toggle="tab" href="#meals">Meals</a></li>
-      <li><a data-toggle="tab" href="#orders">Orders</a></li>
+    <li class="active"><a class='detail' data-toggle="tab" href="#meals">Meals</a></li>
+    <li><a data-toggle="tab" href="#orders">Orders</a></li>
     <% end %>
   </ul>
 
@@ -10,25 +10,38 @@
     <% if current_user.cook_status == 1 %>
 
     <div id="meals" class="tab-pane fade in active">
+      <div class="meals-submit">
+        <%= link_to "Submit a meal for approval", new_meal_path %>
+      </div>
+      <div class="meals-repository">
+        <h2>My Meals repository</h2>
+        <h4>Approved Meals</h4>
+      </div>
 
-      <%= link_to "Submit a meal for approval", new_meal_path %>
-      <h2>My Meals repository</h2>
-      <h4>Approved Meals</h4>
-      <div class="row">
-        <% @my_meals.each do |meal| %>
-        <%= link_to render("drag_card", meal: meal), meal_path(meal) %>
-        <% end %>
+        <div class="row">
+          <% @my_meals.each do |meal| %>
+          <%= link_to render("drag_card", meal: meal), meal_path(meal) %>
+          <% end %>
+        </div>
       </div>
 
 
 
-        <h1>Plan the schedule for the next 7 days:</h1>
-        <%#= link_to "Create a new schedule",  new_week_day_path, class: "btn btn-danger" %>
-        <div class="table-scroll">
-          <table class="table">
-            <thead>
+      <h2 class="meals-repository">Plan the schedule for the next week:</h2>
+      <%#= link_to "Create a new schedule",  new_week_day_path, class: "btn btn-danger" %>
+      <div class="table-scroll">
+        <table class="table">
+          <thead>
+            <% (0..6).each do |x| %>
+            <% @selected_day = (@today + x) %>
+            <th><%= @selected_day.strftime('%A') %> - <%= @selected_day.strftime('%x')  %></th>
+            <% end %>
+          </thead>
+          <tbody>
+            <tr>
               <% (0..6).each do |x| %>
               <% @selected_day = (@today + x) %>
+
               <th><%= @selected_day.strftime('%A') %> - <%= @selected_day.strftime('%x')  %></th>
               <% end %>
             </thead>
@@ -56,29 +69,29 @@
 
 
 
-                          </div>
-                        </div>
+                  </div>
+                </div>
 
-                      </div>
-                    </td>
+              </div>
+            </td>
 
-                <% end %>
-                <% end %>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div id="orders" class="tab-pane fade">
-        <div class="row">
-          <%= render 'cook_table', items_from_cook: @items_from_cook %>
-        </div>
-      </div>
-    <% else %>
-      <div class="row">
-        <h4 style="text-align: center">My Orders</h4>
-        <%= render 'user_table', my_orders: @my_orders %>
-      </div>
-    <% end %>
+            <% end %>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
+  <div id="orders" class="tab-pane fade">
+    <div class="row">
+      <%= render 'cook_table', items_from_cook: @items_from_cook %>
+    </div>
+  </div>
+  <% else %>
+  <div class="row">
+    <h4 style="text-align: center">My Orders</h4>
+    <%= render 'user_table', my_orders: @my_orders %>
+  </div>
+  <% end %>
+</div>
 </div>
