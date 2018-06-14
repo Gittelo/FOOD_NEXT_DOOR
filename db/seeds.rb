@@ -27,12 +27,12 @@ userJ1 = User.create!(first_name: "Miguel",    last_name: "Almeida",    address:
 userJ2 = User.create!(first_name: "Isabel",    last_name: "Silva",      address: "Avenida de Berna, 10, Lisboa",           email: "isabel@fesf.fr",     password: "123456", cook_status: 1, photo_fake: 'http://www.2tg.co.uk/wp-content/uploads/2017/06/isabel-barter_Web-400x400.jpg')
 userJ3 = User.create!(first_name: "Margarida", last_name: "Prates",     address: "Rua António Augusto Aguiar, 37, Lisboa", email: "margarida@fesf.fr",  password: "123456", cook_status: 1, photo_fake: 'https://www.cabri-sbo.org/uploads/files/_400x400_crop_top-center/Joana-2.jpg')
 userJ4 = User.create!(first_name: "Pedro",     last_name: "Carneiro",   address: "Avenida da Igreja, 40, Lisboa",          email: "pedro.c@fesf.fr",    password: "123456", cook_status: 1, photo_fake: 'https://pbs.twimg.com/profile_images/988539643783151616/aczdT5i0_400x400.jpg')
-userJ5 = User.create!(first_name: "Mariana",   last_name: "Pires",      address: "Avenida Rainha Dona Amélia, 50, Lisboa", email: "mariana@fesf.fr",    password: "123456", cook_status: 1, photo_fake: 'https://pbs.twimg.com/profile_images/834967283751583744/WDcI47m-_400x400.jpg')
+userJ5 = User.create!(first_name: "Mariana",   last_name: "Pires",      address: "Rua Bernardim Ribeiro, 55, Lisboa",      email: "mariana@fesf.fr",    password: "123456", cook_status: 1, photo_fake: 'https://pbs.twimg.com/profile_images/834967283751583744/WDcI47m-_400x400.jpg')
 
 userA1 = User.create!(first_name: "François",  last_name: "Martin",     address: "Rua do Conde de Redondo 1, Lisboa",      email: "francois@gmail.com", password: "123456", cook_status: 1, photo_fake: 'https://menhairstylesworld.com/wp-content/uploads/2017/12/Business-Casual-Hairstyles-for-Men-with-Receding-Hairlines.jpg')
-userA2 = User.create!(first_name: "Henri",     last_name: "Quélin",     address: "Rua Silva Carvalho 18, Lisboa",          email: "valentin@gmail.com", password: "123456", cook_status: 1, photo_fake: 'https://images-na.ssl-images-amazon.com/images/I/61BSyQG1DGL.jpg')
+userA2 = User.create!(first_name: "Henri",     last_name: "Quélin",     address: "Rua do Conde de Redondo 105, Lisboa",    email: "henri@gmail.com",    password: "123456", cook_status: 1, photo_fake: 'https://images-na.ssl-images-amazon.com/images/I/61BSyQG1DGL.jpg')
 # Cook choosen
-userA3 = User.create!(first_name: "Antoine",   last_name: "Quellier",   address: "Rua Seara Nova 24, Lisboa",              email: "antoine@gmail.com",  password: "123456", cook_status: 1, photo_fake: 'https://www.menshairstylestoday.com/wp-content/uploads/2016/08/Fringe-Haircut-For-Men.jpg')
+userA3 = User.create!(first_name: "Antoine",   last_name: "Quellier",   address: "Rua do Conde de Redondo 79, Lisboa",     email: "antoine@gmail.com",  password: "123456", cook_status: 1, photo_fake: 'https://www.menshairstylestoday.com/wp-content/uploads/2016/08/Fringe-Haircut-For-Men.jpg')
 userA4 = User.create!(first_name: "Julia",     last_name: "Estagnasié", address: "Rua Ferreira Lapa 17, Lisboa",           email: "julia@gmail.com",    password: "123456", cook_status: 1, photo_fake: 'https://i.pinimg.com/originals/84/d2/0e/84d20eb6d69995bbbc178df518b1ea96.jpg')
 userA5 = User.create!(first_name: "Ines",      last_name: "Zanoni",     address: "Rua Telhal 19, Lisboa",                  email: "ines@gmail.com",     password: "123456", cook_status: 1, photo_fake: 'http://media.philly.com/images/RS_500x500_20180215_STAFFHEADSHOT_N_456751562.JPG')
 
@@ -65,7 +65,7 @@ userA9 = User.create!(first_name: "Tim",       last_name: "G",          address:
 
 puts("Creating Meals...")
 
-mealD3 = Meal.create!(cook: usercook,
+mealD3 = Meal.create!(cook: userA5,
                       name: "Eel Stews",
                       description: "Aveiro is famous for its eels which are most often eaten simply fried or in a soup.
                                     Fishermen at Murtosa and Torreira beaches, just outside Aveiro, make an eel stew seasoned with saffron and accompanied by bell
@@ -76,27 +76,15 @@ mealD3 = Meal.create!(cook: usercook,
                       price: 6.20,
                       address: usercook.address,
                       photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Grilled_eel.jpg/1200px-Grilled_eel.jpg')
-mealC1 = Meal.create!(cook: usercook,
+mealC1 = Meal.create!(cook: userJ5,
                       name: 'Red Bean, Carrot and Kale Stew',
                       description: 'This is a tasty bean stew, made ​​with only the essentials of any portuguese bean stew: Beans, Carrot and Cabbage, Kale in this case, but, like the Spiced Lima Bean Soup, is packed with nutrients and is a great way to enjoy the last bunches of Kale at the market while we dream with all the new vegetables and fruits that soon will fill the stalls!',
                       grams_per_dose: 300,
                       ingredients: 'Red Beans, Carrots, Kale, Tomatos and Onions.',
                       price: 7.5,
-                      address: usercook.address,
+                      address: userJ5.address,
                       photo: 'https://minimalistbaker.com/wp-content/uploads/2016/02/1-POT-AMAZING-Lentil-and-Black-Bean-Chili-Smoky-hearty-PROTEIN-and-fiber-packed-vegan-glutenfree-lentils-chili-healthy-recipe-768x1152.jpg')
 
-
-mealD3 = Meal.create!(cook: userD3,
-                      name: "Eel Stews",
-                      description: "Aveiro is famous for its eels which are most often eaten simply fried or in a soup.
-                                    Fishermen at Murtosa and Torreira beaches, just outside Aveiro, make an eel stew seasoned with saffron and accompanied by bell
-                                    peppers, combining beautifully with the crisp white wines of the Bairrada region, just south of Aveiro. The best place to try the
-                                    caldeirada is Bastos, a restaurant on the Torreira Beach, just five miles from Aveiro.",
-                      grams_per_dose: 200,
-                      ingredients: "Eel, tomato, aromatic herb, garlic, onion, salt, pepper, extra virgin olive oil, polenta",
-                      price: 6.20,
-                      address: userD3.address,
-                      photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Grilled_eel.jpg/1200px-Grilled_eel.jpg')
 
 mealC1 = Meal.create!(cook: user2,
                       name: 'Red Bean, Carrot and Kale Stew',
@@ -178,7 +166,7 @@ mealJ4 = Meal.create!(cook: userJ4,
                       price: 4.5,
                       address: userJ4.address,
                       photo: 'http://2.bp.blogspot.com/-pgxx565h1kM/Tig7-m3-ynI/AAAAAAAABME/RpHuaPQjfdA/s640/DSC02387.JPG')
-mealJ5 = Meal.create!(cook: userJ5,
+mealJ5 = Meal.create!(cook: userA4,
                       name: 'Bitoque',
                       description: 'Bitoque is a traditional Portuguese dish, which consists of a lean fried or grilled steak or pork, that is usually accompanied by fries, rice, various salads and topped with an egg.
                                     This recipe has its origin in Beira’s, Portugal. Bitoque is one of the most common lunch options for many Portuguese people and can be found on menus of many traditional restaurants across the country.',
@@ -189,7 +177,7 @@ mealJ5 = Meal.create!(cook: userJ5,
                       photo: 'https://media.timeout.com/images/103701660/image.jpg')
 
 mealA1 = Meal.create!(cook: userA1,
-                      name: "Protein Delight : Morning Omelette",
+                      name: "Ham & Cheese Omelette",
                       description: "This is a great quick meal at any time of the day! This omelette is a fantastic source of protein, helping our muscles to grow and repair and helping us to feel fuller for longer. Served with wholemeal bread and a vegtables for a healthy, balanced meal.",
                       grams_per_dose: 450, ingredients: "Eggs, milk, butter, mushrooms, cheese, ham, spinach, tomatoes, salad, salt, pepper",
                       price: 4.5,
@@ -211,13 +199,13 @@ mealA3 = Meal.create!(cook: userA3,
                       price: 13,
                       address: userA3. address,
                       photo: 'http://cdn3-elle.ladmedia.fr/var/plain_site/storage/images/elle-a-table/toutes-vos-questions-cuisine/cuisson-saumon/51398714-2-fre-FR/Cuisson-saumon.jpg')
-mealA4 = Meal.create!(cook: userA3,
+mealA4 = Meal.create!(cook: userA2,
                       name: "Octopus Chorizo Stew",
                       description: "This exotic revisited dish fits in perfectly with the French South West cuisine. This octopus stew takes plenty of time to prepare, since it requires long and slow simmering. The end result is a very tender octopus in a stew which will delight the most demanding taste buds. The chorizo and grass sublimate the fine and tasteful flesh of this mysterious animal. ",
                       grams_per_dose: 800,
                       ingredients: "Eggs, milk, butter, mushrooms, cheese, ham, spinach, tomatoes, salad, salt, pepper",
                       price: 12.5,
-                      address: userA3. address,
+                      address: userA2. address,
                       photo: 'https://i.pinimg.com/originals/87/d1/57/87d157cdeb19dbdf7b6136bd9fa99273.jpg')
 mealA5 = Meal.create!(cook: userA3,
                       name: "Argentinian Whole Prime Rib Roast a la Parilla",
