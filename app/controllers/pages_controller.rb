@@ -10,6 +10,6 @@ class PagesController < ApplicationController
   def update
   @current_user = User.find(params[:id])
   @current_user.update_attribute("cook_status", 1)
-  redirect_to meals_path
+  redirect_to dashboard_index_path
 end
 end
