@@ -9,25 +9,27 @@ Meal.destroy_all
 WeekDay.destroy_all
 
 puts("Creating Cooks...")
-user1 = User.create!(first_name: "Maria",    last_name: "Belo",       address: "Rua da Moeda 6, Lisboa",               email: "maria@fesf.fr",     password: "123456", cook_status: 1)
-user2 = User.create!(first_name: "Marta",    last_name: "Carmo",      address: "Rua de São Marçal 170, Lisboa",        email: "marta@fesf.fr",     password: "123456", cook_status: 1)
-user3 = User.create!(first_name: "Pedro",    last_name: "Fargo",      address: "Rua da Vitória 4, Lisboa",             email: "pedro@fesf.fr",     password: "123456", cook_status: 1)
-user4 = User.create!(first_name: "Joana",    last_name: "Rosa",       address: "Avenida de Roma 39, Lisboa",           email: "joana@fesf.fr",     password: "123456", cook_status: 1)
-user5 = User.create!(first_name: "Vasco",    last_name: "Castro",     address: "Avenida São João de Deus 35, Lisboa",  email: "vasco@fesf.fr",     password: "123456", cook_status: 1)
-userd1 = User.create!(first_name: "Mitch",   last_name: "Rodrigues",  address: "Avenida do Brasil 2, Lisboa",          email: "mitch@gmail.pt",    password: "123456", cook_status: 1)
-userd2 = User.create!(first_name: "Emanuel", last_name: "Herculano",  address: "Rua Alexandre Herculano 5, Lisboa",    email: "emanuel@gmail.pt",  password: "123456", cook_status: 1)
-userd3 = User.create!(first_name: "Henrique",last_name: "Sousa",      address: "Rua da Penha de França 1, Lisboa",     email: "henrique@gmail.pt", password: "123456", cook_status: 1)
-userd4 = User.create!(first_name: "Julia",   last_name: "Martins",    address: "R. Ferragial 33-1, Lisboa",            email: "julia@gmail.pt",    password: "123456", cook_status: 1)
+user1 = User.create!(first_name: "Maria",    last_name: "Belo",       address: "Rua da Moeda 6, Lisboa",               email: "maria@fesf.fr",     password: "123456", cook_status: 1, photo_fake: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSARxPiIB8cCL-xCX9CW9lyOq75poVh842vdlsYfAJEMPj5J4uLyA")
+user2 = User.create!(first_name: "Marta",    last_name: "Carmo",      address: "Rua de São Marçal 170, Lisboa",        email: "marta@fesf.fr",     password: "123456", cook_status: 1, photo_fake: "https://avatars2.githubusercontent.com/u/398893?s=400&v=4")
+user3 = User.create!(first_name: "Pedro",    last_name: "Fargo",      address: "Rua da Vitória 4, Lisboa",             email: "pedro@fesf.fr",     password: "123456", cook_status: 1, photo_fake: "")
+user4 = User.create!(first_name: "Joana",    last_name: "Rosa",       address: "Avenida de Roma 39, Lisboa",           email: "joana@fesf.fr",     password: "123456", cook_status: 1, photo_fake: "")
+user5 = User.create!(first_name: "Vasco",    last_name: "Castro",     address: "Avenida São João de Deus 35, Lisboa",  email: "vasco@fesf.fr",     password: "123456", cook_status: 1, photo_fake: "")
+userd1 = User.create!(first_name: "Mitch",   last_name: "Rodrigues",  address: "Avenida do Brasil 2, Lisboa",          email: "mitch@gmail.pt",    password: "123456", cook_status: 1, photo_fake: "")
+userd2 = User.create!(first_name: "Emanuel", last_name: "Herculano",  address: "R. Vítor Cordon 2-20, Lisboa",         email: "emanuel@gmail.pt",  password: "123456", cook_status: 1, photo_fake: "")
+userd3 = User.create!(first_name: "Henrique",last_name: "Sousa",      address: "Rua da Penha de França 1, Lisboa",     email: "henrique@gmail.pt", password: "123456", cook_status: 1, photo_fake: "")
+
+userd4 = User.create!(first_name: "Julia",   last_name: "Martins",    address: "R. Ferragial 33-1, Lisboa",            email: "julia@gmail.pt",    password: "123456", cook_status: 1, photo_fake: "")
+userd5 = User.create!(first_name: "Ricardo", last_name: "Lobo",       address: "R. Portas de Santo Antão 5, Lisboa",   email: "ricardo@gmail.pt",  password: "123456", cook_status: 1, photo_fake: "")
 
 
 
 puts("Creating Users...")
-user6  = User.create!(first_name: "Diogo",    last_name: "Rato",      address: "Avenida da Igreja 28, Lisboa",         email: "diogo@fesf.fr",    password: "123456", cook_status: 0)
-user7  = User.create!(first_name: "Ana",      last_name: "Mendonça",  address: "Rua Alexandre Herculano 2, Lisboa",    email: "ana@fesf.fr",      password: "123456", cook_status: 0)
-user8  = User.create!(first_name: "Catarina", last_name: "Vidal",     address: "Avenida Elias Garcia 76, Lisboa",      email: "catarina@fesf.fr", password: "123456", cook_status: 0)
-user9  = User.create!(first_name: "Rute",     last_name: "Almada",    address: "Rua da Penha de França 94, Lisboa",    email: "rute@fesf.fr",     password: "123456", cook_status: 0)
-user10 = User.create!(first_name: "Manuel",   last_name: "Morato",    address: "Avenida da Liberdade 2, Lisboa",       email: "manuel@fesf.fr",   password: "123456", cook_status: 0)
-user11 = User.create!(first_name: "Sara",     last_name: "Guerra",    address: "Avenida do Brasil 30, Lisboa",         email: "sara@fesf.fr",     password: "123456", cook_status: 0)
+user6  = User.create!(first_name: "Diogo",    last_name: "Rato",      address: "Avenida da Igreja 28, Lisboa",         email: "diogo@fesf.fr",    password: "123456", cook_status: 0, photo_fake: "")
+user7  = User.create!(first_name: "Ana",      last_name: "Mendonça",  address: "Rua Alexandre Herculano 2, Lisboa",    email: "ana@fesf.fr",      password: "123456", cook_status: 0, photo_fake: "")
+user8  = User.create!(first_name: "Catarina", last_name: "Vidal",     address: "Avenida Elias Garcia 76, Lisboa",      email: "catarina@fesf.fr", password: "123456", cook_status: 0, photo_fake: "")
+user9  = User.create!(first_name: "Rute",     last_name: "Almada",    address: "Rua da Penha de França 94, Lisboa",    email: "rute@fesf.fr",     password: "123456", cook_status: 0, photo_fake: "")
+user10 = User.create!(first_name: "Manuel",   last_name: "Morato",    address: "Avenida da Liberdade 2, Lisboa",       email: "manuel@fesf.fr",   password: "123456", cook_status: 0, photo_fake: "")
+user11 = User.create!(first_name: "Sara",     last_name: "Guerra",    address: "Avenida do Brasil 30, Lisboa",         email: "sara@fesf.fr",     password: "123456", cook_status: 0, photo_fake: "")
 
 
 puts("Creating Meals...")
