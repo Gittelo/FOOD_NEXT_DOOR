@@ -77,7 +77,7 @@ mealD3 = Meal.create!(cook: userA5,
                       address: usercook.address,
                       photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Grilled_eel.jpg/1200px-Grilled_eel.jpg')
 mealC1 = Meal.create!(cook: userJ5,
-                      name: 'Red Bean, Carrot and Kale Stew',
+                      name: 'Red Bean and Kale Stew',
                       description: 'This is a tasty bean stew, made ​​with only the essentials of any portuguese bean stew: Beans, Carrot and Cabbage, Kale in this case, but, like the Spiced Lima Bean Soup, is packed with nutrients and is a great way to enjoy the last bunches of Kale at the market while we dream with all the new vegetables and fruits that soon will fill the stalls!',
                       grams_per_dose: 300,
                       ingredients: 'Red Beans, Carrots, Kale, Tomatos and Onions.',
@@ -200,7 +200,7 @@ mealA4 = Meal.create!(cook: userA2,
                       photo: 'https://i.pinimg.com/originals/87/d1/57/87d157cdeb19dbdf7b6136bd9fa99273.jpg')
 
 mealA6 = Meal.create!(cook: userA3,
-                      name: "Squeed Ink Tagliatelle, shrimps and mint",
+                      name: "Squeed Ink Tagliatelle",
                       description: "Fresh squid ink pasta is an incredibly delicious, gourmet ingredient. To make it, squid ink is mixed right into fresh pasta dough, turning it a gorgeous, dark hue and infusing it with a light salinity that pairs perfectly with shellfish. Here, I'm using a classic Italian sauce of fresh cherry tomatoes, spiced with a little red pepper and enriched with lobster demi-glace. In this elegant dinner, I'm celebrating the unique flavors of the sea.",
                       grams_per_dose: 500,
                       ingredients: "Tagliatelle, shrimps, mint, lobster demi glace, squid ink, cherry tomatoes, coriander, mint, extra virgin olive oil, salt, pepper",
@@ -378,11 +378,7 @@ WeekDay.create!(meal: mealJ3, pick_up_time_start: Time.zone.local(2018,06,day,19
                               last_order_time:    Time.zone.local(2018,06,day,18,30,00),
                               doses: 7,
                               date: Date.new(2018,06,day))
-WeekDay.create!(meal: mealA3, pick_up_time_start: Time.zone.local(2018,06,day,19,30,00),
-                              pick_up_time_end:   Time.zone.local(2018,06,day,21,30,00),
-                              last_order_time:    Time.zone.local(2018,06,day,19,00,00),
-                              doses: 5,
-                              date: Date.new(2018,06,day))
+
 WeekDay.create!(meal: mealC3, pick_up_time_start: Time.zone.local(2018,06,day,20,30,00),
                               pick_up_time_end:   Time.zone.local(2018,06,day,21,30,00),
                               last_order_time:    Time.zone.local(2018,06,day,19,30,00),
@@ -425,14 +421,16 @@ WeekDay.create!(meal: mealC5, pick_up_time_start: Time.zone.local(2018,06,day,20
                               date: Date.new(2018,06,day))
 #puts day
 end
-# WeekDay.create!(meal: Meal.find(2), pick_up_time_start: Time.zone.local(2018,06,13,18,30,00),
-#                                     pick_up_time_end:   Time.zone.local(2018,06,13,20,00,00),
-#                                     last_order_time:    Time.zone.local(2018,06,13,12,00,00),
-#                                     doses: 2,
-#                                     date: Date.new(2018,06,13))
-# WeekDay.create!(meal: Meal.find(7), pick_up_time_start: Time.zone.local(2018,06,13,17,30,00),
-#                                     pick_up_time_end:   Time.zone.local(2018,06,13,21,00,00),
-#                                     last_order_time:    Time.zone.local(2018,06,13,13,30,00),
-#                                     doses: 6,
-#                                     date: Date.new(2018,06,13))
+
+WeekDay.create!(meal: mealA3, pick_up_time_start: Time.zone.local(2018,06,16,19,30,00),
+                              pick_up_time_end:   Time.zone.local(2018,06,16,21,30,00),
+                              last_order_time:    Time.zone.local(2018,06,16,19,00,00),
+                              doses: 5,
+                              date: Date.new(2018,06,16))
+
+WeekDay.create!(meal: mealA6, pick_up_time_start: Time.zone.local(2018,06,18,19,30,00),
+                              pick_up_time_end:   Time.zone.local(2018,06,18,21,30,00),
+                              last_order_time:    Time.zone.local(2018,06,18,19,00,00),
+                              doses: 5,
+                              date: Date.new(2018,06,18))
 
