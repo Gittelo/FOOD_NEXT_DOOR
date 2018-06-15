@@ -15,12 +15,20 @@
 }
 
 .left-section{
-  width: 55%;
+  h4 {
+    margin: 25px 0;
+  }
+  margin-left: 20px;
+  width: 50%;
   height: 100vh;
   float: left;
 }
 
 .right-section{
+  h4 {
+    margin: 25px 0;
+  }
+  background-color: $light-gray;
   padding: 0 80px;
   width: 45%;
   height: 100vh;
