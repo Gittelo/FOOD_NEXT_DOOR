@@ -10,7 +10,6 @@ WeekDay.destroy_all
 
 puts("Creating Cooks...")
 
-
 usercook  = User.create!(first_name: "Telo",   last_name: "Castro",     address: "Rua da Moeda 6, Lisboa",                 email: "telo@gmail.com",     password: "123456", cook_status: 0, photo_fake: 'https://avatars2.githubusercontent.com/u/36533689?s=400&v=4')
 
 user1  = User.create!(first_name: "Maria",     last_name: "Fonseca",    address: "Rua da Moeda 6, Lisboa",                 email: "maria@fesf.fr",      password: "123456", cook_status: 1, photo_fake: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSARxPiIB8cCL-xCX9CW9lyOq75poVh842vdlsYfAJEMPj5J4uLyA')
