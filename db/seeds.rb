@@ -11,7 +11,7 @@ WeekDay.destroy_all
 puts("Creating Cooks...")
 
 
-usercook  = User.create!(first_name: "Telo",     last_name: "Castro",    address: "Rua da Moeda 6, Lisboa",                 email: "telo@gmail.com",      password: "123456", cook_status: 1, photo_fake: 'https://s3.amazonaws.com/typekit-production-public-assets/designers/profile_images/000/000/391/original/400x400-ellmerstefan.jpg?1507307338')
+usercook  = User.create!(first_name: "Telo",     last_name: "Castro",    address: "Rua da Moeda 6, Lisboa",                 email: "telo@gmail.com",       password: "123456", cook_status: 0, photo_fake: 'https://avatars2.githubusercontent.com/u/36533689?s=400&v=4')
 
 user1  = User.create!(first_name: "Maria",     last_name: "Fonseca",    address: "Rua da Moeda 6, Lisboa",                 email: "maria@fesf.fr",      password: "123456", cook_status: 1, photo_fake: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSARxPiIB8cCL-xCX9CW9lyOq75poVh842vdlsYfAJEMPj5J4uLyA')
 user2  = User.create!(first_name: "Marta",     last_name: "Costa",      address: "Rua de São Marçal 170, Lisboa",          email: "marta@fesf.fr",      password: "123456", cook_status: 1, photo_fake: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTttXIwKVB1fejI-XxRuMxRDbtv7HBt67g4wMA1_MvUiyxhTz4Ag')
