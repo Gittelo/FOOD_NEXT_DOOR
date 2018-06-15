@@ -11,7 +11,7 @@ WeekDay.destroy_all
 puts("Creating Cooks...")
 
 
-usercook  = User.create!(first_name: "Telo",     last_name: "Castro",    address: "Rua da Moeda 6, Lisboa",                 email: "telo@gmail.com",      password: "123456", cook_status: 1, photo_fake: 'https://s3.amazonaws.com/typekit-production-public-assets/designers/profile_images/000/000/391/original/400x400-ellmerstefan.jpg?1507307338')
+usercook  = User.create!(first_name: "Telo",   last_name: "Castro",     address: "Rua da Moeda 6, Lisboa",                 email: "telo@gmail.com",     password: "123456", cook_status: 0, photo_fake: 'https://avatars2.githubusercontent.com/u/36533689?s=400&v=4')
 
 user1  = User.create!(first_name: "Maria",     last_name: "Fonseca",    address: "Rua da Moeda 6, Lisboa",                 email: "maria@fesf.fr",      password: "123456", cook_status: 1, photo_fake: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSARxPiIB8cCL-xCX9CW9lyOq75poVh842vdlsYfAJEMPj5J4uLyA')
 user2  = User.create!(first_name: "Marta",     last_name: "Costa",      address: "Rua de São Marçal 170, Lisboa",          email: "marta@fesf.fr",      password: "123456", cook_status: 1, photo_fake: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTttXIwKVB1fejI-XxRuMxRDbtv7HBt67g4wMA1_MvUiyxhTz4Ag')
@@ -55,7 +55,7 @@ userJ6 = User.create!(first_name: "Ana",       last_name: "G",          address:
 userJ7 = User.create!(first_name: "Francisco", last_name: "G",          address: "Rua 4 de Infantaria, 20, Lisboa",        email: "franscisco@fesf.fr", password: "123456", cook_status: 0, photo_fake: 'http://ecfr.eu/page/-/Borjas_profile_picture_II.jpg?v=1463746828')
 userJ8 = User.create!(first_name: "Sofia",     last_name: "G",          address: "Travessa de Santa Quitéria, 25, Lisboa", email: "sofia@fesf.fr",      password: "123456", cook_status: 0, photo_fake: "http://r.fod4.com/c=sq/s=w250,pd2/o=80/http://p.fod4.com/p/channels/kqswu/profile/duSTMEv6TRycZmqilwGk_Sofia%20Black%20D'elia.jpg")
 userJ9 = User.create!(first_name: "João",      last_name: "G",          address: "Rua Luciano Cordeiro, 14, Lisboa",       email: "joao@fesf.fr",       password: "123456", cook_status: 0, photo_fake: "http://www.guengl.eu/images/made/uploads/mep-pictures/FERREIRA_JOAO_PT_400_500_70_c1_c_t.JPG")
-userJ10 = User.create!(first_name: "Manuel",    last_name: "G",          address: "Rua Tomás Ribero 15, Lisboa",            email: "manuel.g@fesf.fr",   password: "123456", cook_status: 0, photo_fake: 'https://wit.edu/sites/default/files/delgado-manuel.jpg')
+userJ10 = User.create!(first_name: "Manuel",   last_name: "G",          address: "Rua Tomás Ribero 15, Lisboa",            email: "manuel.g@fesf.fr",   password: "123456", cook_status: 0, photo_fake: 'https://wit.edu/sites/default/files/delgado-manuel.jpg')
 
 userA6 = User.create!(first_name: "Typhany",   last_name: "G",          address: "Avenida do Brasil 23, Lisboa",           email: "typhany@fesf.fr",    password: "123456", cook_status: 0, photo_fake: 'https://i.pinimg.com/originals/2f/9d/4f/2f9d4f05948c5fe1c2aa06aebb69088c.jpg')
 userA7 = User.create!(first_name: "Elise",     last_name: "G",          address: "Rua Seara Nova 1, Lisboa",               email: "elise@fesf.fr",      password: "123456", cook_status: 0, photo_fake: 'http://www.lovely-hairstyles.com/wp-content/uploads/2016/11/Hair-Style-for-Black-Women.jpg')
@@ -239,22 +239,18 @@ mealD2 = Meal.create!(cook: userD2,
                       photo: 'https://fotos.web.sapo.io/i/o1b06043a/18261602_AjELi.jpeg')
 
 
-# puts("Creating Orders...")
-# order1 = Order.create!(sku: 'a', user: user6,  status: 1, total_price: )
-# order2 = Order.create!(sku: 'b', user: user7,  status: 1, total_price: )
-# order3 = Order.create!(sku: 'c', user: user8,  status: 1, total_price: )
-# order4 = Order.create!(sku: 'd', user: user9,  status: 1, total_price: )
+puts("Creating Orders...")
+order1 = Order.create!(sku: 'a', user: user8,  status: 1, total_price: mealA3.price * 1)
+order2 = Order.create!(sku: 'b', user: userA9, status: 3, total_price: mealA6.price * 2)
+order3 = Order.create!(sku: 'c', user: userJ6, status: 1, total_price: mealA3.price * 3)
 
 
-# puts("Creating Items...")
-# item1  = Item.create!(order: order1, meal: mealC1, doses: 2, item_price: mealC1.price * 2)
-# item2  = Item.create!(order: order1, meal: mealC2, doses: 1, item_price: mealC2.price * 1)
-# item3  = Item.create!(order: order1, meal: mealC3, doses: 3, item_price: mealC3.price * 3)
+puts("Creating Items...")
+item1  = Item.create!(order: order1, meal: mealA3, doses: 1, item_price: mealA3.price * 1)
+item2  = Item.create!(order: order2, meal: mealA6, doses: 2, item_price: mealA6.price * 2)
+item3  = Item.create!(order: order3, meal: mealA3, doses: 3, item_price: mealA3.price * 3)
 
-# item4  = Item.create!(order: order2, meal: mealC2, doses: 4, item_price: mealC2.price * 4)
 
-# item5  = Item.create!(order: order3, meal: mealC3, doses: 1, item_price: mealC3.price * 1)
-# item6  = Item.create!(order: order3, meal: mealC5, doses: 2, item_price: mealC5.price * 2)
 
 # item7  = Item.create!(order: order4, meal: mealC1, doses: 2, item_price: mealC1.price * 2)
 # item8  = Item.create!(order: order4, meal: mealC4, doses: 2, item_price: mealC4.price * 2)
