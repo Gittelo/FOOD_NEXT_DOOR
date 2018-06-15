@@ -27,12 +27,12 @@ userJ1 = User.create!(first_name: "Miguel",    last_name: "Almeida",    address:
 userJ2 = User.create!(first_name: "Isabel",    last_name: "Silva",      address: "Avenida de Berna, 10, Lisboa",           email: "isabel@fesf.fr",     password: "123456", cook_status: 1, photo_fake: 'http://www.2tg.co.uk/wp-content/uploads/2017/06/isabel-barter_Web-400x400.jpg')
 userJ3 = User.create!(first_name: "Margarida", last_name: "Prates",     address: "Rua António Augusto Aguiar, 37, Lisboa", email: "margarida@fesf.fr",  password: "123456", cook_status: 1, photo_fake: 'https://www.cabri-sbo.org/uploads/files/_400x400_crop_top-center/Joana-2.jpg')
 userJ4 = User.create!(first_name: "Pedro",     last_name: "Carneiro",   address: "Avenida da Igreja, 40, Lisboa",          email: "pedro.c@fesf.fr",    password: "123456", cook_status: 1, photo_fake: 'https://pbs.twimg.com/profile_images/988539643783151616/aczdT5i0_400x400.jpg')
-userJ5 = User.create!(first_name: "Mariana",   last_name: "Pires",      address: "Avenida Rainha Dona Amélia, 50, Lisboa", email: "mariana@fesf.fr",    password: "123456", cook_status: 1, photo_fake: 'https://pbs.twimg.com/profile_images/834967283751583744/WDcI47m-_400x400.jpg')
+userJ5 = User.create!(first_name: "Mariana",   last_name: "Pires",      address: "Rua Bernardim Ribeiro, 55, Lisboa",      email: "mariana@fesf.fr",    password: "123456", cook_status: 1, photo_fake: 'https://pbs.twimg.com/profile_images/834967283751583744/WDcI47m-_400x400.jpg')
 
 userA1 = User.create!(first_name: "François",  last_name: "Martin",     address: "Rua do Conde de Redondo 1, Lisboa",      email: "francois@gmail.com", password: "123456", cook_status: 1, photo_fake: 'https://menhairstylesworld.com/wp-content/uploads/2017/12/Business-Casual-Hairstyles-for-Men-with-Receding-Hairlines.jpg')
-userA2 = User.create!(first_name: "Henri",     last_name: "Quélin",     address: "Rua Silva Carvalho 18, Lisboa",          email: "valentin@gmail.com", password: "123456", cook_status: 1, photo_fake: 'https://images-na.ssl-images-amazon.com/images/I/61BSyQG1DGL.jpg')
+userA2 = User.create!(first_name: "Henri",     last_name: "Quélin",     address: "Rua do Conde de Redondo 105, Lisboa",    email: "henri@gmail.com",    password: "123456", cook_status: 1, photo_fake: 'https://images-na.ssl-images-amazon.com/images/I/61BSyQG1DGL.jpg')
 # Cook choosen
-userA3 = User.create!(first_name: "Antoine",   last_name: "Quellier",   address: "Rua Seara Nova 24, Lisboa",              email: "antoine@gmail.com",  password: "123456", cook_status: 1, photo_fake: 'https://www.menshairstylestoday.com/wp-content/uploads/2016/08/Fringe-Haircut-For-Men.jpg')
+userA3 = User.create!(first_name: "Antoine",   last_name: "Quellier",   address: "Rua do Conde de Redondo 79, Lisboa",     email: "antoine@gmail.com",  password: "123456", cook_status: 1, photo_fake: 'https://lh3.googleusercontent.com/IUEtHWxxfQLRTViPpvTmewws1WHqaNEbgrahY5WrIBSChELM3cYQwj9PTiWE4nksA6C8rnkhdQQCpm4TUleAuWXkQzJkPi0_Z4LwHWKoujYv0dW18wqwAA-hO0x3pk4Yx1zeavgWlJMm2wa9uLwBf4NDSyu4aYU1Yy_AKOsrljAt84IZK8MuePq3GOiYV6bxFLwycF9HQ9epnrvXEOoAH2aWBe0aJy2517BZUd1xFvs2XiqbFckfzseYdmpjo5LTXu5ixKsVtonS4D7u1sLEl1UVRx3QHCGsCqG8GT3SueBPK3zLpLtBaTuGVhTHuTKrvwICKsQsMzdgRg5Au1D6RnGh-hpxk_lzBVjAtWUMVLgWQH3sgrjYTxmeXBOiI2lNcf039kj9foUlEJcBvptQMIcssb3f2Znj6qahndqG0jA9VD8HAml0-nxsebjFzxSahtrjV81WjcMSg24l_YUNJ0RAYtP-YyRrdwxdASrUCvfCoCHdFpyMId_ZT4Z7GCn9FyeUnqjGJxy0DVcctIy4Gtdj_q91qhSrg-9k0fUbyKi3bLi6LMjvRPTqcegpmZZSGqnlphe9qSuYrlDvzwvHz5-fDjMQLqSmr-82y7P41qS1BY_iDRTEnKIGcdL9Z_u9RmFuAwyWGgrsOod9EzLmDYaikmosvdTu=w1302-h1300-no')
 userA4 = User.create!(first_name: "Julia",     last_name: "Estagnasié", address: "Rua Ferreira Lapa 17, Lisboa",           email: "julia@gmail.com",    password: "123456", cook_status: 1, photo_fake: 'https://i.pinimg.com/originals/84/d2/0e/84d20eb6d69995bbbc178df518b1ea96.jpg')
 userA5 = User.create!(first_name: "Ines",      last_name: "Zanoni",     address: "Rua Telhal 19, Lisboa",                  email: "ines@gmail.com",     password: "123456", cook_status: 1, photo_fake: 'http://media.philly.com/images/RS_500x500_20180215_STAFFHEADSHOT_N_456751562.JPG')
 
@@ -65,7 +65,7 @@ userA9 = User.create!(first_name: "Tim",       last_name: "G",          address:
 
 puts("Creating Meals...")
 
-mealD3 = Meal.create!(cook: usercook,
+mealD3 = Meal.create!(cook: userA5,
                       name: "Eel Stews",
                       description: "Aveiro is famous for its eels which are most often eaten simply fried or in a soup.
                                     Fishermen at Murtosa and Torreira beaches, just outside Aveiro, make an eel stew seasoned with saffron and accompanied by bell
@@ -76,36 +76,15 @@ mealD3 = Meal.create!(cook: usercook,
                       price: 6.20,
                       address: usercook.address,
                       photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Grilled_eel.jpg/1200px-Grilled_eel.jpg')
-mealC1 = Meal.create!(cook: usercook,
+mealC1 = Meal.create!(cook: userJ5,
                       name: 'Red Bean, Carrot and Kale Stew',
                       description: 'This is a tasty bean stew, made ​​with only the essentials of any portuguese bean stew: Beans, Carrot and Cabbage, Kale in this case, but, like the Spiced Lima Bean Soup, is packed with nutrients and is a great way to enjoy the last bunches of Kale at the market while we dream with all the new vegetables and fruits that soon will fill the stalls!',
                       grams_per_dose: 300,
                       ingredients: 'Red Beans, Carrots, Kale, Tomatos and Onions.',
                       price: 7.5,
-                      address: usercook.address,
+                      address: userJ5.address,
                       photo: 'https://minimalistbaker.com/wp-content/uploads/2016/02/1-POT-AMAZING-Lentil-and-Black-Bean-Chili-Smoky-hearty-PROTEIN-and-fiber-packed-vegan-glutenfree-lentils-chili-healthy-recipe-768x1152.jpg')
 
-
-mealD3 = Meal.create!(cook: userD3,
-                      name: "Eel Stews",
-                      description: "Aveiro is famous for its eels which are most often eaten simply fried or in a soup.
-                                    Fishermen at Murtosa and Torreira beaches, just outside Aveiro, make an eel stew seasoned with saffron and accompanied by bell
-                                    peppers, combining beautifully with the crisp white wines of the Bairrada region, just south of Aveiro. The best place to try the
-                                    caldeirada is Bastos, a restaurant on the Torreira Beach, just five miles from Aveiro.",
-                      grams_per_dose: 200,
-                      ingredients: "Eel, tomato, aromatic herb, garlic, onion, salt, pepper, extra virgin olive oil, polenta",
-                      price: 6.20,
-                      address: userD3.address,
-                      photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Grilled_eel.jpg/1200px-Grilled_eel.jpg')
-
-mealC1 = Meal.create!(cook: user2,
-                      name: 'Red Bean, Carrot and Kale Stew',
-                      description: 'This is a tasty bean stew, made ​​with only the essentials of any portuguese bean stew: Beans, Carrot and Cabbage, Kale in this case, but, like the Spiced Lima Bean Soup, is packed with nutrients and is a great way to enjoy the last bunches of Kale at the market while we dream with all the new vegetables and fruits that soon will fill the stalls!',
-                      grams_per_dose: 300,
-                      ingredients: 'Red Beans, Carrots, Kale, Tomatos and Onions.',
-                      price: 7.5,
-                      address: user2.address,
-                      photo: 'https://minimalistbaker.com/wp-content/uploads/2016/02/1-POT-AMAZING-Lentil-and-Black-Bean-Chili-Smoky-hearty-PROTEIN-and-fiber-packed-vegan-glutenfree-lentils-chili-healthy-recipe-768x1152.jpg')
 
 mealC2 = Meal.create!(cook: user4,
                       name: 'Caldo Verde',
@@ -141,14 +120,14 @@ mealC5 = Meal.create!(cook: userC3,
                       address: userC3.address,
                       photo: 'http://portuguesediner.com/tiamaria/wp-content/uploads/2012/05/bacalhauabraz.jpg')
 
-mealJ1 = Meal.create!(cook: userJ1,
+mealJ1 = Meal.create!(cook: userA2,
                       name: 'Quiche Lorraine',
                       description: 'The most traditional French Pie, has a savory custard and is usually flavored with bacon and Swiss or Gruyere cheese.
                                     Our version of Quiche Lorraine is just that: made with a creamy, cheesy, savory center and baked on a flaky, warm crust for a brunch recipe that’s filling',
                       grams_per_dose: 300,
                       ingredients: 'Bacon, gruyère, eggs, pastry, olive oil, eggs, milk, cream',
                       price: 4.5,
-                      address: userJ1.address,
+                      address: userA2.address,
                       photo: 'https://img.taste.com.au/yzM49jFu/taste/2017/02/classic-quiche-lorraine-121391-2.jpg')
 mealJ2 = Meal.create!(cook: userJ2,
                       name: 'Brazilian Picanha',
@@ -159,14 +138,14 @@ mealJ2 = Meal.create!(cook: userJ2,
                       price: 9,
                       address: userJ2.address,
                       photo: 'http://www.pamonhasdocezar.com.br/uploads/3226d0672c5162538c1ec3898c63bb44.jpg')
-mealJ3 = Meal.create!(cook: userJ3,
+mealJ3 = Meal.create!(cook: userA2,
                       name: 'Polvo à Lagareiro',
                       description: 'Polvo à lagareiro is a quintessentially Portuguese seafood dish featuring a boiled and baked octopus with smashed potatoes in a herbed garlic oil.
                                     The dish is a common meal on many tables throughout the country, though many claim the dish hails from the Beiras, a strip of land between the South of the Douro River and the North of the Tagus River.',
                       grams_per_dose: 700,
                       ingredients: 'Octupus, potatoes, onions, coriander, garlic, olive oil, bay leaves, salt and pepper.',
                       price: 8.5,
-                      address: userJ3.address,
+                      address: userA2.address,
                       photo: 'https://labohemie.pt/wp-content/uploads/2017/12/Fama-dAlfama-polvo-%C3%A0-lagareiro.jpg')
 mealJ4 = Meal.create!(cook: userJ4,
                       name: 'Açorda de Marisco',
@@ -178,7 +157,7 @@ mealJ4 = Meal.create!(cook: userJ4,
                       price: 4.5,
                       address: userJ4.address,
                       photo: 'http://2.bp.blogspot.com/-pgxx565h1kM/Tig7-m3-ynI/AAAAAAAABME/RpHuaPQjfdA/s640/DSC02387.JPG')
-mealJ5 = Meal.create!(cook: userJ5,
+mealJ5 = Meal.create!(cook: userA4,
                       name: 'Bitoque',
                       description: 'Bitoque is a traditional Portuguese dish, which consists of a lean fried or grilled steak or pork, that is usually accompanied by fries, rice, various salads and topped with an egg.
                                     This recipe has its origin in Beira’s, Portugal. Bitoque is one of the most common lunch options for many Portuguese people and can be found on menus of many traditional restaurants across the country.',
@@ -188,12 +167,12 @@ mealJ5 = Meal.create!(cook: userJ5,
                       address: userJ5.address,
                       photo: 'https://media.timeout.com/images/103701660/image.jpg')
 
-mealA1 = Meal.create!(cook: userA1,
-                      name: "Protein Delight : Morning Omelette",
+mealA1 = Meal.create!(cook: userA2,
+                      name: "Ham & Cheese Omelette",
                       description: "This is a great quick meal at any time of the day! This omelette is a fantastic source of protein, helping our muscles to grow and repair and helping us to feel fuller for longer. Served with wholemeal bread and a vegtables for a healthy, balanced meal.",
                       grams_per_dose: 450, ingredients: "Eggs, milk, butter, mushrooms, cheese, ham, spinach, tomatoes, salad, salt, pepper",
                       price: 4.5,
-                      address: userA1. address,
+                      address: userA2. address,
                       photo: 'https://4.bp.blogspot.com/-c7gRAH_aZlA/VBAC1IdQewI/AAAAAAAAC4s/ErZKSMyRFIU/s1600/IMG_9291.JPG')
 mealA2 = Meal.create!(cook: userA1,
                       name: "Zucchini Gratin",
@@ -211,15 +190,26 @@ mealA3 = Meal.create!(cook: userA3,
                       price: 13,
                       address: userA3. address,
                       photo: 'http://cdn3-elle.ladmedia.fr/var/plain_site/storage/images/elle-a-table/toutes-vos-questions-cuisine/cuisson-saumon/51398714-2-fre-FR/Cuisson-saumon.jpg')
-mealA4 = Meal.create!(cook: userA3,
+mealA4 = Meal.create!(cook: userA2,
                       name: "Octopus Chorizo Stew",
                       description: "This exotic revisited dish fits in perfectly with the French South West cuisine. This octopus stew takes plenty of time to prepare, since it requires long and slow simmering. The end result is a very tender octopus in a stew which will delight the most demanding taste buds. The chorizo and grass sublimate the fine and tasteful flesh of this mysterious animal. ",
                       grams_per_dose: 800,
                       ingredients: "Eggs, milk, butter, mushrooms, cheese, ham, spinach, tomatoes, salad, salt, pepper",
                       price: 12.5,
-                      address: userA3. address,
+                      address: userA2. address,
                       photo: 'https://i.pinimg.com/originals/87/d1/57/87d157cdeb19dbdf7b6136bd9fa99273.jpg')
-mealA5 = Meal.create!(cook: userA3,
+
+mealA6 = Meal.create!(cook: userA3,
+                      name: "Squeed Ink Tagliatelle, shrimps and mint",
+                      description: "Fresh squid ink pasta is an incredibly delicious, gourmet ingredient. To make it, squid ink is mixed right into fresh pasta dough, turning it a gorgeous, dark hue and infusing it with a light salinity that pairs perfectly with shellfish. Here, I'm using a classic Italian sauce of fresh cherry tomatoes, spiced with a little red pepper and enriched with lobster demi-glace. In this elegant dinner, I'm celebrating the unique flavors of the sea.",
+                      grams_per_dose: 500,
+                      ingredients: "Tagliatelle, shrimps, mint, lobster demi glace, squid ink, cherry tomatoes, coriander, mint, extra virgin olive oil, salt, pepper",
+                      price: 6.5,
+                      address: userA3. address,
+                      photo: 'https://media.blueapron.com/recipes/1240/square_newsletter_images/20150616-1643-219-3616/2P_061015_4_Spaghetti_20Neri_20with_20Shrimp_20and_20Cherry_20Tomatoes_20-_207165_20SQ_hi_res.jpg')
+
+
+mealA5 = Meal.create!(cook: userA5,
                       name: "Argentinian Whole Prime Rib Roast a la Parilla",
                       description: "This is a classic of the Argentinian Cuisine. This high quality prime rib roast is whole grilled on the parilla. The meat comes directly from Argentinian producers and the chimichurri is, of course, homemade with only fresh ingredients.",
                       grams_per_dose: 1600,
@@ -294,7 +284,7 @@ puts("Creating Reviews...")
 
 Review.create!(user: userJ1, meal: mealJ1, rating: 5, content: 'This was amazing!')
 Review.create!(user: userJ2, meal: mealJ2, rating: 2, content: 'I was expecting better..')
-Review.create!(user: userJ3, meal: mealJ3, rating: 3, content: 'I did not love it.')
+Review.create!(user: userJ3, meal: mealJ3, rating: 4, content: 'Great octopus!')
 Review.create!(user: userJ4, meal: mealJ4, rating: 4, content: 'Very very good!')
 Review.create!(user: userJ5, meal: mealJ5, rating: 5, content: "Couldn't recommend this more")
 
@@ -332,6 +322,13 @@ Review.create!(user: userJ7,  meal: mealC1, rating: 5, content: 'This wonderful 
 Review.create!(user: userJ8,  meal: mealC1, rating: 4, content: 'Finally vegan food on Food Next Door. So Happy :) Keep the good work guys.')
 Review.create!(user: userJ9,  meal: mealC1, rating: 5, content: 'Very fine stew, the vegetables release their full taste. A pleasure !')
 Review.create!(user: userJ10, meal: mealC1, rating: 5, content: 'Really tasteful!')
+
+# Review for the Red bean, carrot and kale stew
+Review.create!(user: userJ6,  meal: mealA6, rating: 5, content: 'Never had shrimps in this way, fantastic')
+Review.create!(user: userJ7,  meal: mealA6, rating: 5, content: 'The association of shrimps and mint was a revelation')
+Review.create!(user: userJ8,  meal: mealA6, rating: 4, content: 'So gooooooood!')
+Review.create!(user: userJ9,  meal: mealA6, rating: 5, content: 'Very fine pasta dish, I will remember for a long time.')
+Review.create!(user: userJ10, meal: mealA6, rating: 5, content: 'Really tasteful!')
 
 
 puts("Creating Weekdays...")
