@@ -327,94 +327,97 @@ Review.create!(user: userJ10, meal: mealA6, rating: 5, content: 'Really tasteful
 
 
 puts("Creating Weekdays...")
-(14..30).each do |day|
-WeekDay.create!(meal: mealJ1, pick_up_time_start: Time.zone.local(2018,06,day,21,00,00),
-                              pick_up_time_end:   Time.zone.local(2018,06,day,22,30,00),
-                              last_order_time:    Time.zone.local(2018,06,day,20,00,00),
-                              doses: 5,
-                              date: Date.new(2018,06,day))
-WeekDay.create!(meal: mealA1, pick_up_time_start: Time.zone.local(2018,06,day,20,30,00),
-                              pick_up_time_end:   Time.zone.local(2018,06,day,21,30,00),
-                              last_order_time:    Time.zone.local(2018,06,day,20,00,00),
-                              doses: 8,
-                              date: Date.new(2018,06,day))
-WeekDay.create!(meal: mealC1, pick_up_time_start: Time.zone.local(2018,06,day,20,00,00),
-                              pick_up_time_end:   Time.zone.local(2018,06,day,22,30,00),
-                              last_order_time:    Time.zone.local(2018,06,day,19,30,00),
-                              doses: 4,
-                              date: Date.new(2018,06,day))
-WeekDay.create!(meal: mealD1, pick_up_time_start: Time.zone.local(2018,06,day,20,30,00),
-                              pick_up_time_end:   Time.zone.local(2018,06,day,21,30,00),
-                              last_order_time:    Time.zone.local(2018,06,day,20,00,00),
-                              doses: 6,
-                              date: Date.new(2018,06,day))
-WeekDay.create!(meal: mealJ2, pick_up_time_start: Time.zone.local(2018,06,day,22,00,00),
-                              pick_up_time_end:   Time.zone.local(2018,06,day,23,00,00),
-                              last_order_time:    Time.zone.local(2018,06,day,21,00,00),
-                              doses: 7,
-                              date: Date.new(2018,06,day))
-WeekDay.create!(meal: mealA2, pick_up_time_start: Time.zone.local(2018,06,day,20,30,00),
-                              pick_up_time_end:   Time.zone.local(2018,06,day,21,00,00),
-                              last_order_time:    Time.zone.local(2018,06,day,19,00,00),
-                              doses: 3,
-                              date: Date.new(2018,06,day))
-WeekDay.create!(meal: mealC2, pick_up_time_start: Time.zone.local(2018,06,day,20,00,00),
-                              pick_up_time_end:   Time.zone.local(2018,06,day,21,00,00),
-                              last_order_time:    Time.zone.local(2018,06,day,19,30,00),
-                              doses: 8,
-                              date: Date.new(2018,06,day))
-WeekDay.create!(meal: mealD2, pick_up_time_start: Time.zone.local(2018,06,day,20,00,00),
-                              pick_up_time_end:   Time.zone.local(2018,06,day,21,00,00),
-                              last_order_time:    Time.zone.local(2018,06,day,19,30,00),
-                              doses: 6,
-                              date: Date.new(2018,06,day))
-WeekDay.create!(meal: mealJ3, pick_up_time_start: Time.zone.local(2018,06,day,19,00,00),
-                              pick_up_time_end:   Time.zone.local(2018,06,day,20,30,00),
-                              last_order_time:    Time.zone.local(2018,06,day,18,30,00),
-                              doses: 7,
-                              date: Date.new(2018,06,day))
+(7..12).each do |month|
+  puts month
+  (1..30).each do |day|
+    puts day
+    WeekDay.create!(meal: mealJ1, pick_up_time_start: Time.zone.local(2018,month,day,21,00,00),
+                                  pick_up_time_end:   Time.zone.local(2018,month,day,22,30,00),
+                                  last_order_time:    Time.zone.local(2018,month,day,20,00,00),
+                                  doses: 5,
+                                  date: Date.new(2018,month,day))
+    WeekDay.create!(meal: mealA1, pick_up_time_start: Time.zone.local(2018,month,day,20,30,00),
+                                  pick_up_time_end:   Time.zone.local(2018,month,day,21,30,00),
+                                  last_order_time:    Time.zone.local(2018,month,day,20,00,00),
+                                  doses: 8,
+                                  date: Date.new(2018,month,day))
+    WeekDay.create!(meal: mealC1, pick_up_time_start: Time.zone.local(2018,month,day,20,00,00),
+                                  pick_up_time_end:   Time.zone.local(2018,month,day,22,30,00),
+                                  last_order_time:    Time.zone.local(2018,month,day,19,30,00),
+                                  doses: 4,
+                                  date: Date.new(2018,month,day))
+    WeekDay.create!(meal: mealD1, pick_up_time_start: Time.zone.local(2018,month,day,20,30,00),
+                                  pick_up_time_end:   Time.zone.local(2018,month,day,21,30,00),
+                                  last_order_time:    Time.zone.local(2018,month,day,20,00,00),
+                                  doses: 6,
+                                  date: Date.new(2018,month,day))
+    WeekDay.create!(meal: mealJ2, pick_up_time_start: Time.zone.local(2018,month,day,22,00,00),
+                                  pick_up_time_end:   Time.zone.local(2018,month,day,23,00,00),
+                                  last_order_time:    Time.zone.local(2018,month,day,21,00,00),
+                                  doses: 7,
+                                  date: Date.new(2018,month,day))
+    WeekDay.create!(meal: mealA2, pick_up_time_start: Time.zone.local(2018,month,day,20,30,00),
+                                  pick_up_time_end:   Time.zone.local(2018,month,day,21,00,00),
+                                  last_order_time:    Time.zone.local(2018,month,day,19,00,00),
+                                  doses: 3,
+                                  date: Date.new(2018,month,day))
+    WeekDay.create!(meal: mealC2, pick_up_time_start: Time.zone.local(2018,month,day,20,00,00),
+                                  pick_up_time_end:   Time.zone.local(2018,month,day,21,00,00),
+                                  last_order_time:    Time.zone.local(2018,month,day,19,30,00),
+                                  doses: 8,
+                                  date: Date.new(2018,month,day))
+    WeekDay.create!(meal: mealD2, pick_up_time_start: Time.zone.local(2018,month,day,20,00,00),
+                                  pick_up_time_end:   Time.zone.local(2018,month,day,21,00,00),
+                                  last_order_time:    Time.zone.local(2018,month,day,19,30,00),
+                                  doses: 6,
+                                  date: Date.new(2018,month,day))
+    WeekDay.create!(meal: mealJ3, pick_up_time_start: Time.zone.local(2018,month,day,19,00,00),
+                                  pick_up_time_end:   Time.zone.local(2018,month,day,20,30,00),
+                                  last_order_time:    Time.zone.local(2018,month,day,18,30,00),
+                                  doses: 7,
+                                  date: Date.new(2018,month,day))
 
-WeekDay.create!(meal: mealC3, pick_up_time_start: Time.zone.local(2018,06,day,20,30,00),
-                              pick_up_time_end:   Time.zone.local(2018,06,day,21,30,00),
-                              last_order_time:    Time.zone.local(2018,06,day,19,30,00),
-                              doses: 9,
-                              date: Date.new(2018,06,day))
-WeekDay.create!(meal: mealD3, pick_up_time_start: Time.zone.local(2018,06,day,21,00,00),
-                              pick_up_time_end:   Time.zone.local(2018,06,day,22,30,00),
-                              last_order_time:    Time.zone.local(2018,06,day,19,30,00),
-                              doses: 5,
-                              date: Date.new(2018,06,day))
-WeekDay.create!(meal: mealJ4, pick_up_time_start: Time.zone.local(2018,06,day,21,00,00),
-                              pick_up_time_end:   Time.zone.local(2018,06,day,22,00,00),
-                              last_order_time:    Time.zone.local(2018,06,day,20,00,00),
-                              doses: 12,
-                              date: Date.new(2018,06,day))
-WeekDay.create!(meal: mealA4, pick_up_time_start: Time.zone.local(2018,06,day,20,00,00),
-                              pick_up_time_end:   Time.zone.local(2018,06,day,23,00,00),
-                              last_order_time:    Time.zone.local(2018,06,day,19,00,00),
-                              doses: 15,
-                              date: Date.new(2018,06,day))
-WeekDay.create!(meal: mealC4, pick_up_time_start: Time.zone.local(2018,06,day,20,00,00),
-                              pick_up_time_end:   Time.zone.local(2018,06,day,21,00,00),
-                              last_order_time:    Time.zone.local(2018,06,day,19,30,00),
-                              doses: 4,
-                              date: Date.new(2018,06,day))
-WeekDay.create!(meal: mealJ5, pick_up_time_start: Time.zone.local(2018,06,day,20,30,00),
-                              pick_up_time_end:   Time.zone.local(2018,06,day,21,30,00),
-                              last_order_time:    Time.zone.local(2018,06,day,20,00,00),
-                              doses: 10,
-                              date: Date.new(2018,06,day))
-WeekDay.create!(meal: mealA5, pick_up_time_start: Time.zone.local(2018,06,day,20,00,00),
-                              pick_up_time_end:   Time.zone.local(2018,06,day,22,30,00),
-                              last_order_time:    Time.zone.local(2018,06,day,19,30,00),
-                              doses: 7,
-                              date: Date.new(2018,06,day))
-WeekDay.create!(meal: mealC5, pick_up_time_start: Time.zone.local(2018,06,day,20,30,00),
-                              pick_up_time_end:   Time.zone.local(2018,06,day,22,00,00),
-                              last_order_time:    Time.zone.local(2018,06,day,19,00,00),
-                              doses: 11,
-                              date: Date.new(2018,06,day))
-#puts day
+    WeekDay.create!(meal: mealC3, pick_up_time_start: Time.zone.local(2018,month,day,20,30,00),
+                                  pick_up_time_end:   Time.zone.local(2018,month,day,21,30,00),
+                                  last_order_time:    Time.zone.local(2018,month,day,19,30,00),
+                                  doses: 9,
+                                  date: Date.new(2018,month,day))
+    WeekDay.create!(meal: mealD3, pick_up_time_start: Time.zone.local(2018,month,day,21,00,00),
+                                  pick_up_time_end:   Time.zone.local(2018,month,day,22,30,00),
+                                  last_order_time:    Time.zone.local(2018,month,day,19,30,00),
+                                  doses: 5,
+                                  date: Date.new(2018,month,day))
+    WeekDay.create!(meal: mealJ4, pick_up_time_start: Time.zone.local(2018,month,day,21,00,00),
+                                  pick_up_time_end:   Time.zone.local(2018,month,day,22,00,00),
+                                  last_order_time:    Time.zone.local(2018,month,day,20,00,00),
+                                  doses: 12,
+                                  date: Date.new(2018,month,day))
+    WeekDay.create!(meal: mealA4, pick_up_time_start: Time.zone.local(2018,month,day,20,00,00),
+                                  pick_up_time_end:   Time.zone.local(2018,month,day,23,00,00),
+                                  last_order_time:    Time.zone.local(2018,month,day,19,00,00),
+                                  doses: 15,
+                                  date: Date.new(2018,month,day))
+    WeekDay.create!(meal: mealC4, pick_up_time_start: Time.zone.local(2018,month,day,20,00,00),
+                                  pick_up_time_end:   Time.zone.local(2018,month,day,21,00,00),
+                                  last_order_time:    Time.zone.local(2018,month,day,19,30,00),
+                                  doses: 4,
+                                  date: Date.new(2018,month,day))
+    WeekDay.create!(meal: mealJ5, pick_up_time_start: Time.zone.local(2018,month,day,20,30,00),
+                                  pick_up_time_end:   Time.zone.local(2018,month,day,21,30,00),
+                                  last_order_time:    Time.zone.local(2018,month,day,20,00,00),
+                                  doses: 10,
+                                  date: Date.new(2018,month,day))
+    WeekDay.create!(meal: mealA5, pick_up_time_start: Time.zone.local(2018,month,day,20,00,00),
+                                  pick_up_time_end:   Time.zone.local(2018,month,day,22,30,00),
+                                  last_order_time:    Time.zone.local(2018,month,day,19,30,00),
+                                  doses: 7,
+                                  date: Date.new(2018,month,day))
+    WeekDay.create!(meal: mealC5, pick_up_time_start: Time.zone.local(2018,month,day,20,30,00),
+                                  pick_up_time_end:   Time.zone.local(2018,month,day,22,00,00),
+                                  last_order_time:    Time.zone.local(2018,month,day,19,00,00),
+                                  doses: 11,
+                                  date: Date.new(2018,month,day))
+  end
 end
 
 WeekDay.create!(meal: mealA3, pick_up_time_start: Time.zone.local(2018,06,16,19,30,00),
